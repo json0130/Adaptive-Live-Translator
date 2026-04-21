@@ -1,0 +1,15 @@
+{
+  "speaker_id": "demo_speaker",
+  "display_name": "Demo Speaker",
+  "default_src_lang": "en",
+  "default_tgt_lang": "ko",
+  "register": "formal",
+  "topic_summary": "Machine learning research presentation",
+  "glossary_entries": [
+    {"src": "our model", "tgt": "저희 모델", "dnt": false},
+    {"src": "SeamlessM4T", "tgt": "SeamlessM4T", "dnt": true}
+  ],
+  "dnt_list": ["Qwen", "Whisper", "CosyVoice"],
+  "lora_adapter": null,
+  "corrections": []
+}

@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Env
+.env
+.env.local
+
+# Models & data (keep structure, ignore content)
+models/
+data/translation_memory/*.index
+data/translation_memory/*.faiss
+data/lora_adapters/*.safetensors
+data/lora_adapters/*.bin
+*.pt
+*.ckpt
+
+# Logs / reports
+logs/
+reports/
+*.log
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp

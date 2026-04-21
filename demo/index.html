@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Adaptive Live Translator — Demo</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #171a21;
+      --border: #252933;
+      --text: #e6e8ec;
+      --muted: #8b94a7;
+      --accent: #5b8def;
+      --accent-hot: #6f9cff;
+      --ok: #4ade80;
+      --warn: #f59e0b;
+      --err: #ef4444;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 24px;
+    }
+    h1 { margin: 0 0 4px; font-size: 22px; font-weight: 600; }
+    .sub { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 16px;
+      max-width: 1200px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .panel h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--muted);
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+    label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+    input, select, textarea {
+      width: 100%;
+      background: #0b0d12;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: inherit;
+    }
+    input:focus, select:focus, textarea:focus { outline: 1px solid var(--accent); }
+    .row { margin-bottom: 12px; }
+    .row-inline { display: flex; gap: 8px; }
+    .row-inline > * { flex: 1; }
+
+    button {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover:not(:disabled) { background: var(--accent-hot); }
+    button:disabled { opacity: 0.4; cursor: not-allowed; }
+    button.secondary {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: #0b0d12;
+      color: var(--muted);
+    }
+    .status.ok { color: var(--ok); }
+    .status.rec { color: var(--err); }
+    .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: currentColor;
+    }
+    .rec .dot { animation: pulse 1s infinite; }
+    @keyframes pulse { 50% { opacity: 0.3; } }
+
+    .transcript {
+      min-height: 400px;
+      max-height: 600px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .segment {
+      border-left: 2px solid var(--border);
+      padding: 6px 0 6px 12px;
+    }
+    .segment .src { color: var(--muted); margin-bottom: 3px; font-size: 13px; }
+    .segment .tgt { color: var(--text); }
+    .segment .meta {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .empty { color: var(--muted); font-size: 13px; text-align: center; padding: 40px 0; }
+
+    .glossary-editor { font-size: 12px; }
+    .glossary-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+    .glossary-row input { padding: 4px 6px; font-size: 12px; }
+    .glossary-row .x {
+      background: transparent; color: var(--muted);
+      border: 1px solid var(--border); width: 24px; padding: 0;
+    }
+
+    .log {
+      font-family: ui-monospace, monospace;
+      font-size: 11px;
+      color: var(--muted);
+      background: #0b0d12;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 8px;
+      max-height: 100px;
+      overflow-y: auto;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Adaptive Live Translator</h1>
+  <div class="sub">Streaming ASR + context-aware LLM translation. Connects to <code id="endpoint">ws://localhost:8000</code>.</div>
+
+  <div class="grid">
+    <!-- ── Left panel: Session setup ─────────────────────────────── -->
+    <div>
+      <div class="panel">
+        <h2>Session</h2>
+        <div class="row row-inline">
+          <div>
+            <label>Source</label>
+            <select id="src-lang">
+              <option value="en" selected>English</option>
+              <option value="ko">한국어</option>
+              <option value="ja">日本語</option>
+              <option value="zh">中文</option>
+              <option value="es">Español</option>
+              <option value="de">Deutsch</option>
+              <option value="fr">Français</option>
+            </select>
+          </div>
+          <div>
+            <label>Target</label>
+            <select id="tgt-lang">
+              <option value="ko" selected>한국어</option>
+              <option value="en">English</option>
+              <option value="ja">日本語</option>
+              <option value="zh">中文</option>
+              <option value="es">Español</option>
+              <option value="de">Deutsch</option>
+              <option value="fr">Français</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <label>Speaker ID</label>
+          <input id="speaker-id" value="demo_speaker" />
+        </div>
+        <div class="row">
+          <label>Topic / Domain</label>
+          <input id="topic" placeholder="e.g. Machine learning conference" />
+        </div>
+        <div class="row">
+          <label>Register</label>
+          <select id="register">
+            <option value="formal" selected>Formal</option>
+            <option value="informal">Informal</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top: 12px;">
+        <h2>Live Glossary</h2>
+        <div class="glossary-editor" id="glossary-editor">
+          <!-- rows injected by JS -->
+        </div>
+        <button class="secondary" style="margin-top: 8px; font-size: 12px; padding: 6px;"
+                onclick="addGlossaryRow()">+ Add entry</button>
+      </div>
+
+      <div class="panel" style="margin-top: 12px;">
+        <h2>Controls</h2>
+        <div class="row">
+          <button id="start-btn" onclick="startSession()">Start Recording</button>
+        </div>
+        <div class="row">
+          <button id="stop-btn" class="secondary" onclick="stopSession()" disabled>Stop</button>
+        </div>
+        <div>
+          <span id="status" class="status"><span class="dot"></span>Idle</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Right panel: Live transcript ──────────────────────────── -->
+    <div class="panel">
+      <h2>Transcript</h2>
+      <div id="transcript" class="transcript">
+        <div class="empty">Start recording to see live translations.</div>
+      </div>
+      <div id="log" class="log"></div>
+    </div>
+  </div>
+
+  <script>
+    const SERVER_HTTP = "http://localhost:8000";
+    const SERVER_WS   = "ws://localhost:8000";
+
+    let ws = null;
+    let mediaStream = null;
+    let audioCtx = null;
+    let processor = null;
+    let sessionId = null;
+
+    function log(msg) {
+      const el = document.getElementById("log");
+      const ts = new Date().toLocaleTimeString();
+      el.innerHTML = `[${ts}] ${msg}<br>` + el.innerHTML;
+    }
+    function setStatus(text, cls = "") {
+      const el = document.getElementById("status");
+      el.className = "status " + cls;
+      el.innerHTML = `<span class="dot"></span>${text}`;
+    }
+
+    // ─── Glossary editor ────────────────────────────────────────────
+    function addGlossaryRow(src = "", tgt = "") {
+      const ed = document.getElementById("glossary-editor");
+      const div = document.createElement("div");
+      div.className = "glossary-row";
+      div.innerHTML = `
+        <input placeholder="source term" value="${src}" />
+        <input placeholder="target" value="${tgt}" />
+        <button class="x" onclick="this.parentElement.remove()">×</button>
+      `;
+      ed.appendChild(div);
+    }
+    function collectGlossary() {
+      const rows = document.querySelectorAll(".glossary-row");
+      return Array.from(rows).map(r => {
+        const [s, t] = r.querySelectorAll("input");
+        return { src: s.value.trim(), tgt: t.value.trim(), dnt: false };
+      }).filter(e => e.src && e.tgt);
+    }
+
+    // ─── Session control ────────────────────────────────────────────
+    async function startSession() {
+      const cfg = {
+        src_lang:      document.getElementById("src-lang").value,
+        tgt_lang:      document.getElementById("tgt-lang").value,
+        speaker_id:    document.getElementById("speaker-id").value || "default",
+        topic_summary: document.getElementById("topic").value,
+        register:      document.getElementById("register").value,
+        meeting_id:    "browser_demo",
+      };
+
+      setStatus("Creating session…", "");
+      try {
+        const resp = await fetch(`${SERVER_HTTP}/sessions`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(cfg),
+        });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const data = await resp.json();
+        sessionId = data.session_id;
+        log(`Session created: ${sessionId}`);
+      } catch (e) {
+        setStatus(`Server unreachable: ${e.message}`, "");
+        log(`ERROR: ${e.message}`);
+        return;
+      }
+
+      // Open WebSocket
+      ws = new WebSocket(`${SERVER_WS}/ws/${sessionId}`);
+      ws.onopen = () => {
+        log("WebSocket open.");
+        const glossary = collectGlossary();
+        if (glossary.length > 0) {
+          ws.send(JSON.stringify({
+            type: "config",
+            topic: cfg.topic_summary,
+            register: cfg.register,
+            glossary,
+          }));
+          log(`Pushed glossary (${glossary.length} entries)`);
+        }
+        startMic();
+      };
+      ws.onmessage = onMessage;
+      ws.onerror = () => { log("WS error"); };
+      ws.onclose = () => { log("WS closed"); setStatus("Idle"); };
+    }
+
+    async function startMic() {
+      try {
+        mediaStream = await navigator.mediaDevices.getUserMedia({
+          audio: { channelCount: 1, sampleRate: 16000, echoCancellation: true, noiseSuppression: true }
+        });
+      } catch (e) {
+        log(`Mic error: ${e.message}`);
+        setStatus("Mic blocked", "");
+        return;
+      }
+
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 16000 });
+      const source = audioCtx.createMediaStreamSource(mediaStream);
+      processor = audioCtx.createScriptProcessor(4096, 1, 1);
+      source.connect(processor);
+      processor.connect(audioCtx.destination);
+
+      processor.onaudioprocess = (e) => {
+        if (!ws || ws.readyState !== WebSocket.OPEN) return;
+        const input = e.inputBuffer.getChannelData(0);
+        const pcm = new Float32Array(input);
+        ws.send(pcm.buffer);
+      };
+
+      document.getElementById("start-btn").disabled = true;
+      document.getElementById("stop-btn").disabled = false;
+      setStatus("Recording", "rec");
+      document.getElementById("transcript").innerHTML = "";
+    }
+
+    function onMessage(event) {
+      const data = JSON.parse(event.data);
+      if (data.type === "final" || data.type === "partial") {
+        appendSegment(data);
+      } else if (data.type === "done") {
+        log("Done signal received.");
+      } else if (data.type === "error") {
+        log(`SERVER ERROR: ${data.message}`);
+      }
+    }
+
+    function appendSegment(data) {
+      const el = document.getElementById("transcript");
+      const empty = el.querySelector(".empty");
+      if (empty) empty.remove();
+
+      const div = document.createElement("div");
+      div.className = "segment";
+      div.innerHTML = `
+        <div class="src">${escapeHtml(data.src_raw || "")}</div>
+        <div class="tgt">${escapeHtml(data.tgt || "")}</div>
+        <div class="meta">${data.latency_ms?.toFixed(0) || "?"} ms · ${data.type}</div>
+      `;
+      el.appendChild(div);
+      el.scrollTop = el.scrollHeight;
+    }
+
+    function escapeHtml(s) {
+      return (s || "").replace(/[&<>"']/g, c => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[c]));
+    }
+
+    async function stopSession() {
+      if (processor) processor.disconnect();
+      if (mediaStream) mediaStream.getTracks().forEach(t => t.stop());
+      if (audioCtx) await audioCtx.close();
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify({ type: "end" }));
+        setTimeout(() => ws.close(), 500);
+      }
+      document.getElementById("start-btn").disabled = false;
+      document.getElementById("stop-btn").disabled = true;
+      setStatus("Idle");
+    }
+
+    // Seed glossary with example rows
+    addGlossaryRow("LLM", "대형 언어 모델");
+    addGlossaryRow("fine-tuning", "파인튜닝");
+  </script>
+</body>
+</html>

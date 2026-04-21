@@ -1,0 +1,10 @@
+{"src": "The model achieved state-of-the-art results on multiple benchmarks.", "tgt": "모델은 여러 벤치마크에서 최첨단 결과를 달성했습니다."}
+{"src": "We fine-tuned the large language model on domain-specific data.", "tgt": "우리는 도메인별 데이터로 대형 언어 모델을 파인튜닝했습니다."}
+{"src": "The inference latency was reduced by fifty percent.", "tgt": "추론 지연 시간이 50% 감소했습니다."}
+{"src": "Attention mechanisms allow the model to focus on relevant tokens.", "tgt": "어텐션 메커니즘은 모델이 관련 토큰에 집중할 수 있게 합니다."}
+{"src": "We used quantization to reduce memory requirements.", "tgt": "메모리 요구 사항을 줄이기 위해 양자화를 사용했습니다."}
+{"src": "The training data consists of one trillion tokens.", "tgt": "학습 데이터는 1조 개의 토큰으로 구성됩니다."}
+{"src": "Good morning, everyone. Thank you for joining us today.", "tgt": "안녕하세요, 여러분. 오늘 참석해 주셔서 감사합니다."}
+{"src": "Let me move on to the next slide.", "tgt": "다음 슬라이드로 넘어가겠습니다."}
+{"src": "Are there any questions so far?", "tgt": "지금까지 질문이 있으신가요?"}
+{"src": "In conclusion, our approach outperforms existing baselines.", "tgt": "결론적으로, 우리의 접근법은 기존 기준선을 능가합니다."}

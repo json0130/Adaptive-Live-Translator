@@ -1,0 +1,21 @@
+{
+  "src_lang": "en",
+  "tgt_lang": "ko",
+  "entries": [
+    {"src": "LLM", "tgt": "대형 언어 모델", "dnt": false},
+    {"src": "fine-tuning", "tgt": "파인튜닝", "dnt": false},
+    {"src": "inference", "tgt": "추론", "dnt": false},
+    {"src": "embedding", "tgt": "임베딩", "dnt": false},
+    {"src": "attention mechanism", "tgt": "어텐션 메커니즘", "dnt": false},
+    {"src": "tokenizer", "tgt": "토크나이저", "dnt": false},
+    {"src": "hallucination", "tgt": "환각 현상", "dnt": false},
+    {"src": "RLHF", "tgt": "RLHF", "dnt": true},
+    {"src": "NVIDIA", "tgt": "NVIDIA", "dnt": true},
+    {"src": "PyTorch", "tgt": "PyTorch", "dnt": true},
+    {"src": "HuggingFace", "tgt": "HuggingFace", "dnt": true},
+    {"src": "benchmark", "tgt": "벤치마크", "dnt": false},
+    {"src": "throughput", "tgt": "처리량", "dnt": false},
+    {"src": "latency", "tgt": "지연 시간", "dnt": false},
+    {"src": "quantization", "tgt": "양자화", "dnt": false}
+  ]
+}

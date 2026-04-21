@@ -1,0 +1,63 @@
+asr:
+  model: openai/whisper-large-v3
+  device: cuda
+  compute_type: float16
+  chunk_seconds: 2.0
+  vad_enabled: true
+  policy: align_att
+  align_att:
+    start_seconds: 2.0
+    num_frames: 20
+    threshold_layers: all
+
+translator:
+  model: Qwen/Qwen2.5-7B-Instruct
+  device: cuda
+  dtype: bfloat16
+  max_new_tokens: 128
+  max_context_tokens: 4096
+  kv_cache_reuse: true
+  policy: local_agreement
+  temperature: 0.0
+
+context:
+  rag:
+    enabled: true
+    hybrid: true
+    dense_model: BAAI/bge-m3
+    top_k: 5
+    min_similarity: 0.65
+  glossary:
+    enabled: true
+    injection_mode: prompt
+    max_entries_in_prompt: 30
+  translation_memory:
+    enabled: true
+    top_k: 3
+    min_similarity: 0.75
+  rolling_context:
+    prev_segments: 5
+
+personalization:
+  lora:
+    enabled: false
+    adapter_dir: data/lora_adapters
+    rank: 8
+    alpha: 16
+  speaker_id:
+    enabled: false
+
+tts:
+  enabled: false
+  model: FunAudioLLM/CosyVoice2-0.5B
+  voice_cloning: true
+  streaming: true
+
+pipeline:
+  latency_regime: low          # low | high
+  target_streamlaal_s: 2.0
+  log_metrics: true
+
+api:
+  host: 0.0.0.0
+  port: 8000
