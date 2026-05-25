@@ -10,9 +10,12 @@ experiments and the comparison table resets.
 Other pairs are deferred to a later phase.
 
 ## Test set
-- en->ko: data/translation_memory/en-ko held-out split, OR an agreed
-  public dev set. Pick ONE and record the exact path here: <FILL IN>
-- ko->en: the reverse split of the same set: <FILL IN>
+- en->ko: data/eval/flores_devtest_en_ko.tsv
+  (FLORES+ devtest, 1012 sentences, CC-BY-SA. Built by
+  scripts/build_flores_eval.py from the openlanguagedata/flores_plus
+  dataset on HF. Frozen at first build — never re-tuned, never re-split.)
+- ko->en: data/eval/flores_devtest_ko_en.tsv (mirror of the same 1012
+  sentences, columns swapped).
 - The test set is frozen for the whole research effort. No experiment
   may train or tune on it.
 
@@ -22,8 +25,11 @@ Other pairs are deferred to a later phase.
   unless the streaming policy IS the variable being tested.
 
 ## Metrics
-- BLEU (sacrebleu, default tokenization; for ko use a consistent
-  tokenizer — record which: <FILL IN>)
+- BLEU (sacrebleu).
+  - en target: --tokenize 13a (sacrebleu default)
+  - ko target: --tokenize ko-mecab  (LOCKED. If the harness machine
+    cannot install mecab-ko-dic, fall back to --tokenize char AND reset
+    the comparison table — char and ko-mecab are not interchangeable.)
 - StreamLAAL, non-computationally-aware
 - Peak VRAM (GB)
 - Wall-clock latency per segment (if available)
