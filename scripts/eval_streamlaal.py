@@ -82,12 +82,17 @@ async def evaluate(
     return results
 
 
-def compute_scores(results: list[dict]) -> dict:
+def compute_scores(results: list[dict], tgt_lang: str = "en") -> dict:
     from src.utils.metrics import compute_bleu, compute_streamlaal, SegmentRecord
 
     hyps = [r["hyp"] for r in results]
     refs = [r["ref"] for r in results]
-    bleu = compute_bleu(hyps, refs) if any(refs) else -1.0
+    # Eval protocol: ko-mecab for ko targets, 13a otherwise.
+    tokenize = "ko-mecab" if tgt_lang == "ko" else "13a"
+    if any(refs):
+        bleu, tokenize_used = compute_bleu(hyps, refs, tokenize=tokenize)
+    else:
+        bleu, tokenize_used = -1.0, "n/a"
 
     records = [
         SegmentRecord(
@@ -104,6 +109,7 @@ def compute_scores(results: list[dict]) -> dict:
 
     return {
         "bleu": round(bleu, 2),
+        "bleu_tokenize": tokenize_used,
         "stream_laal_s": round(laal, 3),
         "avg_latency_ms": round(avg_latency, 1),
         "n_segments": len(results),
@@ -131,7 +137,7 @@ def main():
     results = asyncio.run(
         evaluate(testset_path, args.src, args.tgt, cfg)
     )
-    scores = compute_scores(results)
+    scores = compute_scores(results, tgt_lang=args.tgt)
 
     logger.info("── Evaluation Results ──────────────────")
     for k, v in scores.items():
