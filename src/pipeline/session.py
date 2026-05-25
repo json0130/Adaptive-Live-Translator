@@ -20,6 +20,7 @@ from ..context.translation_memory import TranslationMemory
 from ..personalization.lora_loader import LoRALoader
 from ..personalization.speaker_profile import SpeakerProfile, SpeakerProfileStore
 from ..translator.qwen_translator import QwenTranslator
+from ..translator.madlad_translator import MadladTranslator
 
 
 @dataclass
@@ -53,7 +54,11 @@ class TranslationSession:
         self.asr = WhisperStreaming(cfg)
 
         # ------ Translator
-        self.translator = QwenTranslator(cfg)
+        model_name = cfg["translator"]["model"]
+        if model_name.startswith("google/madlad"):
+            self.translator = MadladTranslator(cfg)
+        else:
+            self.translator = QwenTranslator(cfg)
 
         # ------ Context
         self.glossary = self._load_glossary(session_cfg)
