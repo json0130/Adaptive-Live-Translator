@@ -1,6 +1,38 @@
 {
-     "env": {
-       "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
-     },
-     "agent": "research-manager"
-   }
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "agent": "research-manager",
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/eval_streamlaal.py:*)",
+      "Bash(PYTHONPATH=. python3 scripts/eval_streamlaal.py:*)",
+      "Bash(python3 scripts/build_flores_eval.py:*)",
+      "Bash(pip3 install --user *)",
+      "Bash(pip install --user *)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git show:*)",
+      "Bash(git worktree:*)",
+      "Bash(mkdir -p reports/*)",
+      "Bash(nvidia-smi:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(grep:*)",
+      "Bash(wc:*)",
+      "Bash(python3 -c:*)",
+      "Bash(PYTHONPATH=. python3 -c:*)",
+      "Bash(ollama stop:*)",
+      "Bash(ollama ps:*)",
+      "Bash(echo:*)",
+      "Bash(sleep:*)"
+    ]
+  }
+}

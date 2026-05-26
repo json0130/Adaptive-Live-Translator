@@ -1,0 +1,118 @@
+2026-05-26 15:13:10.361 | INFO     | __main__:main:136 - Evaluating flores_devtest_en_ko.tsv | en → ko
+2026-05-26 15:13:11.092 | INFO     | src.pipeline.session:__init__:46 - [Session d53dc3f7] en → ko | speaker=default
+2026-05-26 15:13:11.092 | INFO     | src.translator.qwen_translator:_load_glossary_and_tm:69 - [Qwen ctx] glossary: 15 entries
+2026-05-26 15:13:11.093 | INFO     | src.translator.qwen_translator:_load_glossary_and_tm:79 - [Qwen ctx] TM: 10 pairs
+2026-05-26 15:13:11.096 | INFO     | src.translator.qwen_translator:_lazy_load:128 - Loading translator (bnb-nf4): Qwen/Qwen2.5-7B-Instruct
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:37,  3.46it/s]Loading weights:   1%|          | 2/339 [00:00<01:36,  3.51it/s]Loading weights:   4%|▎         | 12/339 [00:00<00:12, 25.26it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:05, 61.37it/s]Loading weights:  16%|█▌        | 54/339 [00:00<00:02, 104.89it/s]Loading weights:  22%|██▏       | 76/339 [00:01<00:02, 128.48it/s]Loading weights:  27%|██▋       | 92/339 [00:01<00:02, 103.06it/s]Loading weights:  33%|███▎      | 113/339 [00:01<00:01, 125.59it/s]Loading weights:  40%|████      | 137/339 [00:01<00:01, 147.47it/s]Loading weights:  47%|████▋     | 160/339 [00:01<00:01, 167.39it/s]Loading weights:  54%|█████▍    | 184/339 [00:01<00:00, 180.08it/s]Loading weights:  61%|██████▏   | 208/339 [00:01<00:00, 188.34it/s]Loading weights:  67%|██████▋   | 228/339 [00:01<00:00, 190.82it/s]Loading weights:  73%|███████▎  | 248/339 [00:01<00:00, 187.90it/s]Loading weights:  79%|███████▉  | 269/339 [00:02<00:00, 193.13it/s]Loading weights:  86%|████████▋ | 293/339 [00:02<00:00, 203.88it/s]Loading weights:  94%|█████████▎| 317/339 [00:02<00:00, 206.33it/s]Loading weights: 100%|██████████| 339/339 [00:02<00:00, 140.93it/s]
+2026-05-26 15:13:18.146 | INFO     | src.translator.qwen_translator:_lazy_load:144 - Qwen2.5-7B-Instruct loaded (nf4) | context_injection=True
+2026-05-26 15:13:34.853 | INFO     | __main__:evaluate:77 -   10/1012 done
+2026-05-26 15:13:58.173 | INFO     | __main__:evaluate:77 -   20/1012 done
+2026-05-26 15:14:13.120 | INFO     | __main__:evaluate:77 -   30/1012 done
+2026-05-26 15:14:28.529 | INFO     | __main__:evaluate:77 -   40/1012 done
+2026-05-26 15:14:44.436 | INFO     | __main__:evaluate:77 -   50/1012 done
+2026-05-26 15:15:00.926 | INFO     | __main__:evaluate:77 -   60/1012 done
+2026-05-26 15:15:14.639 | INFO     | __main__:evaluate:77 -   70/1012 done
+2026-05-26 15:15:31.162 | INFO     | __main__:evaluate:77 -   80/1012 done
+2026-05-26 15:15:45.386 | INFO     | __main__:evaluate:77 -   90/1012 done
+2026-05-26 15:15:57.914 | INFO     | __main__:evaluate:77 -   100/1012 done
+2026-05-26 15:16:14.401 | INFO     | __main__:evaluate:77 -   110/1012 done
+2026-05-26 15:16:29.229 | INFO     | __main__:evaluate:77 -   120/1012 done
+2026-05-26 15:16:43.160 | INFO     | __main__:evaluate:77 -   130/1012 done
+2026-05-26 15:16:56.963 | INFO     | __main__:evaluate:77 -   140/1012 done
+2026-05-26 15:17:10.165 | INFO     | __main__:evaluate:77 -   150/1012 done
+2026-05-26 15:17:27.422 | INFO     | __main__:evaluate:77 -   160/1012 done
+2026-05-26 15:17:46.755 | INFO     | __main__:evaluate:77 -   170/1012 done
+2026-05-26 15:17:59.762 | INFO     | __main__:evaluate:77 -   180/1012 done
+2026-05-26 15:18:13.948 | INFO     | __main__:evaluate:77 -   190/1012 done
+2026-05-26 15:18:30.845 | INFO     | __main__:evaluate:77 -   200/1012 done
+2026-05-26 15:18:49.363 | INFO     | __main__:evaluate:77 -   210/1012 done
+2026-05-26 15:19:01.148 | INFO     | __main__:evaluate:77 -   220/1012 done
+2026-05-26 15:19:12.404 | INFO     | __main__:evaluate:77 -   230/1012 done
+2026-05-26 15:19:26.588 | INFO     | __main__:evaluate:77 -   240/1012 done
+2026-05-26 15:19:43.615 | INFO     | __main__:evaluate:77 -   250/1012 done
+2026-05-26 15:19:55.785 | INFO     | __main__:evaluate:77 -   260/1012 done
+2026-05-26 15:20:11.091 | INFO     | __main__:evaluate:77 -   270/1012 done
+2026-05-26 15:20:26.780 | INFO     | __main__:evaluate:77 -   280/1012 done
+2026-05-26 15:20:38.505 | INFO     | __main__:evaluate:77 -   290/1012 done
+2026-05-26 15:20:52.919 | INFO     | __main__:evaluate:77 -   300/1012 done
+2026-05-26 15:21:07.260 | INFO     | __main__:evaluate:77 -   310/1012 done
+2026-05-26 15:21:19.993 | INFO     | __main__:evaluate:77 -   320/1012 done
+2026-05-26 15:21:36.720 | INFO     | __main__:evaluate:77 -   330/1012 done
+2026-05-26 15:21:51.228 | INFO     | __main__:evaluate:77 -   340/1012 done
+2026-05-26 15:22:05.629 | INFO     | __main__:evaluate:77 -   350/1012 done
+2026-05-26 15:22:18.454 | INFO     | __main__:evaluate:77 -   360/1012 done
+2026-05-26 15:22:33.618 | INFO     | __main__:evaluate:77 -   370/1012 done
+2026-05-26 15:22:48.461 | INFO     | __main__:evaluate:77 -   380/1012 done
+2026-05-26 15:23:06.031 | INFO     | __main__:evaluate:77 -   390/1012 done
+2026-05-26 15:23:18.285 | INFO     | __main__:evaluate:77 -   400/1012 done
+2026-05-26 15:23:32.177 | INFO     | __main__:evaluate:77 -   410/1012 done
+2026-05-26 15:23:46.759 | INFO     | __main__:evaluate:77 -   420/1012 done
+2026-05-26 15:24:04.006 | INFO     | __main__:evaluate:77 -   430/1012 done
+2026-05-26 15:24:16.979 | INFO     | __main__:evaluate:77 -   440/1012 done
+2026-05-26 15:24:31.723 | INFO     | __main__:evaluate:77 -   450/1012 done
+2026-05-26 15:24:46.643 | INFO     | __main__:evaluate:77 -   460/1012 done
+2026-05-26 15:25:04.381 | INFO     | __main__:evaluate:77 -   470/1012 done
+2026-05-26 15:25:17.874 | INFO     | __main__:evaluate:77 -   480/1012 done
+2026-05-26 15:25:33.797 | INFO     | __main__:evaluate:77 -   490/1012 done
+2026-05-26 15:25:47.649 | INFO     | __main__:evaluate:77 -   500/1012 done
+2026-05-26 15:26:05.307 | INFO     | __main__:evaluate:77 -   510/1012 done
+2026-05-26 15:26:16.659 | INFO     | __main__:evaluate:77 -   520/1012 done
+2026-05-26 15:26:29.107 | INFO     | __main__:evaluate:77 -   530/1012 done
+2026-05-26 15:26:49.021 | INFO     | __main__:evaluate:77 -   540/1012 done
+2026-05-26 15:27:04.872 | INFO     | __main__:evaluate:77 -   550/1012 done
+2026-05-26 15:27:22.248 | INFO     | __main__:evaluate:77 -   560/1012 done
+2026-05-26 15:27:36.810 | INFO     | __main__:evaluate:77 -   570/1012 done
+2026-05-26 15:27:50.079 | INFO     | __main__:evaluate:77 -   580/1012 done
+2026-05-26 15:28:01.164 | INFO     | __main__:evaluate:77 -   590/1012 done
+2026-05-26 15:28:13.324 | INFO     | __main__:evaluate:77 -   600/1012 done
+2026-05-26 15:28:26.150 | INFO     | __main__:evaluate:77 -   610/1012 done
+2026-05-26 15:28:38.765 | INFO     | __main__:evaluate:77 -   620/1012 done
+2026-05-26 15:28:49.872 | INFO     | __main__:evaluate:77 -   630/1012 done
+2026-05-26 15:29:05.636 | INFO     | __main__:evaluate:77 -   640/1012 done
+2026-05-26 15:29:15.978 | INFO     | __main__:evaluate:77 -   650/1012 done
+2026-05-26 15:29:30.740 | INFO     | __main__:evaluate:77 -   660/1012 done
+2026-05-26 15:29:41.723 | INFO     | __main__:evaluate:77 -   670/1012 done
+2026-05-26 15:29:56.271 | INFO     | __main__:evaluate:77 -   680/1012 done
+2026-05-26 15:30:15.182 | INFO     | __main__:evaluate:77 -   690/1012 done
+2026-05-26 15:30:28.242 | INFO     | __main__:evaluate:77 -   700/1012 done
+2026-05-26 15:30:43.942 | INFO     | __main__:evaluate:77 -   710/1012 done
+2026-05-26 15:30:56.702 | INFO     | __main__:evaluate:77 -   720/1012 done
+2026-05-26 15:31:10.284 | INFO     | __main__:evaluate:77 -   730/1012 done
+2026-05-26 15:31:27.896 | INFO     | __main__:evaluate:77 -   740/1012 done
+2026-05-26 15:31:43.566 | INFO     | __main__:evaluate:77 -   750/1012 done
+2026-05-26 15:31:56.491 | INFO     | __main__:evaluate:77 -   760/1012 done
+2026-05-26 15:32:10.950 | INFO     | __main__:evaluate:77 -   770/1012 done
+2026-05-26 15:32:28.028 | INFO     | __main__:evaluate:77 -   780/1012 done
+2026-05-26 15:32:41.678 | INFO     | __main__:evaluate:77 -   790/1012 done
+2026-05-26 15:32:56.530 | INFO     | __main__:evaluate:77 -   800/1012 done
+2026-05-26 15:33:11.281 | INFO     | __main__:evaluate:77 -   810/1012 done
+2026-05-26 15:33:24.895 | INFO     | __main__:evaluate:77 -   820/1012 done
+2026-05-26 15:33:37.248 | INFO     | __main__:evaluate:77 -   830/1012 done
+2026-05-26 15:33:54.806 | INFO     | __main__:evaluate:77 -   840/1012 done
+2026-05-26 15:34:08.109 | INFO     | __main__:evaluate:77 -   850/1012 done
+2026-05-26 15:34:22.068 | INFO     | __main__:evaluate:77 -   860/1012 done
+2026-05-26 15:34:38.563 | INFO     | __main__:evaluate:77 -   870/1012 done
+2026-05-26 15:34:50.832 | INFO     | __main__:evaluate:77 -   880/1012 done
+2026-05-26 15:35:02.568 | INFO     | __main__:evaluate:77 -   890/1012 done
+2026-05-26 15:35:14.011 | INFO     | __main__:evaluate:77 -   900/1012 done
+2026-05-26 15:35:28.746 | INFO     | __main__:evaluate:77 -   910/1012 done
+2026-05-26 15:35:40.766 | INFO     | __main__:evaluate:77 -   920/1012 done
+2026-05-26 15:35:54.929 | INFO     | __main__:evaluate:77 -   930/1012 done
+2026-05-26 15:36:09.208 | INFO     | __main__:evaluate:77 -   940/1012 done
+2026-05-26 15:36:24.026 | INFO     | __main__:evaluate:77 -   950/1012 done
+2026-05-26 15:36:37.902 | INFO     | __main__:evaluate:77 -   960/1012 done
+2026-05-26 15:36:52.200 | INFO     | __main__:evaluate:77 -   970/1012 done
+2026-05-26 15:37:06.422 | INFO     | __main__:evaluate:77 -   980/1012 done
+2026-05-26 15:37:18.258 | INFO     | __main__:evaluate:77 -   990/1012 done
+2026-05-26 15:37:30.278 | INFO     | __main__:evaluate:77 -   1000/1012 done
+2026-05-26 15:37:43.449 | INFO     | __main__:evaluate:77 -   1010/1012 done
+2026-05-26 15:37:45.513 | INFO     | src.pipeline.session:close:146 - [Session d53dc3f7] Closed. Segments: 0
+2026-05-26 15:37:45.726 | INFO     | __main__:main:142 - ── Evaluation Results ──────────────────
+2026-05-26 15:37:45.726 | INFO     | __main__:main:144 -   bleu                      17.32
+2026-05-26 15:37:45.726 | INFO     | __main__:main:144 -   bleu_tokenize             ko-mecab
+2026-05-26 15:37:45.726 | INFO     | __main__:main:144 -   stream_laal_s             1.456
+2026-05-26 15:37:45.726 | INFO     | __main__:main:144 -   avg_latency_ms            1456.9
+2026-05-26 15:37:45.726 | INFO     | __main__:main:144 -   n_segments                1012
+2026-05-26 15:37:45.726 | INFO     | __main__:main:145 - ────────────────────────────────────────
+2026-05-26 15:37:45.726 | INFO     | __main__:main:150 - Report saved → reports/exp_qwen25-7b-awq/en-ko.json
