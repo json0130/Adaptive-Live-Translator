@@ -60,15 +60,16 @@ def compute_streamlaal(records: list[SegmentRecord]) -> float:
 
 
 def print_session_summary(records: list[SegmentRecord]) -> None:
-    bleu = None
     if any(r.ref_tgt for r in records):
-        bleu, _ = compute_bleu(
+        score, tok = compute_bleu(
             [r.tgt for r in records],
             [r.ref_tgt for r in records if r.ref_tgt],
         )
+    else:
+        score, tok = None, None
 
     laal = compute_streamlaal(records)
     print(f"Segments      : {len(records)}")
     print(f"StreamLAAL    : {laal:.2f} s")
-    if bleu is not None:
-        print(f"BLEU          : {bleu:.1f}")
+    if score is not None:
+        print(f"BLEU ({tok})  : {score:.1f}")

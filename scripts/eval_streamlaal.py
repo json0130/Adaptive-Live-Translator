@@ -2,7 +2,7 @@
 """Offline evaluation: BLEU + per-segment latency on a held-out test set.
 
 TEXT MODE (--testset some.tsv):
-  TSV: src_text \t ref_tgt_text
+  TSV: src_text \\t ref_tgt_text
   Feeds source TEXT directly to the translator. ASR is bypassed.
   Latency reported = translator-only wall-clock per segment.
 
