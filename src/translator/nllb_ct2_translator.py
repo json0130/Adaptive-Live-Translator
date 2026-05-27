@@ -3,7 +3,7 @@
 Key approach:
   - CTranslate2 converts the Hugging Face model to int8 quantization format
   - Runs on CPU with 8 intra-threads for 8-core laptop deployability
-  - Uses greedy decoding (num_beams=1, no sampling) to match round 1 fp16 baseline
+  - Uses greedy decoding (beam_size=1, no sampling) to match round 1 fp16 baseline
   - Multilingual SentencePiece tokenizer with FLORES lang codes
 """
 from __future__ import annotations
@@ -12,6 +12,7 @@ import os
 from typing import AsyncIterator
 
 import ctranslate2
+import sentencepiece as spm
 from loguru import logger
 from transformers import AutoTokenizer
 
@@ -36,6 +37,7 @@ class NllbCt2Translator(Translator):
 
         self._ct2_translator = None
         self._tokenizer = None
+        self._sp_model = None
         logger.info(f"NllbCt2Translator: model_dir={self.ct2_model_dir}, device={self.device}, dtype={self.dtype}")
 
     def _lazy_load(self) -> None:
@@ -55,6 +57,12 @@ class NllbCt2Translator(Translator):
 
         # Load tokenizer for SentencePiece
         self._tokenizer = AutoTokenizer.from_pretrained(self.ct2_model_dir, fix_mistral_regex=True)
+
+        # Load SentencePiece model for proper token decoding
+        sp_model_path = os.path.join(self.ct2_model_dir, "sentencepiece.bpe.model")
+        self._sp_model = spm.SentencePieceProcessor()
+        self._sp_model.Load(sp_model_path)
+
         logger.info("CTranslate2 translator and tokenizer loaded")
 
     def reset(self) -> None:
@@ -109,9 +117,11 @@ class NllbCt2Translator(Translator):
         # Decode the first (only) result
         # results[0].hypotheses[0] is the token list from greedy decoding (beam_size=1)
         output_token_strings = results[0].hypotheses[0]
-        # Convert token strings back to IDs, then decode
-        output_ids = self._tokenizer.convert_tokens_to_ids(output_token_strings)
-        tgt_text = self._tokenizer.decode(output_ids, skip_special_tokens=True)
+        # Skip the target language token and decode pieces with SentencePiece
+        # (SentencePiece properly handles merging of BPE subwords like ▁ and Ġ)
+        if output_token_strings and output_token_strings[0] == tgt_flores_code:
+            output_token_strings = output_token_strings[1:]
+        tgt_text = self._sp_model.DecodePieces(output_token_strings)
 
         # Emit as single final chunk
         yield TranslationChunk(text=tgt_text, delta=tgt_text, is_final=True)
