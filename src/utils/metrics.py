@@ -18,15 +18,37 @@ class SegmentRecord:
     ref_tgt: str = ""       # optional reference for BLEU
 
 
-def compute_bleu(hypotheses: list[str], references: list[str]) -> float:
-    """Corpus BLEU over hypothesis/reference string lists."""
+def compute_bleu(
+    hypotheses: list[str],
+    references: list[str],
+    tokenize: str = "13a",
+) -> tuple[float, str]:
+    """Corpus BLEU over hypothesis/reference string lists.
+
+    Returns (score, tokenize_used). For ko targets pass tokenize="ko-mecab"
+    per the locked eval protocol. If mecab-ko-dic is unavailable, falls
+    back to "char" and records that in tokenize_used so all experiments
+    can be checked for matching tokenizer.
+    """
     try:
         from sacrebleu.metrics import BLEU
-        bleu = BLEU(effective_order=True)
-        result = bleu.corpus_score(hypotheses, [references])
-        return result.score
     except ImportError:
-        return -1.0
+        return -1.0, "unavailable"
+
+    requested = tokenize
+    try:
+        bleu = BLEU(effective_order=True, tokenize=requested)
+        result = bleu.corpus_score(hypotheses, [references])
+        return result.score, requested
+    except Exception:
+        # mecab-ko-dic missing on this host — fall back to char (resets the
+        # comparison table per the eval protocol, but at least all four
+        # experiments in this round will share the same fallback).
+        if requested == "ko-mecab":
+            bleu = BLEU(effective_order=True, tokenize="char")
+            result = bleu.corpus_score(hypotheses, [references])
+            return result.score, "char(fallback-from-ko-mecab)"
+        raise
 
 
 def compute_streamlaal(records: list[SegmentRecord]) -> float:
@@ -38,10 +60,12 @@ def compute_streamlaal(records: list[SegmentRecord]) -> float:
 
 
 def print_session_summary(records: list[SegmentRecord]) -> None:
-    bleu = compute_bleu(
-        [r.tgt for r in records],
-        [r.ref_tgt for r in records if r.ref_tgt],
-    ) if any(r.ref_tgt for r in records) else None
+    bleu = None
+    if any(r.ref_tgt for r in records):
+        bleu, _ = compute_bleu(
+            [r.tgt for r in records],
+            [r.ref_tgt for r in records if r.ref_tgt],
+        )
 
     laal = compute_streamlaal(records)
     print(f"Segments      : {len(records)}")

@@ -20,6 +20,7 @@ from ..context.translation_memory import TranslationMemory
 from ..personalization.lora_loader import LoRALoader
 from ..personalization.speaker_profile import SpeakerProfile, SpeakerProfileStore
 from ..translator.qwen_translator import QwenTranslator
+from ..translator.nllb_ct2_translator import NllbCt2Translator
 
 
 @dataclass
@@ -53,7 +54,12 @@ class TranslationSession:
         self.asr = WhisperStreaming(cfg)
 
         # ------ Translator
-        self.translator = QwenTranslator(cfg)
+        # Dispatch: use CTranslate2 if ct2_model_dir is set, otherwise Qwen
+        if cfg["translator"].get("ct2_model_dir"):
+            self.translator = NllbCt2Translator(cfg)
+            logger.info("Using NllbCt2Translator (CTranslate2 INT8)")
+        else:
+            self.translator = QwenTranslator(cfg)
 
         # ------ Context
         self.glossary = self._load_glossary(session_cfg)

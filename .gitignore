@@ -13,6 +13,7 @@ venv/
 
 # Models & data (keep structure, ignore content)
 models/
+models/nllb-600m-ct2-int8/
 data/translation_memory/*.index
 data/translation_memory/*.faiss
 data/lora_adapters/*.safetensors
