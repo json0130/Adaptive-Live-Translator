@@ -1,7 +1,7 @@
 asr:
-  model: openai/whisper-large-v3
-  device: cuda
-  compute_type: float16
+  model: Systran/faster-whisper-medium
+  device: cpu
+  compute_type: int8
   chunk_seconds: 2.0
   vad_enabled: true
   policy: align_att
@@ -11,10 +11,11 @@ asr:
     threshold_layers: all
 
 translator:
-  model: Qwen/Qwen2.5-7B-Instruct
-  device: cuda
-  dtype: bfloat16
-  max_new_tokens: 128
+  model: facebook/nllb-200-distilled-600M
+  ct2_model_dir: models/nllb-600m-ct2-int8
+  device: cpu
+  dtype: int8
+  max_new_tokens: 256
   max_context_tokens: 4096
   kv_cache_reuse: true
   policy: local_agreement
