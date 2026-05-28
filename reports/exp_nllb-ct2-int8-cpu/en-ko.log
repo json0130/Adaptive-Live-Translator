@@ -1,0 +1,117 @@
+2026-05-28 12:12:21.506 | INFO     | __main__:main:231 - TEXT-mode | flores_devtest_en_ko.tsv | en → ko
+2026-05-28 12:12:24.228 | INFO     | src.pipeline.session:__init__:47 - [Session 5e70402c] en → ko | speaker=default
+2026-05-28 12:12:24.228 | INFO     | src.translator.nllb_ct2_translator:__init__:41 - NllbCt2Translator: model_dir=models/nllb-600m-ct2-int8, device=cpu, dtype=int8
+2026-05-28 12:12:24.228 | INFO     | src.pipeline.session:__init__:60 - Using NllbCt2Translator (CTranslate2 INT8)
+2026-05-28 12:12:24.230 | INFO     | src.translator.nllb_ct2_translator:_lazy_load:48 - Loading CTranslate2 model from models/nllb-600m-ct2-int8
+[transformers] The tokenizer you are loading from 'models/nllb-600m-ct2-int8' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+2026-05-28 12:12:25.861 | INFO     | src.translator.nllb_ct2_translator:_lazy_load:71 - CTranslate2 translator and tokenizer loaded
+2026-05-28 12:12:33.110 | INFO     | __main__:evaluate:82 -   10/1012 done
+2026-05-28 12:12:42.727 | INFO     | __main__:evaluate:82 -   20/1012 done
+2026-05-28 12:12:49.727 | INFO     | __main__:evaluate:82 -   30/1012 done
+2026-05-28 12:12:53.358 | INFO     | __main__:evaluate:82 -   40/1012 done
+2026-05-28 12:12:57.374 | INFO     | __main__:evaluate:82 -   50/1012 done
+2026-05-28 12:13:05.155 | INFO     | __main__:evaluate:82 -   60/1012 done
+2026-05-28 12:13:11.408 | INFO     | __main__:evaluate:82 -   70/1012 done
+2026-05-28 12:13:18.299 | INFO     | __main__:evaluate:82 -   80/1012 done
+2026-05-28 12:13:24.479 | INFO     | __main__:evaluate:82 -   90/1012 done
+2026-05-28 12:13:31.233 | INFO     | __main__:evaluate:82 -   100/1012 done
+2026-05-28 12:13:37.904 | INFO     | __main__:evaluate:82 -   110/1012 done
+2026-05-28 12:13:49.460 | INFO     | __main__:evaluate:82 -   120/1012 done
+2026-05-28 12:13:56.004 | INFO     | __main__:evaluate:82 -   130/1012 done
+2026-05-28 12:14:02.456 | INFO     | __main__:evaluate:82 -   140/1012 done
+2026-05-28 12:14:09.744 | INFO     | __main__:evaluate:82 -   150/1012 done
+2026-05-28 12:14:17.779 | INFO     | __main__:evaluate:82 -   160/1012 done
+2026-05-28 12:14:26.730 | INFO     | __main__:evaluate:82 -   170/1012 done
+2026-05-28 12:14:32.594 | INFO     | __main__:evaluate:82 -   180/1012 done
+2026-05-28 12:14:39.969 | INFO     | __main__:evaluate:82 -   190/1012 done
+2026-05-28 12:14:46.258 | INFO     | __main__:evaluate:82 -   200/1012 done
+2026-05-28 12:14:54.193 | INFO     | __main__:evaluate:82 -   210/1012 done
+2026-05-28 12:15:00.328 | INFO     | __main__:evaluate:82 -   220/1012 done
+2026-05-28 12:15:05.013 | INFO     | __main__:evaluate:82 -   230/1012 done
+2026-05-28 12:15:18.573 | INFO     | __main__:evaluate:82 -   240/1012 done
+2026-05-28 12:15:26.198 | INFO     | __main__:evaluate:82 -   250/1012 done
+2026-05-28 12:15:30.991 | INFO     | __main__:evaluate:82 -   260/1012 done
+2026-05-28 12:15:35.674 | INFO     | __main__:evaluate:82 -   270/1012 done
+2026-05-28 12:15:44.076 | INFO     | __main__:evaluate:82 -   280/1012 done
+2026-05-28 12:15:50.003 | INFO     | __main__:evaluate:82 -   290/1012 done
+2026-05-28 12:15:57.391 | INFO     | __main__:evaluate:82 -   300/1012 done
+2026-05-28 12:16:03.688 | INFO     | __main__:evaluate:82 -   310/1012 done
+2026-05-28 12:16:08.976 | INFO     | __main__:evaluate:82 -   320/1012 done
+2026-05-28 12:16:16.742 | INFO     | __main__:evaluate:82 -   330/1012 done
+2026-05-28 12:16:23.773 | INFO     | __main__:evaluate:82 -   340/1012 done
+2026-05-28 12:16:30.926 | INFO     | __main__:evaluate:82 -   350/1012 done
+2026-05-28 12:16:36.924 | INFO     | __main__:evaluate:82 -   360/1012 done
+2026-05-28 12:16:44.848 | INFO     | __main__:evaluate:82 -   370/1012 done
+2026-05-28 12:16:51.633 | INFO     | __main__:evaluate:82 -   380/1012 done
+2026-05-28 12:16:58.868 | INFO     | __main__:evaluate:82 -   390/1012 done
+2026-05-28 12:17:04.013 | INFO     | __main__:evaluate:82 -   400/1012 done
+2026-05-28 12:17:11.083 | INFO     | __main__:evaluate:82 -   410/1012 done
+2026-05-28 12:17:18.538 | INFO     | __main__:evaluate:82 -   420/1012 done
+2026-05-28 12:17:26.583 | INFO     | __main__:evaluate:82 -   430/1012 done
+2026-05-28 12:17:33.001 | INFO     | __main__:evaluate:82 -   440/1012 done
+2026-05-28 12:17:40.182 | INFO     | __main__:evaluate:82 -   450/1012 done
+2026-05-28 12:17:47.448 | INFO     | __main__:evaluate:82 -   460/1012 done
+2026-05-28 12:17:55.740 | INFO     | __main__:evaluate:82 -   470/1012 done
+2026-05-28 12:18:03.672 | INFO     | __main__:evaluate:82 -   480/1012 done
+2026-05-28 12:18:12.329 | INFO     | __main__:evaluate:82 -   490/1012 done
+2026-05-28 12:18:18.723 | INFO     | __main__:evaluate:82 -   500/1012 done
+2026-05-28 12:18:26.954 | INFO     | __main__:evaluate:82 -   510/1012 done
+2026-05-28 12:18:32.375 | INFO     | __main__:evaluate:82 -   520/1012 done
+2026-05-28 12:18:38.717 | INFO     | __main__:evaluate:82 -   530/1012 done
+2026-05-28 12:18:45.596 | INFO     | __main__:evaluate:82 -   540/1012 done
+2026-05-28 12:18:53.072 | INFO     | __main__:evaluate:82 -   550/1012 done
+2026-05-28 12:19:00.566 | INFO     | __main__:evaluate:82 -   560/1012 done
+2026-05-28 12:19:09.544 | INFO     | __main__:evaluate:82 -   570/1012 done
+2026-05-28 12:19:16.334 | INFO     | __main__:evaluate:82 -   580/1012 done
+2026-05-28 12:19:22.527 | INFO     | __main__:evaluate:82 -   590/1012 done
+2026-05-28 12:19:29.218 | INFO     | __main__:evaluate:82 -   600/1012 done
+2026-05-28 12:19:36.498 | INFO     | __main__:evaluate:82 -   610/1012 done
+2026-05-28 12:19:42.593 | INFO     | __main__:evaluate:82 -   620/1012 done
+2026-05-28 12:19:47.358 | INFO     | __main__:evaluate:82 -   630/1012 done
+2026-05-28 12:19:53.433 | INFO     | __main__:evaluate:82 -   640/1012 done
+2026-05-28 12:19:58.163 | INFO     | __main__:evaluate:82 -   650/1012 done
+2026-05-28 12:20:03.510 | INFO     | __main__:evaluate:82 -   660/1012 done
+2026-05-28 12:20:07.905 | INFO     | __main__:evaluate:82 -   670/1012 done
+2026-05-28 12:20:14.169 | INFO     | __main__:evaluate:82 -   680/1012 done
+2026-05-28 12:20:21.554 | INFO     | __main__:evaluate:82 -   690/1012 done
+2026-05-28 12:20:26.717 | INFO     | __main__:evaluate:82 -   700/1012 done
+2026-05-28 12:20:33.931 | INFO     | __main__:evaluate:82 -   710/1012 done
+2026-05-28 12:20:41.036 | INFO     | __main__:evaluate:82 -   720/1012 done
+2026-05-28 12:20:48.138 | INFO     | __main__:evaluate:82 -   730/1012 done
+2026-05-28 12:20:55.700 | INFO     | __main__:evaluate:82 -   740/1012 done
+2026-05-28 12:21:03.249 | INFO     | __main__:evaluate:82 -   750/1012 done
+2026-05-28 12:21:09.331 | INFO     | __main__:evaluate:82 -   760/1012 done
+2026-05-28 12:21:16.504 | INFO     | __main__:evaluate:82 -   770/1012 done
+2026-05-28 12:21:23.883 | INFO     | __main__:evaluate:82 -   780/1012 done
+2026-05-28 12:21:31.110 | INFO     | __main__:evaluate:82 -   790/1012 done
+2026-05-28 12:21:38.095 | INFO     | __main__:evaluate:82 -   800/1012 done
+2026-05-28 12:21:44.817 | INFO     | __main__:evaluate:82 -   810/1012 done
+2026-05-28 12:21:52.099 | INFO     | __main__:evaluate:82 -   820/1012 done
+2026-05-28 12:21:57.782 | INFO     | __main__:evaluate:82 -   830/1012 done
+2026-05-28 12:22:05.245 | INFO     | __main__:evaluate:82 -   840/1012 done
+2026-05-28 12:22:14.847 | INFO     | __main__:evaluate:82 -   850/1012 done
+2026-05-28 12:22:22.202 | INFO     | __main__:evaluate:82 -   860/1012 done
+2026-05-28 12:22:29.448 | INFO     | __main__:evaluate:82 -   870/1012 done
+2026-05-28 12:22:35.445 | INFO     | __main__:evaluate:82 -   880/1012 done
+2026-05-28 12:22:40.740 | INFO     | __main__:evaluate:82 -   890/1012 done
+2026-05-28 12:22:46.636 | INFO     | __main__:evaluate:82 -   900/1012 done
+2026-05-28 12:22:52.735 | INFO     | __main__:evaluate:82 -   910/1012 done
+2026-05-28 12:22:58.620 | INFO     | __main__:evaluate:82 -   920/1012 done
+2026-05-28 12:23:06.533 | INFO     | __main__:evaluate:82 -   930/1012 done
+2026-05-28 12:23:13.719 | INFO     | __main__:evaluate:82 -   940/1012 done
+2026-05-28 12:23:20.495 | INFO     | __main__:evaluate:82 -   950/1012 done
+2026-05-28 12:23:27.329 | INFO     | __main__:evaluate:82 -   960/1012 done
+2026-05-28 12:23:34.378 | INFO     | __main__:evaluate:82 -   970/1012 done
+2026-05-28 12:23:40.764 | INFO     | __main__:evaluate:82 -   980/1012 done
+2026-05-28 12:23:46.320 | INFO     | __main__:evaluate:82 -   990/1012 done
+2026-05-28 12:23:52.810 | INFO     | __main__:evaluate:82 -   1000/1012 done
+2026-05-28 12:24:00.032 | INFO     | __main__:evaluate:82 -   1010/1012 done
+2026-05-28 12:24:01.488 | INFO     | src.pipeline.session:close:152 - [Session 5e70402c] Closed. Segments: 0
+2026-05-28 12:24:01.912 | INFO     | __main__:main:237 - ── Evaluation Results ──────────────────
+2026-05-28 12:24:01.912 | INFO     | __main__:main:239 -   bleu                      25.24
+2026-05-28 12:24:01.912 | INFO     | __main__:main:239 -   bleu_tokenize             ko-mecab
+2026-05-28 12:24:01.912 | INFO     | __main__:main:239 -   stream_laal_s             0.688
+2026-05-28 12:24:01.912 | INFO     | __main__:main:239 -   avg_latency_ms            688.9
+2026-05-28 12:24:01.912 | INFO     | __main__:main:239 -   n_segments                1012
+2026-05-28 12:24:01.912 | INFO     | __main__:main:240 - ────────────────────────────────────────
+2026-05-28 12:24:01.913 | INFO     | __main__:main:245 - Report saved → reports/exp_nllb-ct2-int8-cpu/en-ko.json
