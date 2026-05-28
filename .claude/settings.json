@@ -1,19 +1,25 @@
-"permissions": {
-  "allow": [
-    "Bash",
-    "Read",
-    "Edit",
-    "Write",
-    "Glob",
-    "Grep",
-    "WebSearch",
-    "WebFetch"
-  ],
-  "deny": [
-    "Bash(git push:*)",
-    "Bash(rm -rf /:*)",
-    "Bash(rm -rf ~:*)",
-    "Bash(sudo:*)",
-    "Bash(:(){:|:&};:)"
-  ]
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "agent": "research-manager",
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Read",
+      "Edit",
+      "Write",
+      "Glob",
+      "Grep",
+      "WebSearch",
+      "WebFetch"
+    ],
+    "deny": [
+      "Bash(git push:*)",
+      "Bash(rm -rf /:*)",
+      "Bash(rm -rf ~:*)",
+      "Bash(sudo:*)",
+      "Bash(:(){:|:&};:)"
+    ]
+  }
 }
