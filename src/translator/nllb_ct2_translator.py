@@ -55,8 +55,13 @@ class NllbCt2Translator(Translator):
             intra_threads=8,
         )
 
-        # Load tokenizer for SentencePiece
-        self._tokenizer = AutoTokenizer.from_pretrained(self.ct2_model_dir, fix_mistral_regex=True)
+        # Load tokenizer for SentencePiece.
+        # NB: do NOT pass fix_mistral_regex=True here. That flag silences a
+        # warning intended for Mistral tokenizers; applying it to NllbTokenizer
+        # makes encode() emit GPT-2 / BPE 'Ġ'-prefixed tokens instead of the
+        # SentencePiece '▁'-prefixed tokens the model was trained on, which
+        # silently destroys translation quality on long sentences.
+        self._tokenizer = AutoTokenizer.from_pretrained(self.ct2_model_dir)
 
         # Load SentencePiece model for proper token decoding
         sp_model_path = os.path.join(self.ct2_model_dir, "sentencepiece.bpe.model")
