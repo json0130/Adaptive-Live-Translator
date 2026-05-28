@@ -1,0 +1,165 @@
+{
+  "args": {
+    "manifest": "data/eval/fleurs_en_us_test/manifest.tsv",
+    "lang": "en",
+    "model": "Systran/faster-whisper-medium",
+    "backend": "faster-whisper",
+    "compute_type": "int8",
+    "report": "reports/exp_fw-turbo-int8-cpu-asr/medium_en.json",
+    "limit": 0
+  },
+  "scores": {
+    "wer": 5.47,
+    "rtfx": 0.277,
+    "total_audio_s": 3476.5,
+    "total_decode_s": 961.4,
+    "ram_peak_mb": 2031.7,
+    "n_utterances": 350,
+    "model": "Systran/faster-whisper-medium",
+    "compute_type": "int8",
+    "backend": "faster-whisper",
+    "lang": "en"
+  },
+  "samples": [
+    {
+      "id": "1980",
+      "hyp": "Unfortunately, stunning traffic flow is difficult because driver behavior cannot be predicted with 100% certainty.",
+      "ref": "Unfortunately, studying traffic flow is difficult because driver behavior cannot be predicted with one-hundred percent certainty.",
+      "audio_s": 12.64,
+      "decode_s": 2.683177025988698
+    },
+    {
+      "id": "1914",
+      "hyp": "Twentieth century research has shown that there are two pools of genetic variation, hidden and expressed.",
+      "ref": "Twentieth century research has shown that there are two pools of genetic variation: hidden and expressed.",
+      "audio_s": 5.88,
+      "decode_s": 2.452550429996336
+    },
+    {
+      "id": "1771",
+      "hyp": "Remember that even though music on the main stages may have finished, there may be sections of the festival that will keep playing music until late into the night.",
+      "ref": "Remember that even though music on the main stages may have finished, there may be sections of the festival that will keep playing music until late into the night.",
+      "audio_s": 8.94,
+      "decode_s": 2.624233706999803
+    },
+    {
+      "id": "1669",
+      "hyp": "Police Superintendent Shandra Shankar Solansky said the accused appeared in court with covered faces.",
+      "ref": "Police superintendent Chandra Shekhar Solanki said the accused appeared in court with covered faces.",
+      "audio_s": 9.14,
+      "decode_s": 2.3873483490024228
+    },
+    {
+      "id": "1949",
+      "hyp": "The term bug is used by entomologists in a formal sense for this group of insects.",
+      "ref": "The term bug is used by entomologists in a formal sense for this group of insects.",
+      "audio_s": 6.72,
+      "decode_s": 2.3406392989854794
+    },
+    {
+      "id": "1832",
+      "hyp": "Popular sports include football, basketball, volleyball, water polo, fencing, rugby, cycling, ice hockey, roller hockey, and F1 motor racing.",
+      "ref": "Popular sports include football, basketball, volleyball, water-polo, fencing, rugby, cycling, ice hockey, roller hockey and F1 motor racing.",
+      "audio_s": 10.38,
+      "decode_s": 2.567293972999323
+    },
+    {
+      "id": "1915",
+      "hyp": "You can use Boda Boda, motorcycle taxi, to get around Goma. The normal local price is 500 Congolese francs for the short ride.",
+      "ref": "You can use boda-boda (motorcycle taxi) to get around Goma. The normal (local) price is ~500 Congolese Francs for the short ride.",
+      "audio_s": 13.34,
+      "decode_s": 2.699350170994876
+    },
+    {
+      "id": "1699",
+      "hyp": "Bishkek was described as sinking into a state of anarchy by one observer as gangs of people roamed the streets and plundered stores of consumer goods.",
+      "ref": "\"Bishkek was described as sinking into a state of \"\"anarchy\"\" by one observer, as gangs of people roamed the streets and plundered stores of consumer goods.\"",
+      "audio_s": 9.6,
+      "decode_s": 2.6536809799727052
+    },
+    {
+      "id": "1673",
+      "hyp": "During the Revolutionary War, the 13 states first formed a weak central government, with the Congress being its only component under the Articles of Confederation.",
+      "ref": "During the Revolutionary War, the thirteen states first formed a weak central government—with the Congress being its only component—under the Articles of Confederation.",
+      "audio_s": 10.08,
+      "decode_s": 2.8146618790051434
+    },
+    {
+      "id": "1877",
+      "hyp": "Current Senator and Argentine First Lady Cristina Fernandez de Kirchner announced her presidential candidacy yesterday evening in La Plata, a city 50 kilometers, 31 miles away from Buenos Aires.",
+      "ref": "Current senator and Argentine First Lady Cristina Fernandez de Kirchner announced her presidential candidacy yesterday evening in La Plata, a city 50 kilometers (31 miles) away from Buenos Aires.",
+      "audio_s": 19.56,
+      "decode_s": 2.8031651150085963
+    },
+    {
+      "id": "1860",
+      "hyp": "The governor's office and 19 of the injured were police officers.",
+      "ref": "The governor's office said nineteen of the injured were police officers.",
+      "audio_s": 4.56,
+      "decode_s": 2.3717850229877513
+    },
+    {
+      "id": "1935",
+      "hyp": "However, that is not true. Although there is something written on the back of the document, it is not a treasure map.",
+      "ref": "However, that is not true. Although there is something written on the back of the document, it is not a treasure map.",
+      "audio_s": 8.54,
+      "decode_s": 2.593779552000342
+    },
+    {
+      "id": "1674",
+      "hyp": "In some areas, boiling water for a minute is enough and other several minutes are needed.",
+      "ref": "In some areas boiling water for a minute is enough, in others several minutes are needed.",
+      "audio_s": 5.64,
+      "decode_s": 2.4188677789934445
+    },
+    {
+      "id": "1675",
+      "hyp": "All nouns alongside the word C for you, always begin with a capital letter even in the middle of a sentence.",
+      "ref": "All nouns, alongside the word Sie for you, always begin with a capital letter, even in the middle of a sentence.",
+      "audio_s": 6.6,
+      "decode_s": 2.541575201001251
+    },
+    {
+      "id": "1728",
+      "hyp": "The Cabbage Juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "ref": "The cabbage juice changes color depending on how acidic or basic (alkaline) the chemical is.",
+      "audio_s": 5.76,
+      "decode_s": 2.4754470629850402
+    },
+    {
+      "id": "1798",
+      "hyp": "In its early days the show was featured solely at the long-running internet radio site TokiNet Radio, a site focused on talk radio.",
+      "ref": "In its early days, the show was featured solely at the long-running internet radio site TogiNet Radio, a site focused on talk radio.",
+      "audio_s": 13.18,
+      "decode_s": 2.5866694640135393
+    },
+    {
+      "id": "1924",
+      "hyp": "Four skiers in the women's skating group failed to finish their runs and 45 of the 117 total skiers in the Giants Slideline failed to rank in the race.",
+      "ref": "Four skiers in the women's sitting group failed to finish their runs, and 45 of the 117 total skiers in the Giant Slalom failed to rank in the race.",
+      "audio_s": 7.68,
+      "decode_s": 2.711252967012115
+    },
+    {
+      "id": "1684",
+      "hyp": "Apia is the capital of Samoa. The town is on the island of Upolut and has a population of just under 40,000.",
+      "ref": "Apia is the capital of Samoa. The town is on the island of Upolu and has a population of just under 40,000.",
+      "audio_s": 10.96,
+      "decode_s": 2.6151044240104966
+    },
+    {
+      "id": "1936",
+      "hyp": "Perry stated that he would return to Texas to assess the results of tonight's caucus, determining whether it is a path forward for myself in this race, but later said that he would remain in the race and compete in the January 21, South Carolina primary.",
+      "ref": "\"Perry stated that he would \"\"return to Texas to assess the results of tonight's caucus, determine whether there is a path forward for myself in this race\"\", but later said that he would remain in the race and compete in the January 21 South Carolina primary.\"",
+      "audio_s": 12.6,
+      "decode_s": 3.054661436995957
+    },
+    {
+      "id": "1661",
+      "hyp": "He did not set a figure for the cuts, saying they will be made based on China's economic output.",
+      "ref": "He did not set a figure for the cuts, saying they will be made based on China's economic output.",
+      "audio_s": 6.36,
+      "decode_s": 2.5112379389756825
+    }
+  ]
+}
