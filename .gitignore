@@ -36,3 +36,10 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+.cache/
+.translator/
+.claude/worktrees/
+
+# Round 2: Fleurs audio is rebuilt on demand by scripts/build_fleurs_eval.py
+data/eval/fleurs_en_us_test/audio/
+data/eval/fleurs_ko_kr_test/audio/
