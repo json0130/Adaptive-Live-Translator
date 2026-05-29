@@ -97,3 +97,45 @@ PYTHONPATH=. python3 scripts/eval_glossary.py --testset data/eval/flores_devtest
 PYTHONPATH=. python3 scripts/eval_glossary.py --testset data/eval/flores_devtest_en_ko.tsv \
   --src en --tgt ko --mode treatment --bias 3 --report reports/exp_nllb-logit-bias-glossary/flores_treatment_b3.json --limit 300
 ```
+
+---
+
+## REVIEWER VERDICT (independent Korean particle spot-check) — OVERTURNS the qualified pass
+
+A native-Korean reviewer agent inspected 30 triggered-term sentences at
+bias=+3 (control vs treatment). Result:
+
+- CLEAN 11 / MINOR 12 / BROKEN 7.
+- **5 of the 7 BROKEN are treatment-specific** (not in control) — all
+  particle/structure failures caused by the bias forcing:
+  - S6: `처리량과 비교` (comitative 과) vs control `처리량을 비교` (object 을)
+        — "compared WITH throughput" vs "compared throughput". Meaning changed.
+  - S12: `처리량으로` (instrument 으로) vs control `출력은` (topic 은) — subject became instrument.
+  - S14: `처리량 2x 향상` — subject particle dropped entirely.
+  - S23: `처리량 향상` vs control `처리량이 향상` — subject particle 이 dropped.
+  - S4: sentence truncated to a dangling connective when 3 terms triggered at once.
+- Pattern: damage concentrates where 2–3 terms trigger simultaneously;
+  the decoder places the forced tokens but the surrounding case-marking
+  glue breaks.
+
+**Reviewer's verdict: bias=+3 is NOT grammatically safe; particle damage
+is present at +3, not only +15.** The 26.8% recall gain comes with ~17%
+treatment-specific grammatical breakage on triggered sentences. Incorrect
+particles change meaning (을 vs 과), so the effect is not cosmetic.
+
+## REVISED MANAGER VERDICT: R3-3 = FAIL (corrected from qualified pass)
+
+The corpus-BLEU non-regression check (−0.03 on FLORES) MISSED this because
+(a) BLEU was char-level and (b) FLORES triggers the glossary on only
+2/300 sentences, so grammar damage on triggered text is invisible in the
+FLORES aggregate. The reviewer's targeted grammatical inspection is the
+correct instrument and it fails the approach.
+
+Soft token-level logit-bias is the wrong mechanism: it has no good
+operating point (weak bias → no recall; strong bias → term-salad; even
+moderate bias → particle breakage on multi-term sentences). Round-4 path:
+position-aware constrained decoding over COMPLETE phrase sequences that
+include their particles (Hokamp grid-beam / aligned trie), and/or cap
+simultaneous triggers at 1 per sentence. This is a clean, well-diagnosed
+NEGATIVE — the round-1 lesson (output-side beats prompt-injection) still
+holds, but naive token-bias is not sufficient.
