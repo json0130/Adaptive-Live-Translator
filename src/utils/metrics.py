@@ -18,6 +18,31 @@ class SegmentRecord:
     ref_tgt: str = ""       # optional reference for BLEU
 
 
+_KO_MECAB_TAGGER = None
+
+
+def _ko_mecab_tagger():
+    """Direct MeCab wakati tagger using mecab_ko_dic's dictionary.
+
+    We bypass sacrebleu's TokenizerKoMecab because its version coupling to
+    mecab_ko / mecab_ko_dic broke mid-project (a MeloTTS install upgraded
+    mecab_ko_dic; sacrebleu's tokenizer expects attributes — MECAB_ARGS,
+    then DICDIR — that the new release dropped, which silently forced a
+    char-BLEU fallback). Calling MeCab directly with the dictionary path is
+    stable and gives the same morpheme segmentation. Returns None if MeCab
+    is genuinely unavailable.
+    """
+    global _KO_MECAB_TAGGER
+    if _KO_MECAB_TAGGER is not None:
+        return _KO_MECAB_TAGGER
+    try:
+        import MeCab, mecab_ko_dic
+        _KO_MECAB_TAGGER = MeCab.Tagger(f"-d {mecab_ko_dic.dictionary_path} -Owakati")
+        return _KO_MECAB_TAGGER
+    except Exception:
+        return None
+
+
 def compute_bleu(
     hypotheses: list[str],
     references: list[str],
@@ -36,18 +61,29 @@ def compute_bleu(
         return -1.0, "unavailable"
 
     requested = tokenize
+
+    # ko-mecab: pre-tokenize with a direct MeCab tagger, then score with
+    # tokenize='none' (sacrebleu's built-in ko-mecab tokenizer is broken by
+    # a mecab_ko_dic version mismatch — see _ko_mecab_tagger).
+    if requested == "ko-mecab":
+        tagger = _ko_mecab_tagger()
+        if tagger is not None:
+            try:
+                hyp_t = [tagger.parse(h).strip() for h in hypotheses]
+                ref_t = [tagger.parse(r).strip() for r in references]
+                bleu = BLEU(effective_order=True, tokenize="none")
+                return bleu.corpus_score(hyp_t, [ref_t]).score, "ko-mecab"
+            except Exception:
+                pass
+        # genuinely unavailable -> char fallback (records the fallback)
+        bleu = BLEU(effective_order=True, tokenize="char")
+        return bleu.corpus_score(hypotheses, [references]).score, "char(fallback-from-ko-mecab)"
+
     try:
         bleu = BLEU(effective_order=True, tokenize=requested)
         result = bleu.corpus_score(hypotheses, [references])
         return result.score, requested
     except Exception:
-        # mecab-ko-dic missing on this host — fall back to char (resets the
-        # comparison table per the eval protocol, but at least all four
-        # experiments in this round will share the same fallback).
-        if requested == "ko-mecab":
-            bleu = BLEU(effective_order=True, tokenize="char")
-            result = bleu.corpus_score(hypotheses, [references])
-            return result.score, "char(fallback-from-ko-mecab)"
         raise
 
 
