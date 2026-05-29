@@ -1,0 +1,886 @@
+{
+  "config": {
+    "testset": "data/eval/ml_glossary_slice_en_ko.tsv",
+    "src": "en",
+    "tgt": "ko",
+    "mode": "control",
+    "bias_value": null,
+    "glossary": "data/glossaries/ml-conference-en-ko.json",
+    "n_sentences": 60
+  },
+  "scores": {
+    "bleu": 50.92,
+    "bleu_tokenize": "char",
+    "term_recall_pct": 5.4,
+    "n_sentences": 60,
+    "n_triggered": 56,
+    "avg_latency_ms": 1406.0
+  },
+  "all_hyps": [
+    "우리는 100억 개의 토큰으로 LLM를 훈련시켰습니다.",
+    "영역별 데이터에 대한 대규모 언어 모델을 정렬하면 환각이 줄어들 수 있습니다.",
+    "새로운 LLM는 벤치마크에 있어서 최첨단 결과를 달성합니다.",
+    "인퍼런스 지연은 양자화로 int4로 감소했다.",
+    "주의 메커니즘은 모델이 관련 토큰에 집중할 수 있도록 한다.",
+    "우리는 두 개의 LLM 추론 엔진의 처리량을 비교했습니다.",
+    "임베디션 차원은 모델의 표현 능력을 영향을 미칩니다.",
+    "토케니저는 LLM에 대한 서브워드 단위로 텍스트를 나눕니다.",
+    "RLHF는 LLM를 인간의 선호도에 맞추기 위해 사용되었습니다.",
+    "NVIDIA는 LLM 추론을 위해 최적화된 새로운 GPU를 출시했습니다.",
+    "우리는 PyTorch에서 훈련 루프를 구현했습니다.",
+    "모델 체크포인트들은 HuggingFace에서 호스팅됩니다.",
+    "기준은 추론, 수학, 코드 생성에 해당한다.",
+    "더 높은 출력은 더 큰 대량량을 필요로 합니다.",
+    "엔드-투-엔드 지연시간은 100밀리초 이하로 유지되어야 합니다.",
+    "int8에 대한 양분화는 2x 성능 향상을 가져왔다.",
+    "LoRA 어댑터와 정렬하면 기본 LLM 무게가 유지됩니다.",
+    "토큰화 사전에는 250,000개의 서브워드 토큰이 있습니다.",
+    "우리는 같은 기준 세트에 5개의 LLM를 평가했습니다.",
+    "정확성을 줄이는 것은 종종 환각률을 높여줍니다.",
+    "임베디션 모델은 1024 차원 벡터를 생성합니다.",
+    "PyTorch 및 HuggingFace는 LLM 개발의 표준 도구입니다.",
+    "NVIDIA H100 GPU는 LLM 추론을 크게 가속화합니다.",
+    "주의 메커니즘은 염기 길이와 함께 사각형으로 확장됩니다.",
+    "추측적 디코딩을 적용한 후 인퍼런스 처리량이 향상되었습니다.",
+    "환각은 여전히 임용된 LLM에서 큰 도전입니다.",
+    "지난달 HuggingFace에서 기준을 발표했습니다.",
+    "양분화 의식의 미세조정은 훈련 후 양분화보다 더 정확성을 유지합니다.",
+    "우리는 토케니저 오버헤드를 포함하여 엔드-투-엔드 레이턴티를 측정했습니다.",
+    "LLM는 RLHF 유물을 제거하기 위해 필터링된 데이터에 훈련되었습니다.",
+    "유사성을 삽입하면 벡터 데이터베이스에서 검색이 가능합니다.",
+    "출력 단축은 토케니저 단계로 확인되었습니다.",
+    "NVIDIA의 CUDA 스택은 대부분의 LLM 추론 프레임워크를 뒷받침합니다.",
+    "정렬은 2주 동안 8개의 NVIDIA A100 GPU가 필요했습니다.",
+    "환각율은 RLHF 이후 30% 감소했습니다.",
+    "지연에 민감한 응용 프로그램은 더 작은 LLM를 선호합니다.",
+    "벤치마킹 결과는 7억 매개 변수를 초과하는 모델에 유리하다.",
+    "우리는 HuggingFace 트랜스퍼머를 사용하여 LLM 무게를 로드했습니다.",
+    "양자화된 LLM에 대한 추론은 소비자 하드웨어에 대한 추론이 가능하다.",
+    "토케니저는 훈련과 추론을 일치시켜야 합니다.",
+    "달러당 매출은 표준 비교 측정입니다.",
+    "캐싱을 삽입하면 추론 과정에서 과잉 계산이 줄어들게 됩니다.",
+    "PyTorch 2.0는 LLM에 대한 컴파일 기반 최적화를 도입했습니다.",
+    "RLHF는 보상 모델과 정책 최적화와 결합합니다.",
+    "주의 메커니즘의 KV 캐시는 추론에서 메모리 사용에 지배한다.",
+    "int4로 양자화하면 LLM의 메모리 발자국을 절반으로 줄일 수 있습니다.",
+    "우리는 PyTorch 프로파일러로 추론 파이프라인을 프로파일했습니다.",
+    "HuggingFace 모델 카드에서는 벤치마크 방법론을 문서화하였다.",
+    "저정밀 수학적 결과물으로 NVIDIA Hopper GPU의 처리량이 증가합니다.",
+    "환각 테스트는 LLM 결과물의 사실적 일관성을 측정합니다.",
+    "합성 데이터에 대한 정교한 조정은 분배의 변화를 위험합니다.",
+    "토케니저는 바이트쌍 코딩으로 훈련되었습니다.",
+    "지연차는 평균 지연보다 사용자 경험에 더 많은 영향을 미친다.",
+    "임베디션 모델은 검색 기준으로 평가될 수 있습니다.",
+    "LLM는 존재하지 않는 논문에 대한 환각을 일으켰습니다.",
+    "RLHF 데이터에 대한 정밀 조정은 지침을 따라 개선되었습니다.",
+    "NVIDIA Triton는 생산 처리량에서 양자화된 LLM를 제공합니다.",
+    "vLLM 패치와 같은 인퍼런스 엔진은 더 높은 처리량을 요구합니다.",
+    "주의 메커니즘의 소프트맥스는 fp16에서 수치적인 불안정을 유발할 수 있습니다.",
+    "HuggingFace 데이터 세트는 메모리에 로딩 없이 큰 몸체를 스트리밍합니다."
+  ],
+  "all_results": [
+    {
+      "src": "We trained the LLM on a hundred billion tokens.",
+      "ref": "우리는 1000억 토큰으로 대형 언어 모델을 학습시켰습니다.",
+      "hyp": "우리는 100억 개의 토큰으로 LLM를 훈련시켰습니다.",
+      "triggered_terms": [
+        "LLM"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델"
+      ],
+      "latency_ms": 2268.6
+    },
+    {
+      "src": "Fine-tuning a large language model on domain-specific data reduces hallucination.",
+      "ref": "도메인 특화 데이터로 대형 언어 모델을 파인튜닝하면 환각 현상이 감소합니다.",
+      "hyp": "영역별 데이터에 대한 대규모 언어 모델을 정렬하면 환각이 줄어들 수 있습니다.",
+      "triggered_terms": [
+        "fine-tuning",
+        "hallucination"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "파인튜닝",
+        "환각 현상"
+      ],
+      "latency_ms": 1713.9
+    },
+    {
+      "src": "The new LLM achieves state-of-the-art results on the benchmark.",
+      "ref": "새로운 대형 언어 모델은 해당 벤치마크에서 최첨단 결과를 달성합니다.",
+      "hyp": "새로운 LLM는 벤치마크에 있어서 최첨단 결과를 달성합니다.",
+      "triggered_terms": [
+        "LLM",
+        "benchmark"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델"
+      ],
+      "latency_ms": 1215.9
+    },
+    {
+      "src": "Inference latency was reduced by quantization to int4.",
+      "ref": "int4 양자화를 통해 추론 지연 시간을 단축했습니다.",
+      "hyp": "인퍼런스 지연은 양자화로 int4로 감소했다.",
+      "triggered_terms": [
+        "inference",
+        "latency",
+        "quantization"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "추론",
+        "지연 시간"
+      ],
+      "latency_ms": 1311.9
+    },
+    {
+      "src": "The attention mechanism allows the model to focus on relevant tokens.",
+      "ref": "어텐션 메커니즘은 모델이 관련 토큰에 집중할 수 있게 합니다.",
+      "hyp": "주의 메커니즘은 모델이 관련 토큰에 집중할 수 있도록 한다.",
+      "triggered_terms": [
+        "attention mechanism"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "어텐션 메커니즘"
+      ],
+      "latency_ms": 1598.2
+    },
+    {
+      "src": "We compared the throughput of two LLM inference engines.",
+      "ref": "두 대형 언어 모델 추론 엔진의 처리량을 비교했습니다.",
+      "hyp": "우리는 두 개의 LLM 추론 엔진의 처리량을 비교했습니다.",
+      "triggered_terms": [
+        "LLM",
+        "inference",
+        "throughput"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델"
+      ],
+      "latency_ms": 1236.3
+    },
+    {
+      "src": "Embedding dimensions affect the model's representational capacity.",
+      "ref": "임베딩 차원은 모델의 표현 능력에 영향을 줍니다.",
+      "hyp": "임베디션 차원은 모델의 표현 능력을 영향을 미칩니다.",
+      "triggered_terms": [
+        "embedding"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "임베딩"
+      ],
+      "latency_ms": 1123.8
+    },
+    {
+      "src": "The tokenizer splits text into subword units for the LLM.",
+      "ref": "토크나이저는 대형 언어 모델을 위해 텍스트를 서브워드 단위로 분할합니다.",
+      "hyp": "토케니저는 LLM에 대한 서브워드 단위로 텍스트를 나눕니다.",
+      "triggered_terms": [
+        "LLM",
+        "tokenizer"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델",
+        "토크나이저"
+      ],
+      "latency_ms": 1586.8
+    },
+    {
+      "src": "RLHF was used to align the LLM with human preferences.",
+      "ref": "RLHF는 대형 언어 모델을 인간의 선호에 정렬하는 데 사용되었습니다.",
+      "hyp": "RLHF는 LLM를 인간의 선호도에 맞추기 위해 사용되었습니다.",
+      "triggered_terms": [
+        "LLM"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델"
+      ],
+      "latency_ms": 1285.9
+    },
+    {
+      "src": "NVIDIA released a new GPU optimized for LLM inference.",
+      "ref": "NVIDIA는 대형 언어 모델 추론에 최적화된 새 GPU를 출시했습니다.",
+      "hyp": "NVIDIA는 LLM 추론을 위해 최적화된 새로운 GPU를 출시했습니다.",
+      "triggered_terms": [
+        "LLM",
+        "inference"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델"
+      ],
+      "latency_ms": 1385.9
+    },
+    {
+      "src": "We implemented the training loop in PyTorch.",
+      "ref": "우리는 PyTorch로 학습 루프를 구현했습니다.",
+      "hyp": "우리는 PyTorch에서 훈련 루프를 구현했습니다.",
+      "triggered_terms": [],
+      "all_terms_present": true,
+      "missing_terms": [],
+      "latency_ms": 976.6
+    },
+    {
+      "src": "The model checkpoints are hosted on HuggingFace.",
+      "ref": "모델 체크포인트는 HuggingFace에 호스팅됩니다.",
+      "hyp": "모델 체크포인트들은 HuggingFace에서 호스팅됩니다.",
+      "triggered_terms": [],
+      "all_terms_present": true,
+      "missing_terms": [],
+      "latency_ms": 1144.4
+    },
+    {
+      "src": "The benchmark covers reasoning, math, and code generation.",
+      "ref": "벤치마크는 추론, 수학, 코드 생성을 다룹니다.",
+      "hyp": "기준은 추론, 수학, 코드 생성에 해당한다.",
+      "triggered_terms": [
+        "benchmark"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "벤치마크"
+      ],
+      "latency_ms": 1099.7
+    },
+    {
+      "src": "Higher throughput requires larger batch sizes.",
+      "ref": "더 높은 처리량은 더 큰 배치 크기가 필요합니다.",
+      "hyp": "더 높은 출력은 더 큰 대량량을 필요로 합니다.",
+      "triggered_terms": [
+        "throughput"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "처리량"
+      ],
+      "latency_ms": 1084.8
+    },
+    {
+      "src": "End-to-end latency must stay under 100 milliseconds.",
+      "ref": "종단 간 지연 시간은 100밀리초 이하로 유지해야 합니다.",
+      "hyp": "엔드-투-엔드 지연시간은 100밀리초 이하로 유지되어야 합니다.",
+      "triggered_terms": [
+        "latency"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "지연 시간"
+      ],
+      "latency_ms": 1566.6
+    },
+    {
+      "src": "Quantization to int8 yielded a 2x throughput improvement.",
+      "ref": "int8 양자화는 처리량을 2배 향상시켰습니다.",
+      "hyp": "int8에 대한 양분화는 2x 성능 향상을 가져왔다.",
+      "triggered_terms": [
+        "throughput",
+        "quantization"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "처리량",
+        "양자화"
+      ],
+      "latency_ms": 1320.6
+    },
+    {
+      "src": "Fine-tuning with LoRA adapters preserves the base LLM weights.",
+      "ref": "LoRA 어댑터를 사용한 파인튜닝은 기본 대형 언어 모델 가중치를 보존합니다.",
+      "hyp": "LoRA 어댑터와 정렬하면 기본 LLM 무게가 유지됩니다.",
+      "triggered_terms": [
+        "LLM",
+        "fine-tuning"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델",
+        "파인튜닝"
+      ],
+      "latency_ms": 1342.4
+    },
+    {
+      "src": "The tokenizer vocabulary contains 250,000 subword tokens.",
+      "ref": "토크나이저 어휘는 250,000개의 서브워드 토큰을 포함합니다.",
+      "hyp": "토큰화 사전에는 250,000개의 서브워드 토큰이 있습니다.",
+      "triggered_terms": [
+        "tokenizer"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "토크나이저"
+      ],
+      "latency_ms": 1281.9
+    },
+    {
+      "src": "We evaluated five LLMs on the same benchmark set.",
+      "ref": "우리는 동일한 벤치마크 세트에서 다섯 개의 대형 언어 모델을 평가했습니다.",
+      "hyp": "우리는 같은 기준 세트에 5개의 LLM를 평가했습니다.",
+      "triggered_terms": [
+        "LLM",
+        "benchmark"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델",
+        "벤치마크"
+      ],
+      "latency_ms": 1126.5
+    },
+    {
+      "src": "Reducing precision often increases hallucination rates.",
+      "ref": "정밀도를 낮추면 환각 현상 비율이 종종 증가합니다.",
+      "hyp": "정확성을 줄이는 것은 종종 환각률을 높여줍니다.",
+      "triggered_terms": [
+        "hallucination"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "환각 현상"
+      ],
+      "latency_ms": 1197.0
+    },
+    {
+      "src": "The embedding model produces 1024-dimensional vectors.",
+      "ref": "임베딩 모델은 1024차원 벡터를 생성합니다.",
+      "hyp": "임베디션 모델은 1024 차원 벡터를 생성합니다.",
+      "triggered_terms": [
+        "embedding"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "임베딩"
+      ],
+      "latency_ms": 1332.0
+    },
+    {
+      "src": "PyTorch and HuggingFace are standard tools for LLM development.",
+      "ref": "PyTorch와 HuggingFace는 대형 언어 모델 개발의 표준 도구입니다.",
+      "hyp": "PyTorch 및 HuggingFace는 LLM 개발의 표준 도구입니다.",
+      "triggered_terms": [
+        "LLM"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델"
+      ],
+      "latency_ms": 1382.5
+    },
+    {
+      "src": "NVIDIA H100 GPUs accelerate LLM inference significantly.",
+      "ref": "NVIDIA H100 GPU는 대형 언어 모델 추론을 크게 가속화합니다.",
+      "hyp": "NVIDIA H100 GPU는 LLM 추론을 크게 가속화합니다.",
+      "triggered_terms": [
+        "LLM",
+        "inference"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델"
+      ],
+      "latency_ms": 1314.9
+    },
+    {
+      "src": "The attention mechanism scales quadratically with sequence length.",
+      "ref": "어텐션 메커니즘은 시퀀스 길이에 따라 이차적으로 확장됩니다.",
+      "hyp": "주의 메커니즘은 염기 길이와 함께 사각형으로 확장됩니다.",
+      "triggered_terms": [
+        "attention mechanism"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "어텐션 메커니즘"
+      ],
+      "latency_ms": 1338.8
+    },
+    {
+      "src": "Inference throughput improved after applying speculative decoding.",
+      "ref": "추측적 디코딩을 적용한 후 추론 처리량이 향상되었습니다.",
+      "hyp": "추측적 디코딩을 적용한 후 인퍼런스 처리량이 향상되었습니다.",
+      "triggered_terms": [
+        "inference",
+        "throughput"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "추론"
+      ],
+      "latency_ms": 1299.9
+    },
+    {
+      "src": "Hallucination remains a major challenge in deployed LLMs.",
+      "ref": "환각 현상은 배포된 대형 언어 모델에서 여전히 주요 과제입니다.",
+      "hyp": "환각은 여전히 임용된 LLM에서 큰 도전입니다.",
+      "triggered_terms": [
+        "LLM",
+        "hallucination"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델",
+        "환각 현상"
+      ],
+      "latency_ms": 1181.6
+    },
+    {
+      "src": "The benchmark was released by HuggingFace last month.",
+      "ref": "이 벤치마크는 지난달 HuggingFace가 공개했습니다.",
+      "hyp": "지난달 HuggingFace에서 기준을 발표했습니다.",
+      "triggered_terms": [
+        "benchmark"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "벤치마크"
+      ],
+      "latency_ms": 1049.5
+    },
+    {
+      "src": "Quantization-aware fine-tuning preserves more accuracy than post-training quantization.",
+      "ref": "양자화 인식 파인튜닝은 사후 학습 양자화보다 더 많은 정확도를 보존합니다.",
+      "hyp": "양분화 의식의 미세조정은 훈련 후 양분화보다 더 정확성을 유지합니다.",
+      "triggered_terms": [
+        "fine-tuning",
+        "quantization"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "파인튜닝",
+        "양자화"
+      ],
+      "latency_ms": 1676.9
+    },
+    {
+      "src": "We measured end-to-end latency including tokenizer overhead.",
+      "ref": "토크나이저 오버헤드를 포함한 종단 간 지연 시간을 측정했습니다.",
+      "hyp": "우리는 토케니저 오버헤드를 포함하여 엔드-투-엔드 레이턴티를 측정했습니다.",
+      "triggered_terms": [
+        "tokenizer",
+        "latency"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "토크나이저",
+        "지연 시간"
+      ],
+      "latency_ms": 1922.2
+    },
+    {
+      "src": "The LLM was trained on data filtered to remove RLHF artifacts.",
+      "ref": "이 대형 언어 모델은 RLHF 부산물을 제거하도록 필터링된 데이터로 학습되었습니다.",
+      "hyp": "LLM는 RLHF 유물을 제거하기 위해 필터링된 데이터에 훈련되었습니다.",
+      "triggered_terms": [
+        "LLM"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델"
+      ],
+      "latency_ms": 1821.4
+    },
+    {
+      "src": "Embedding similarity drives retrieval in vector databases.",
+      "ref": "임베딩 유사도는 벡터 데이터베이스에서 검색을 주도합니다.",
+      "hyp": "유사성을 삽입하면 벡터 데이터베이스에서 검색이 가능합니다.",
+      "triggered_terms": [
+        "embedding"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "임베딩"
+      ],
+      "latency_ms": 1338.9
+    },
+    {
+      "src": "The throughput bottleneck was identified as the tokenizer step.",
+      "ref": "처리량 병목 현상은 토크나이저 단계에서 확인되었습니다.",
+      "hyp": "출력 단축은 토케니저 단계로 확인되었습니다.",
+      "triggered_terms": [
+        "tokenizer",
+        "throughput"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "토크나이저",
+        "처리량"
+      ],
+      "latency_ms": 1184.7
+    },
+    {
+      "src": "NVIDIA's CUDA stack underpins most LLM inference frameworks.",
+      "ref": "NVIDIA의 CUDA 스택은 대부분의 대형 언어 모델 추론 프레임워크를 뒷받침합니다.",
+      "hyp": "NVIDIA의 CUDA 스택은 대부분의 LLM 추론 프레임워크를 뒷받침합니다.",
+      "triggered_terms": [
+        "LLM",
+        "inference"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델"
+      ],
+      "latency_ms": 1806.4
+    },
+    {
+      "src": "Fine-tuning required 8 NVIDIA A100 GPUs for two weeks.",
+      "ref": "파인튜닝에는 NVIDIA A100 GPU 8대로 2주가 필요했습니다.",
+      "hyp": "정렬은 2주 동안 8개의 NVIDIA A100 GPU가 필요했습니다.",
+      "triggered_terms": [
+        "fine-tuning"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "파인튜닝"
+      ],
+      "latency_ms": 1532.1
+    },
+    {
+      "src": "The hallucination rate dropped 30 percent after RLHF.",
+      "ref": "환각 현상 비율은 RLHF 이후 30퍼센트 감소했습니다.",
+      "hyp": "환각율은 RLHF 이후 30% 감소했습니다.",
+      "triggered_terms": [
+        "hallucination"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "환각 현상"
+      ],
+      "latency_ms": 1091.1
+    },
+    {
+      "src": "Latency-sensitive applications prefer smaller LLMs.",
+      "ref": "지연 시간에 민감한 애플리케이션은 더 작은 대형 언어 모델을 선호합니다.",
+      "hyp": "지연에 민감한 응용 프로그램은 더 작은 LLM를 선호합니다.",
+      "triggered_terms": [
+        "LLM",
+        "latency"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델",
+        "지연 시간"
+      ],
+      "latency_ms": 1233.6
+    },
+    {
+      "src": "The benchmark results favor models above 7 billion parameters.",
+      "ref": "벤치마크 결과는 70억 매개변수 이상의 모델이 유리합니다.",
+      "hyp": "벤치마킹 결과는 7억 매개 변수를 초과하는 모델에 유리하다.",
+      "triggered_terms": [
+        "benchmark"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "벤치마크"
+      ],
+      "latency_ms": 1563.1
+    },
+    {
+      "src": "We loaded the LLM weights using HuggingFace transformers.",
+      "ref": "HuggingFace transformers를 사용해 대형 언어 모델 가중치를 로드했습니다.",
+      "hyp": "우리는 HuggingFace 트랜스퍼머를 사용하여 LLM 무게를 로드했습니다.",
+      "triggered_terms": [
+        "LLM"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델"
+      ],
+      "latency_ms": 1541.7
+    },
+    {
+      "src": "Inference on quantized LLMs is feasible on consumer hardware.",
+      "ref": "양자화된 대형 언어 모델 추론은 소비자용 하드웨어에서 실현 가능합니다.",
+      "hyp": "양자화된 LLM에 대한 추론은 소비자 하드웨어에 대한 추론이 가능하다.",
+      "triggered_terms": [
+        "LLM",
+        "inference"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델"
+      ],
+      "latency_ms": 1759.4
+    },
+    {
+      "src": "The tokenizer must match between training and inference.",
+      "ref": "토크나이저는 학습과 추론 사이에 일치해야 합니다.",
+      "hyp": "토케니저는 훈련과 추론을 일치시켜야 합니다.",
+      "triggered_terms": [
+        "inference",
+        "tokenizer"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "토크나이저"
+      ],
+      "latency_ms": 1171.0
+    },
+    {
+      "src": "Throughput per dollar is the standard comparison metric.",
+      "ref": "달러당 처리량은 표준 비교 지표입니다.",
+      "hyp": "달러당 매출은 표준 비교 측정입니다.",
+      "triggered_terms": [
+        "throughput"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "처리량"
+      ],
+      "latency_ms": 920.9
+    },
+    {
+      "src": "Embedding caching reduces redundant computation during inference.",
+      "ref": "임베딩 캐싱은 추론 중 중복 계산을 줄입니다.",
+      "hyp": "캐싱을 삽입하면 추론 과정에서 과잉 계산이 줄어들게 됩니다.",
+      "triggered_terms": [
+        "inference",
+        "embedding"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "임베딩"
+      ],
+      "latency_ms": 1671.1
+    },
+    {
+      "src": "PyTorch 2.0 introduced compile-based optimization for LLMs.",
+      "ref": "PyTorch 2.0은 대형 언어 모델을 위한 컴파일 기반 최적화를 도입했습니다.",
+      "hyp": "PyTorch 2.0는 LLM에 대한 컴파일 기반 최적화를 도입했습니다.",
+      "triggered_terms": [
+        "LLM"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델"
+      ],
+      "latency_ms": 1688.3
+    },
+    {
+      "src": "RLHF combines a reward model with policy optimization.",
+      "ref": "RLHF는 보상 모델과 정책 최적화를 결합합니다.",
+      "hyp": "RLHF는 보상 모델과 정책 최적화와 결합합니다.",
+      "triggered_terms": [],
+      "all_terms_present": true,
+      "missing_terms": [],
+      "latency_ms": 1166.3
+    },
+    {
+      "src": "The attention mechanism's KV cache dominates memory usage at inference.",
+      "ref": "어텐션 메커니즘의 KV 캐시는 추론 시 메모리 사용량을 지배합니다.",
+      "hyp": "주의 메커니즘의 KV 캐시는 추론에서 메모리 사용에 지배한다.",
+      "triggered_terms": [
+        "inference",
+        "attention mechanism"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "어텐션 메커니즘"
+      ],
+      "latency_ms": 1573.2
+    },
+    {
+      "src": "Quantization to int4 halved the LLM's memory footprint.",
+      "ref": "int4 양자화는 대형 언어 모델의 메모리 사용량을 절반으로 줄였습니다.",
+      "hyp": "int4로 양자화하면 LLM의 메모리 발자국을 절반으로 줄일 수 있습니다.",
+      "triggered_terms": [
+        "LLM",
+        "quantization"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델"
+      ],
+      "latency_ms": 1640.9
+    },
+    {
+      "src": "We profiled the inference pipeline with PyTorch profiler.",
+      "ref": "PyTorch 프로파일러로 추론 파이프라인을 프로파일링했습니다.",
+      "hyp": "우리는 PyTorch 프로파일러로 추론 파이프라인을 프로파일했습니다.",
+      "triggered_terms": [
+        "inference"
+      ],
+      "all_terms_present": true,
+      "missing_terms": [],
+      "latency_ms": 1647.8
+    },
+    {
+      "src": "The HuggingFace model card documented the benchmark methodology.",
+      "ref": "HuggingFace 모델 카드는 벤치마크 방법론을 문서화했습니다.",
+      "hyp": "HuggingFace 모델 카드에서는 벤치마크 방법론을 문서화하였다.",
+      "triggered_terms": [
+        "benchmark"
+      ],
+      "all_terms_present": true,
+      "missing_terms": [],
+      "latency_ms": 1520.3
+    },
+    {
+      "src": "Lower-precision arithmetic increases throughput on NVIDIA Hopper GPUs.",
+      "ref": "저정밀도 산술은 NVIDIA Hopper GPU에서 처리량을 증가시킵니다.",
+      "hyp": "저정밀 수학적 결과물으로 NVIDIA Hopper GPU의 처리량이 증가합니다.",
+      "triggered_terms": [
+        "throughput"
+      ],
+      "all_terms_present": true,
+      "missing_terms": [],
+      "latency_ms": 1687.1
+    },
+    {
+      "src": "Hallucination tests measure factual consistency of LLM outputs.",
+      "ref": "환각 현상 테스트는 대형 언어 모델 출력의 사실 일관성을 측정합니다.",
+      "hyp": "환각 테스트는 LLM 결과물의 사실적 일관성을 측정합니다.",
+      "triggered_terms": [
+        "LLM",
+        "hallucination"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델",
+        "환각 현상"
+      ],
+      "latency_ms": 1283.4
+    },
+    {
+      "src": "Fine-tuning on synthetic data risks distribution shift.",
+      "ref": "합성 데이터로 파인튜닝하면 분포 이동 위험이 있습니다.",
+      "hyp": "합성 데이터에 대한 정교한 조정은 분배의 변화를 위험합니다.",
+      "triggered_terms": [
+        "fine-tuning"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "파인튜닝"
+      ],
+      "latency_ms": 1478.1
+    },
+    {
+      "src": "The tokenizer was trained with byte-pair encoding.",
+      "ref": "토크나이저는 바이트 페어 인코딩으로 학습되었습니다.",
+      "hyp": "토케니저는 바이트쌍 코딩으로 훈련되었습니다.",
+      "triggered_terms": [
+        "tokenizer"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "토크나이저"
+      ],
+      "latency_ms": 1030.9
+    },
+    {
+      "src": "Latency variance affects user experience more than mean latency.",
+      "ref": "지연 시간 분산은 평균 지연 시간보다 사용자 경험에 더 큰 영향을 줍니다.",
+      "hyp": "지연차는 평균 지연보다 사용자 경험에 더 많은 영향을 미친다.",
+      "triggered_terms": [
+        "latency"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "지연 시간"
+      ],
+      "latency_ms": 1317.5
+    },
+    {
+      "src": "Embedding models can be evaluated with retrieval benchmarks.",
+      "ref": "임베딩 모델은 검색 벤치마크로 평가할 수 있습니다.",
+      "hyp": "임베디션 모델은 검색 기준으로 평가될 수 있습니다.",
+      "triggered_terms": [
+        "embedding",
+        "benchmark"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "임베딩",
+        "벤치마크"
+      ],
+      "latency_ms": 1115.6
+    },
+    {
+      "src": "The LLM produced a hallucination about a non-existent paper.",
+      "ref": "대형 언어 모델은 존재하지 않는 논문에 대해 환각 현상을 일으켰습니다.",
+      "hyp": "LLM는 존재하지 않는 논문에 대한 환각을 일으켰습니다.",
+      "triggered_terms": [
+        "LLM",
+        "hallucination"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델",
+        "환각 현상"
+      ],
+      "latency_ms": 1333.1
+    },
+    {
+      "src": "Fine-tuning on RLHF data improved instruction following.",
+      "ref": "RLHF 데이터로 파인튜닝하면 지시 따르기 성능이 향상되었습니다.",
+      "hyp": "RLHF 데이터에 대한 정밀 조정은 지침을 따라 개선되었습니다.",
+      "triggered_terms": [
+        "fine-tuning"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "파인튜닝"
+      ],
+      "latency_ms": 1479.8
+    },
+    {
+      "src": "NVIDIA Triton serves the quantized LLM at production throughput.",
+      "ref": "NVIDIA Triton은 양자화된 대형 언어 모델을 프로덕션 처리량으로 서빙합니다.",
+      "hyp": "NVIDIA Triton는 생산 처리량에서 양자화된 LLM를 제공합니다.",
+      "triggered_terms": [
+        "LLM",
+        "throughput"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델"
+      ],
+      "latency_ms": 1398.8
+    },
+    {
+      "src": "Inference engines like vLLM batch requests for higher throughput.",
+      "ref": "vLLM과 같은 추론 엔진은 더 높은 처리량을 위해 요청을 배치합니다.",
+      "hyp": "vLLM 패치와 같은 인퍼런스 엔진은 더 높은 처리량을 요구합니다.",
+      "triggered_terms": [
+        "LLM",
+        "inference",
+        "throughput"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "대형 언어 모델",
+        "추론"
+      ],
+      "latency_ms": 1801.8
+    },
+    {
+      "src": "The attention mechanism's softmax can cause numerical instability at fp16.",
+      "ref": "어텐션 메커니즘의 소프트맥스는 fp16에서 수치적 불안정성을 일으킬 수 있습니다.",
+      "hyp": "주의 메커니즘의 소프트맥스는 fp16에서 수치적인 불안정을 유발할 수 있습니다.",
+      "triggered_terms": [
+        "attention mechanism"
+      ],
+      "all_terms_present": false,
+      "missing_terms": [
+        "어텐션 메커니즘"
+      ],
+      "latency_ms": 1685.9
+    },
+    {
+      "src": "HuggingFace datasets streams large corpora without loading into memory.",
+      "ref": "HuggingFace datasets는 메모리에 로드하지 않고 대규모 코퍼스를 스트리밍합니다.",
+      "hyp": "HuggingFace 데이터 세트는 메모리에 로딩 없이 큰 몸체를 스트리밍합니다.",
+      "triggered_terms": [],
+      "all_terms_present": true,
+      "missing_terms": [],
+      "latency_ms": 1509.0
+    }
+  ]
+}
