@@ -16,6 +16,16 @@ fixed eval protocol, and a budget.
 2. Implement the minimum needed to test the approach. Reuse the existing
    interfaces in src/ — swap components behind the same APIs.
 3. Run the FULL experiment to completion. Capture logs to reports/<branch>/.
+   Writing `reports/exp_<name>/summary.md` is MANDATORY, not optional — it
+   is a deliverable. A runner that reports only via chat/commit-message and
+   leaves no committed summary.md has not completed (round 4: the e2e runner
+   skipped summary.md, so its inflated narrative lived only in the commit
+   message with nothing committed to check it against). The summary.md must
+   contain the headline numbers, the verdict, and reconciliation, and each
+   number in it must be grep-able in a committed result file.
+   When persisting result JSON, dump per-segment records for ALL segments
+   when N <= 50 (do not cap `per_segment_samples` below N) so a reviewer can
+   recompute every aggregate. Above N=50 a cap is acceptable.
 4. Score with the eval scripts using the EXACT eval-protocol parameters,
    BOTH directions (en->ko and ko->en) where applicable.
 5. Commit your work on your branch with a clear message.
@@ -26,10 +36,25 @@ fixed eval protocol, and a budget.
 - NO VERDICT before the eval has run on N >= 20 segments. A number from
   1 segment, 5 segments, or a "smoke test" is NOT a result. Do not report
   "PROMISING" or any BLEU/WER headline until the real eval is complete.
+- EVERY HEADLINE NUMBER IN YOUR VERDICT MUST BE GREP-ABLE IN A COMMITTED
+  FILE. Before you write a number into your summary or commit message,
+  confirm it appears verbatim in a committed result JSON/log. Do NOT report
+  inferred, estimated, or "steady-state" figures that are not in a committed
+  file (round 4: a runner reported RAM figures of 3.55/4.67 GB that existed
+  in no file; the only measured peak was 7.57 GB — the reviewer overturned
+  the verdict). If you want to claim a derived number, commit the raw
+  measurement it is derived from and show the derivation.
 - The per-component numbers MUST SUM TO THE HEADLINE. If you report an
   end-to-end number, the ASR / MT / TTS sub-numbers must be consistent
   with it. If they don't reconcile, the headline is wrong — investigate,
   do not report it.
+- RAM MEASUREMENT: `resource.getrusage(...).ru_maxrss` is the process's TRUE
+  PEAK working-set RSS (== `/proc/self/status:VmHWM`), in KB on Linux. It is
+  NOT a "PyTorch allocator counter" and you may not dismiss it as such — it
+  is the number that governs the memory budget. ru_maxrss is monotonic (a
+  high-water mark): you CANNOT derive a lower "steady-state between
+  utterances" from it. If you need instantaneous RSS, read VmRSS from
+  `/proc/self/status` at the moment of interest and commit those samples.
 - NEVER silence a warning to make an error disappear. Tokenizer and model
   warnings carry context-specific information (round 2: a silenced
   tokenizer flag produced degenerate decodes and a false "model is dead"
