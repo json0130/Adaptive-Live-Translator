@@ -1,0 +1,54 @@
+2026-06-03 16:14:39.535 | INFO     | __main__:run_eval:353 - === R4-1 E2E Composition Eval: en->ko ===
+2026-06-03 16:14:39.535 | INFO     | __main__:run_eval:357 - RAM before model loads: 37.6 MB
+2026-06-03 16:14:39.536 | INFO     | __main__:load_streaming_asr:60 - Loading streaming ASR: base(int8) streaming + small(int8) final + gate=-0.7
+2026-06-03 16:14:41.450 | INFO     | __main__:run_eval:361 - RAM after ASR load: 1164.1 MB (delta: +1126.5 MB)
+2026-06-03 16:14:41.467 | INFO     | __main__:load_translator:80 - Loading translator: NLLB-200-distilled-600M CT2 INT8
+2026-06-03 16:14:41.467 | INFO     | __main__:load_translator:93 - CT2 model dir: /home/jay/Desktop/Jay-per/adaptive-live-translator/models/nllb-600m-ct2-int8
+2026-06-03 16:14:41.467 | INFO     | src.translator.nllb_ct2_translator:__init__:41 - NllbCt2Translator: model_dir=/home/jay/Desktop/Jay-per/adaptive-live-translator/models/nllb-600m-ct2-int8, device=cpu, dtype=int8
+2026-06-03 16:14:41.467 | INFO     | src.translator.nllb_ct2_translator:_lazy_load:48 - Loading CTranslate2 model from /home/jay/Desktop/Jay-per/adaptive-live-translator/models/nllb-600m-ct2-int8
+2026-06-03 16:14:42.172 | INFO     | src.translator.nllb_ct2_translator:_lazy_load:71 - CTranslate2 translator and tokenizer loaded
+2026-06-03 16:14:42.172 | INFO     | __main__:run_eval:365 - RAM after MT load: 1738.6 MB (delta: +574.5 MB)
+2026-06-03 16:14:42.173 | INFO     | __main__:load_tts_ko:111 - Loading TTS: KoreanCpuTTS (MeloTTS engine)
+/usr/lib/python3/dist-packages/paramiko/pkey.py:82: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/usr/lib/python3/dist-packages/paramiko/transport.py:261: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "class": algorithms.TripleDES,
+/home/jay/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/jay/.local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:273: FutureWarning: You are using a Python version (3.10.12) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/home/jay/.local/lib/python3.10/site-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+2026-06-03 16:14:47.321 | INFO     | __main__:load_tts_ko:113 - TTS loaded, engine=melo
+2026-06-03 16:14:47.321 | INFO     | __main__:run_eval:375 - RAM after TTS load: 2846.5 MB (delta: +1107.9 MB)
+2026-06-03 16:14:47.321 | INFO     | __main__:run_eval:376 - Co-resident peak RSS (all models loaded): 2846.5 MB
+2026-06-03 16:14:47.321 | INFO     | __main__:run_eval:381 - TTS engine: melo
+2026-06-03 16:14:47.322 | INFO     | __main__:run_eval:397 - Evaluating 50 segments (direction: en->ko)
+/home/jay/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Some weights of the model checkpoint at kykim/bert-kor-base were not used when initializing BertForMaskedLM: ['cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+/home/jay/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+2026-06-03 16:18:08.456 | INFO     | __main__:run_eval:417 -   20/50 done — 20 ok | peak RAM 7352 MB
+2026-06-03 16:21:24.072 | INFO     | __main__:run_eval:417 -   40/50 done — 40 ok | peak RAM 7352 MB
+2026-06-03 16:23:09.951 | INFO     | __main__:run_eval:429 - Final co-resident peak RSS: 7351.8 MB
+2026-06-03 16:23:09.951 | INFO     | __main__:run_eval:435 - Successful: 50/50
+2026-06-03 16:23:09.957 | INFO     | __main__:run_eval:458 - Corpus BLEU (ko-mecab): 24.03
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:541 - Report saved -> reports/exp_e2e-composition/en_ko_N50.json
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:544 - -- R4-1 E2E Eval Summary ----------------------------
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:545 -   Direction:          en->ko
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:546 -   N (ok/total):       50/50
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:547 -   BLEU (ko-mecab    ): 24.03
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:550 -   ASR WER (%):        14.73
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:551 -   ASR 1st-emit (s):   2.042
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:552 -   MT latency (ms):    568.0
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:553 -   TTS latency (ms):   3439.6
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:554 -   E2E latency (ms):   6049.7  p50=5677.0  p95=9744.4
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:555 -   Confidence gate:    42/50
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:556 -   Peak RAM (MB):      7351.8
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:557 -     ASR alone:        1164.1 MB
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:558 -     ASR+MT:           1738.6 MB
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:559 -     ASR+MT+TTS:       2846.5 MB
+2026-06-03 16:23:09.958 | INFO     | __main__:run_eval:560 - -----------------------------------------------------

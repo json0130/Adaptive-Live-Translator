@@ -1,0 +1,38 @@
+2026-06-03 16:23:23.051 | INFO     | __main__:run_eval:353 - === R4-1 E2E Composition Eval: ko->en ===
+2026-06-03 16:23:23.051 | INFO     | __main__:run_eval:357 - RAM before model loads: 37.8 MB
+2026-06-03 16:23:23.053 | INFO     | __main__:load_streaming_asr:60 - Loading streaming ASR: base(int8) streaming + small(int8) final + gate=-0.7
+2026-06-03 16:23:25.149 | INFO     | __main__:run_eval:361 - RAM after ASR load: 1164.2 MB (delta: +1126.4 MB)
+2026-06-03 16:23:25.167 | INFO     | __main__:load_translator:80 - Loading translator: NLLB-200-distilled-600M CT2 INT8
+2026-06-03 16:23:25.167 | INFO     | __main__:load_translator:93 - CT2 model dir: /home/jay/Desktop/Jay-per/adaptive-live-translator/models/nllb-600m-ct2-int8
+2026-06-03 16:23:25.167 | INFO     | src.translator.nllb_ct2_translator:__init__:41 - NllbCt2Translator: model_dir=/home/jay/Desktop/Jay-per/adaptive-live-translator/models/nllb-600m-ct2-int8, device=cpu, dtype=int8
+2026-06-03 16:23:25.167 | INFO     | src.translator.nllb_ct2_translator:_lazy_load:48 - Loading CTranslate2 model from /home/jay/Desktop/Jay-per/adaptive-live-translator/models/nllb-600m-ct2-int8
+2026-06-03 16:23:25.957 | INFO     | src.translator.nllb_ct2_translator:_lazy_load:71 - CTranslate2 translator and tokenizer loaded
+2026-06-03 16:23:25.957 | INFO     | __main__:run_eval:365 - RAM after MT load: 1738.5 MB (delta: +574.3 MB)
+2026-06-03 16:23:25.959 | INFO     | __main__:run_eval:375 - RAM after TTS load: 1738.5 MB (delta: +0.0 MB)
+2026-06-03 16:23:25.959 | INFO     | __main__:run_eval:376 - Co-resident peak RSS (all models loaded): 1738.5 MB
+2026-06-03 16:23:25.959 | INFO     | __main__:run_eval:381 - TTS engine: espeak
+2026-06-03 16:23:25.959 | INFO     | __main__:run_eval:397 - Evaluating 50 segments (direction: ko->en)
+2026-06-03 16:23:25.959 | INFO     | __main__:run_eval:399 - R4-3 post-processor ENABLED (ko->en casing + terminal punctuation)
+2026-06-03 16:26:59.118 | INFO     | __main__:run_eval:417 -   20/50 done — 20 ok | peak RAM 2269 MB
+2026-06-03 16:29:36.844 | INFO     | __main__:run_eval:417 -   40/50 done — 40 ok | peak RAM 2270 MB
+2026-06-03 16:31:09.835 | INFO     | __main__:run_eval:429 - Final co-resident peak RSS: 2270.5 MB
+2026-06-03 16:31:09.836 | INFO     | __main__:run_eval:435 - Successful: 50/50
+2026-06-03 16:31:09.839 | INFO     | __main__:run_eval:458 - Corpus BLEU (13a): 19.39
+2026-06-03 16:31:09.843 | INFO     | __main__:run_eval:470 - R4-3 post-proc BLEU delta: 19.39 (with) vs 19.39 (without) = +0.00
+2026-06-03 16:31:09.843 | INFO     | __main__:run_eval:541 - Report saved -> reports/exp_e2e-composition/ko_en_N50_postproc.json
+2026-06-03 16:31:09.843 | INFO     | __main__:run_eval:544 - -- R4-1 E2E Eval Summary ----------------------------
+2026-06-03 16:31:09.843 | INFO     | __main__:run_eval:545 -   Direction:          ko->en
+2026-06-03 16:31:09.843 | INFO     | __main__:run_eval:546 -   N (ok/total):       50/50
+2026-06-03 16:31:09.843 | INFO     | __main__:run_eval:547 -   BLEU (13a         ): 19.39
+2026-06-03 16:31:09.843 | INFO     | __main__:run_eval:549 -   BLEU (no postproc): 19.39  (R4-3 delta: +0.00)
+2026-06-03 16:31:09.843 | INFO     | __main__:run_eval:550 -   ASR WER (%):        10.30
+2026-06-03 16:31:09.843 | INFO     | __main__:run_eval:551 -   ASR 1st-emit (s):   3.657
+2026-06-03 16:31:09.843 | INFO     | __main__:run_eval:552 -   MT latency (ms):    590.0
+2026-06-03 16:31:09.844 | INFO     | __main__:run_eval:553 -   TTS latency (ms):   16.7
+2026-06-03 16:31:09.844 | INFO     | __main__:run_eval:554 -   E2E latency (ms):   4264.1  p50=3005.9  p95=11060.8
+2026-06-03 16:31:09.844 | INFO     | __main__:run_eval:555 -   Confidence gate:    43/50
+2026-06-03 16:31:09.844 | INFO     | __main__:run_eval:556 -   Peak RAM (MB):      2270.5
+2026-06-03 16:31:09.844 | INFO     | __main__:run_eval:557 -     ASR alone:        1164.2 MB
+2026-06-03 16:31:09.844 | INFO     | __main__:run_eval:558 -     ASR+MT:           1738.5 MB
+2026-06-03 16:31:09.844 | INFO     | __main__:run_eval:559 -     ASR+MT+TTS:       1738.5 MB
+2026-06-03 16:31:09.844 | INFO     | __main__:run_eval:560 - -----------------------------------------------------
