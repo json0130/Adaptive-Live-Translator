@@ -1,22 +1,119 @@
-# Adaptive Live Translator
+# Adaptive Live Translator — Postmortem
 
-A context-aware, real-time speech translation system that adapts to **domain, terminology, and speaker** without retraining. Built around a streaming cascaded architecture: **Whisper large-v3 (ASR) → RAG context injection → Qwen2.5-7B-Instruct (translator) → CosyVoice 2 (TTS)**, with optional per-speaker LoRA adapters.
+A context-aware, real-time speech translation system (ASR → context → translator
+→ TTS) for Korean ↔ English, targeting a laptop-CPU deployment. The goal was a
+voice-to-voice cascade that adapts to domain/terminology/speaker **and** runs
+under hard edge gates: **first-audio latency < 3.5 s** and **co-resident RAM
+< 4 GB** on an 8-core CPU with ~7 GB free RAM, no GPU.
 
-> **Status:** baseline scaffold. Components are stubbed with working interfaces — swap models/providers behind the same APIs.
+> **Status: CLOSED research artifact — not a deployable product.** Five rounds
+> of experiments converged on an architectural-limit finding: this CPU/7 GB-laptop
+> class **cannot** meet the 3.5 s latency and 4 GB RAM gates simultaneously for
+> cascaded ko↔en voice translation. The bottlenecks are Whisper first-emission and
+> MeloTTS per-utterance memory growth — **not** the translator, which was the axis
+> four rounds optimized. Details below. This README documents what was learned, not
+> a roadmap.
 
 ---
 
-## Why this stack
+## The research arc (five rounds)
 
-Three orthogonal dimensions of "context" are handled by three independent mechanisms:
+Each round below links to its full report under [reports/](reports/).
 
-| Dimension | Mechanism | Where it lives |
-|---|---|---|
-| Linguistic (prior sentences) | Rolling KV-cache + last-N segments in prompt | `src/pipeline/` |
-| Domain / terminology | Hybrid RAG (BM25 + dense) over glossary + TM | `src/context/` |
-| Speaker / user | Per-user JSON profile + optional LoRA adapter | `src/personalization/` |
+**Round 1 — GPU baseline (RTX 5060, 8 GB VRAM). Verdict: SATURATION.**
+On FLORES-200 devtest, a dedicated NMT — `NLLB-200-distilled-600M` fp16 — set the
+real baseline at **25.35 / 25.32 BLEU** (en→ko / ko→en) at ~135 ms/seg and ~3 GB,
+beating the README's old placeholder. Qwen2.5-7B (nf4, forced by 8 GB) **lost**
+(17.32 en→ko), prompt-injection RAG on NMT was **catastrophic** (25.35 → 5.56),
+and MADLAD-3B OOM'd. Conclusion: the cascade architecture wasn't the bottleneck —
+VRAM and the LLM-quantization penalty on Korean were. See
+[ROUND1_REPORT.md](reports/ROUND1_REPORT.md).
 
-Research grounding: IWSLT 2025 (CUNI, CMU, OSU), EMNLP 2024 "LLMs Are Zero-Shot Context-Aware Simultaneous Translators", InfiniSST (ACL Findings 2025).
+**Round 2 — CPU pivot (laptop, no GPU). Verdict: quality survives, latency/TTS don't.**
+`NLLB-600M` converted to **CT2 int8** held quality on CPU (**25.24 / 24.96 BLEU**,
+~2 GB) — the int8-Korean thesis held. `faster-whisper-medium` int8 was the right
+ASR for CPU. But the batch voice→voice pipeline missed the 3.5 s gate (4.2–5.0 s,
+because batch ASR waits for the whole utterance), and **Korean TTS was the single
+weakest link**: espeak-ng was robotic enough that round-trip ASR couldn't recover
+the words (71.66 % WER). See [ROUND2_REPORT.md](reports/ROUND2_REPORT.md).
+
+**Round 3 — clear the gates. Verdict: ASR + TTS fixed; glossary failed.**
+Streaming ASR via **LocalAgreement-2** dropped first-audio latency to **2.95 s (en,
+PASS)** / 3.89 s (ko, near-miss). **MeloTTS-KR** (MIT-licensed, from source) took
+Korean TTS from unintelligible to **13.64 % round-trip WER** — the strongest
+result of the project. The glossary attempt (token-level logit-bias on NLLB)
+**FAILED**: a reviewer's Korean-particle spot-check found it breaks grammar (case-
+particle swaps) on multi-term sentences, invisible to corpus BLEU. See
+[ROUND3_REPORT.md](reports/ROUND3_REPORT.md).
+
+**Round 4 — compose end-to-end. Verdict: the bottleneck is NOT the translator.**
+The full pipeline composed, but quality was **flat** (≈ −0.5 BLEU vs the R2 e2e run
+on the same manifest — NLLB passes audio-chain quality through but adds none),
+latency **failed** (the small-model final ASR pass pushed the real quality-path
+latency to ~10 s, ~3× the gate), and RAM **busted** the 4 GB budget by 89 %
+(7.57 GB peak, growing from 3.8 GB across the run — a MeloTTS allocation leak). A
+third glossary mechanism (phrase-constrained decoding) also failed. The verified
+finding: **latency is gated by ASR, RAM by TTS; the translator/context axis is
+saturated.** (A reviewer corrected the runner's inflated headline here — the second
+consecutive round review overturned a result.) See
+[ROUND4_FINAL.md](reports/ROUND4_FINAL.md).
+
+**Round 5 — attack the actual bottlenecks. Verdict: BOTH FAIL → ARCHITECTURAL LIMIT.**
+Two experiments, one per gate. **R5-1 single-pass ASR** (remove the final re-decode
+so the latency path == the quality path) reached a best of **3.87 s (ko→en)** and
+5.47 s (en→ko) — **no variant meets 3.5 s** in either direction; Whisper CPU first-
+emission alone is ~3.3 s (base) / ~4.9 s (small). **R5-2 TTS-RAM slim** (disable
+MeloTTS's BERT normalizer) saved ~0.84 GB *at load* but the per-utterance allocation
+growth still climbed to **~6.6 GB by segment 30** — **busts 4 GB**. Terminated on
+budget. See [ROUND5_FINAL.md](reports/ROUND5_FINAL.md).
+
+---
+
+## The finding
+
+On this **CPU / ~7 GB-laptop class with no GPU**, a cascaded ko↔en voice translator
+**cannot meet the 3.5 s latency and 4 GB co-resident-RAM gates simultaneously**. The
+two gates are blocked by distinct, hardware-rooted bottlenecks — and neither is the
+translator, which is where four of five rounds spent their effort:
+
+1. **Latency floor — ASR.** CPU Whisper first-emission is ~3.3 s on its own
+   (`faster-whisper-base`), already at/over the gate before TTS runs. Removing the
+   small-model final pass (R5-1) was the right move but is not enough.
+2. **Memory ceiling — TTS.** MeloTTS-KR synthesis accumulates to ~6.6 GB over a run.
+   Stripping its `kykim/bert-kor-base` normalizer saves only ~0.84 GB at load and
+   nothing about the runtime growth.
+
+To proceed you would change the **hardware/engine class** (a GPU/NPU to collapse
+Whisper first-emission and TTS synthesis; or a fundamentally lighter Korean TTS
+engine) — not the translator. These are architecture decisions, not another
+experiment in this loop.
+
+### What works
+
+- **`NLLB-200-distilled-600M`, CT2 int8 on CPU** — preserves translation quality
+  (≤ 0.4 BLEU vs fp16 GPU; ~25 BLEU both directions), ~2 GB. The translator is solid.
+- **MeloTTS-KR** — intelligible Korean TTS (13.64 % round-trip WER), **MIT-licensed**,
+  installed from source.
+- **Streaming ASR with LocalAgreement-2** (`faster-whisper-small`/`-base` int8) —
+  clears the latency gate for English (2.95 s) and gets Korean close.
+
+### What doesn't
+
+- **Decode-time glossary/terminology enforcement** — failed across **three**
+  mechanisms on NLLB-600M (prompt-prefix in R1, token logit-bias in R3,
+  phrase-constrained decoding in R4). The axis is closed: NMT terminology adherence
+  at decode time was not solvable here without breaking Korean grammar or beam
+  stability.
+- **The CPU cascade against its deployment gates** — see the finding above.
+
+### The one live lead (if anyone resumes)
+
+The **MeloTTS per-utterance allocation growth** is a concrete, isolatable bug and
+the single most promising CPU-side lead. Load-time RAM after disabling the BERT
+normalizer is already **2.93 GB — under budget**; it is the runtime growth to
+~6.6 GB that busts the 4 GB gate. If that leak can be bounded, R5-2's verdict could
+move. **This diagnosis has not been started** and is a separate future decision, not
+part of this close-out. All other axes (translator, glossary, context) are closed.
 
 ---
 
@@ -37,6 +134,11 @@ Research grounding: IWSLT 2025 (CUNI, CMU, OSU), EMNLP 2024 "LLMs Are Zero-Shot 
                    │         glossary hits, TM retrievals                    │
                    └─────────────────────────────────────────────────────────┘
 ```
+
+> Note: the diagram shows the original scaffold's intended components (Whisper /
+> Qwen / CosyVoice). The configuration that actually survived experiments is
+> `faster-whisper` (streaming, LocalAgreement-2) → `NLLB-200-distilled-600M`
+> CT2 int8 → MeloTTS-KR, on CPU. See the finding above.
 
 ---
 
@@ -134,170 +236,6 @@ adaptive-live-translator/
     ├── prompt_template.md
     └── evaluation.md
 ```
-
----
-
-## Quick start
-
-### 1. Prerequisites
-
-- Python 3.11+
-- CUDA 12.1+ GPU with ≥16 GB VRAM (24 GB recommended for Qwen2.5-7B + Whisper large-v3 together)
-- ffmpeg
-
-### 2. Install
-
-```bash
-git clone <your-repo-url> adaptive-live-translator
-cd adaptive-live-translator
-
-python -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
-
-pip install -r requirements.txt
-cp .env.example .env               # edit with your HF token, etc.
-```
-
-### 3. Download models
-
-```bash
-python scripts/download_models.py
-```
-
-This pulls:
-- `openai/whisper-large-v3`
-- `Qwen/Qwen2.5-7B-Instruct`
-- `FunAudioLLM/CosyVoice2-0.5B`
-- `BAAI/bge-m3` (for dense retrieval)
-
-### 4. Index your translation memory (optional)
-
-```bash
-python scripts/build_tm_index.py \
-    --tm data/translation_memory/en-ko.jsonl \
-    --out data/translation_memory/en-ko.index
-```
-
-### 5. Run the server
-
-```bash
-make run
-# or: uvicorn src.api.server:app --host 0.0.0.0 --port 8000
-```
-
-### 6. Test with a WAV
-
-```bash
-python scripts/test_client.py \
-    --audio samples/en_tech_talk.wav \
-    --src en --tgt ko \
-    --meeting-id acme-quarterly-2026
-```
-
----
-
-## Configuration
-
-All runtime behavior is controlled by `configs/default.yaml`. Component-specific overrides live in `configs/asr.yaml`, `configs/translator.yaml`, `configs/context.yaml`. Example:
-
-```yaml
-asr:
-  model: openai/whisper-large-v3
-  chunk_seconds: 2.0
-  policy: align_att
-  align_att_frames: 20
-
-translator:
-  model: Qwen/Qwen2.5-7B-Instruct
-  max_context_tokens: 4096
-  kv_cache_reuse: true
-  policy: local_agreement
-
-context:
-  rag:
-    enabled: true
-    hybrid: true          # BM25 + bge-m3
-    top_k: 5
-  glossary:
-    injection_mode: prompt   # prompt | constrained_decoding
-  translation_memory:
-    top_k: 3
-    min_similarity: 0.75
-
-personalization:
-  lora:
-    enabled: false
-    adapter_dir: data/lora_adapters
-```
-
----
-
-## Prompt template
-
-This is what the translator LLM sees on every chunk (see `src/context/prompt_builder.py`):
-
-```
-[SYSTEM]
-You are a simultaneous interpreter translating {src_lang} → {tgt_lang}.
-Domain: {meeting_topic_summary}
-Speaker: {speaker_name}, register: {formal|informal}
-
-Glossary (must respect):
-  {term_src} → {term_tgt}
-  ...
-Do-not-translate: [{brand}, {product}, ...]
-
-[CONTEXT — previous segments]
-SRC: {prev_n_source}
-TGT: {prev_n_target}
-
-[CURRENT PARTIAL]
-SRC: {streaming_asr_output}
-TGT: {output_so_far}
-```
-
-Rationale and ablations in `docs/prompt_template.md`.
-
----
-
-## Evaluation
-
-```bash
-python scripts/eval_streamlaal.py \
-    --testset data/eval/acl60_60_dev.tsv \
-    --src en --tgt de \
-    --report reports/2026-04-21.json
-```
-
-Reports BLEU + StreamLAAL (non-computationally-aware) on a held-out set. Baseline targets on ACL 60/60 dev, En→De, low-latency regime:
-
-| System | BLEU ↑ | StreamLAAL ↓ |
-|---|---|---|
-| Organizers baseline (IWSLT 2025) | ~17 | 2.0 s |
-| Ours (Whisper + Qwen2.5-7B, no context) | ~22 | 2.0 s |
-| Ours (+ RAG + profile) | ~26 | 2.2 s |
-
-Numbers to beat, not promises — rerun on your data.
-
----
-
-## Roadmap
-
-- [ ] Baseline end-to-end streaming loop (Whisper → Qwen → CosyVoice)
-- [ ] Hybrid RAG with BM25 + bge-m3
-- [ ] Per-user JSON profile + live glossary
-- [ ] StreamLAAL + BLEU eval harness
-- [ ] LoRA speaker adapter training script
-- [ ] WebSocket client for browsers
-- [ ] Diarization for multi-speaker meetings
-- [ ] Voice cloning in TTS (preserve speaker identity across languages)
-- [ ] On-device quantized variants (int4 Qwen, Whisper turbo)
-
----
-
-## License
-
-Apache 2.0 for project code. Model licenses vary — check each in `docs/model_licenses.md`.
 
 ---
 
