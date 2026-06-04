@@ -1,0 +1,35 @@
+2026-06-04 13:31:40.389 | INFO     | __main__:run_eval:356 - === R5-2 TTS-RAM-Slim Eval: en->ko ===
+2026-06-04 13:31:40.389 | INFO     | __main__:run_eval:357 - TTS: MeloTTS-KR with disable_bert=True (BERT model bypassed)
+2026-06-04 13:31:40.389 | INFO     | __main__:run_eval:363 - RAM baseline: peak_hwm=37.9 MB, VmRSS=38.5 MB
+2026-06-04 13:31:40.390 | INFO     | __main__:load_streaming_asr:84 - Loading streaming ASR: base(int8) streaming + small(int8) final + gate=-0.7
+2026-06-04 13:31:42.294 | INFO     | __main__:run_eval:369 - RAM after ASR: peak_hwm=1163.9 MB (+1126.0), VmRSS=933.4 MB
+2026-06-04 13:31:42.310 | INFO     | __main__:load_translator:103 - Loading translator: NLLB-200-distilled-600M CT2 INT8
+2026-06-04 13:31:42.310 | INFO     | __main__:load_translator:112 - CT2 model dir: /home/jay/Desktop/Jay-per/adaptive-live-translator/models/nllb-600m-ct2-int8
+2026-06-04 13:31:42.310 | INFO     | src.translator.nllb_ct2_translator:__init__:41 - NllbCt2Translator: model_dir=/home/jay/Desktop/Jay-per/adaptive-live-translator/models/nllb-600m-ct2-int8, device=cpu, dtype=int8
+2026-06-04 13:31:42.310 | INFO     | src.translator.nllb_ct2_translator:_lazy_load:48 - Loading CTranslate2 model from /home/jay/Desktop/Jay-per/adaptive-live-translator/models/nllb-600m-ct2-int8
+2026-06-04 13:31:42.957 | INFO     | src.translator.nllb_ct2_translator:_lazy_load:71 - CTranslate2 translator and tokenizer loaded
+2026-06-04 13:31:42.957 | INFO     | __main__:run_eval:375 - RAM after MT: peak_hwm=1738.3 MB (+574.4), VmRSS=1637.7 MB
+2026-06-04 13:31:42.957 | INFO     | __main__:load_tts_ko_slim:136 - Loading TTS: KoreanCpuTTS (MeloTTS, disable_bert=True)
+/usr/lib/python3/dist-packages/paramiko/pkey.py:82: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/usr/lib/python3/dist-packages/paramiko/transport.py:261: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "class": algorithms.TripleDES,
+/home/jay/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/jay/.local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:273: FutureWarning: You are using a Python version (3.10.12) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/home/jay/.local/lib/python3.10/site-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+2026-06-04 13:31:48.102 | INFO     | __main__:load_tts_ko_slim:138 - TTS loaded, engine=melo
+2026-06-04 13:31:48.102 | INFO     | __main__:load_tts_ko_slim:139 -   disable_bert on hps: True
+2026-06-04 13:31:48.102 | INFO     | __main__:load_tts_ko_slim:143 - Pre-warming TTS (one dummy synthesis)...
+2026-06-04 13:31:49.138 | INFO     | __main__:load_tts_ko_slim:153 - TTS pre-warm complete (no BERT load expected)
+2026-06-04 13:31:49.138 | INFO     | __main__:run_eval:386 - RAM after TTS + prewarm: peak_hwm=2933.9 MB (+1195.6), VmRSS=2936.3 MB
+2026-06-04 13:31:49.138 | INFO     | __main__:run_eval:387 -   VmHWM from /proc/self/status: 2936.3 MB
+2026-06-04 13:31:49.138 | INFO     | __main__:run_eval:388 -   Co-resident peak at load: 2933.9 MB (gate: <4096 MB)
+2026-06-04 13:31:49.138 | INFO     | __main__:run_eval:393 - TTS engine: melo-slim-no-bert
+2026-06-04 13:31:49.138 | INFO     | __main__:run_eval:396 -   MeloTTS hps.data.disable_bert = True
+2026-06-04 13:31:49.139 | INFO     | __main__:run_eval:412 - Evaluating 50 segments (direction: en->ko)
+2026-06-04 13:34:10.039 | INFO     | __main__:run_eval:444 -   10/50 done — 10 ok | peak_hwm=6336 MB | VmRSS=6133 MB
+2026-06-04 13:36:54.411 | INFO     | __main__:run_eval:444 -   20/50 done — 20 ok | peak_hwm=6637 MB | VmRSS=6290 MB
+2026-06-04 13:39:42.574 | INFO     | __main__:run_eval:444 -   30/50 done — 30 ok | peak_hwm=6637 MB | VmRSS=6362 MB
