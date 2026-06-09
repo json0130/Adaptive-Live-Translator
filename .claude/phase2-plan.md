@@ -26,7 +26,7 @@ Those are Phase 3 questions, decided after Phase 2 lands.
 | Hardware | 8-core CPU, 7 GB free RAM, no GPU | RTX 5060 (8 GB VRAM, ~7 GB free), desktop RAM |
 | Primary goal | Meet 3.5s/4GB gates | Working system end-to-end |
 | Translator | NLLB-600M CT2-int8 (CPU) | NLLB-600M fp16 (GPU) — same model, no quantization |
-| ASR | faster-whisper base+small int8, streaming | faster-whisper large-v3 fp16, streaming (GPU floor ~0.5s first-emission) |
+| ASR | faster-whisper base+small int8, streaming | faster-whisper large-v3 `int8_float16`, streaming (fp16 OOMs the 8 GB card co-resident — see P2-1) |
 | TTS | MeloTTS-KR (RAM-leaky on CPU) | MeloTTS-KR on GPU (RAM headroom removes the gate) |
 | Eval | FLORES text + Fleurs audio, locked | SAME locked protocol — preserves comparability across phases |
 | Adaptive aspect | Glossary tried 3 ways, all failed at decode time | Glossary triggers measured on domain slice — sets baseline for Phase 3 LoRA |
@@ -109,12 +109,26 @@ end-to-end on the locked Fleurs paired manifest.
 
 - Branch: `phase2/gpu-pipeline`
 - Stack:
-  - ASR: faster-whisper-large-v3 fp16 on CUDA, LocalAgreement-2 streaming
+  - ASR: faster-whisper-large-v3 **`int8_float16`** on CUDA, LocalAgreement-2
+    streaming. **Changed from fp16 after P2-0** (signed off 2026-06-09): the
+    full-stack fp16 static-load peak was 7.16 GB of 8.07 GB — with inference
+    activations stacking, fp16 is *expected to OOM mid-run*, not merely
+    "tight". int8 ASR frees ~2 GB. Quality basis: Phase-1 small-int8 ASR ran
+    11.83% ko / 8.21% en WER; large-v3-int8 should beat that even quantized.
+    Architecture validation (P2-1's actual purpose) is unchanged by the
+    precision choice.
   - MT: NLLB-200-distilled-600M, transformers fp16 on CUDA (NOT CT2 — see
     P2-3 rationale)
   - TTS: MeloTTS-KR on CUDA
 - Eval: full Fleurs paired manifest (N=270 each direction, NOT a 50-sample
   smoke — Phase 1 lesson: N≥20 verdicts, full N when N≤300)
+- Required report fields (signed off 2026-06-09):
+  - **Log the chosen ASR config explicitly** (model, device, compute_type).
+  - **Measure ACTUAL peak VRAM during a representative inference segment**
+    (e.g. `torch.cuda.max_memory_allocated` + `nvidia-smi` sampling), NOT
+    just the static-load number. This is the Phase-3 input: does 8 GB ever
+    hold inference + LoRA training co-resident, or must Phase 3
+    unload-and-reload?
 - Pass gates:
   - en↔ko BLEU ≥ Phase 1's wired-pipeline numbers (R4-1: 24.03 / 19.39)
   - first-emission latency ≤ 1.5s (GPU should crush the 3.5s CPU floor)
