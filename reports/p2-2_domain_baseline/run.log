@@ -1,0 +1,31 @@
+2026-06-10 08:45:31.484 | INFO     | __main__:main:302 - P2-2 Domain Baseline: loading data...
+2026-06-10 08:45:31.484 | INFO     | __main__:main:309 - Loaded 15 glossary entries, 146 pairs each direction
+2026-06-10 08:45:31.484 | INFO     | __main__:main:312 - Loading NLLB-600M fp16 on CUDA...
+2026-06-10 08:45:31.484 | INFO     | src.translator.nllb_fp16_translator:__init__:55 - NllbFp16Translator: model=facebook/nllb-200-distilled-600M, device=cuda, dtype=fp16, max_new_tokens=256
+2026-06-10 08:45:31.484 | INFO     | src.translator.nllb_fp16_translator:load:64 - Loading facebook/nllb-200-distilled-600M fp16 on cuda...
+/home/jay/Desktop/Jay-per/adaptive-live-translator/.translator/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/jay/Desktop/Jay-per/adaptive-live-translator/.translator/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+2026-06-10 08:45:38.211 | INFO     | src.translator.nllb_fp16_translator:load:75 - NLLB fp16 loaded on cuda:0, dtype=torch.float16
+2026-06-10 08:45:38.211 | INFO     | __main__:main:315 - Model loaded.
+2026-06-10 08:45:38.211 | INFO     | __main__:run_direction:156 - Running direction: en_ko — 146 segments
+2026-06-10 08:45:40.686 | INFO     | __main__:run_direction:235 -   [en_ko] 25/146 done
+2026-06-10 08:45:43.185 | INFO     | __main__:run_direction:235 -   [en_ko] 50/146 done
+2026-06-10 08:45:45.694 | INFO     | __main__:run_direction:235 -   [en_ko] 75/146 done
+2026-06-10 08:45:48.311 | INFO     | __main__:run_direction:235 -   [en_ko] 100/146 done
+2026-06-10 08:45:50.885 | INFO     | __main__:run_direction:235 -   [en_ko] 125/146 done
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+2026-06-10 08:45:53.078 | INFO     | __main__:main:322 - en->ko BLEU=33.24 (ko-mecab), recall=0.3640 (87/239)
+2026-06-10 08:45:53.079 | INFO     | __main__:run_direction:156 - Running direction: ko_en — 146 segments
+2026-06-10 08:45:55.511 | INFO     | __main__:run_direction:235 -   [ko_en] 25/146 done
+2026-06-10 08:45:57.986 | INFO     | __main__:run_direction:235 -   [ko_en] 50/146 done
+2026-06-10 08:46:00.608 | INFO     | __main__:run_direction:235 -   [ko_en] 75/146 done
+2026-06-10 08:46:03.119 | INFO     | __main__:run_direction:235 -   [ko_en] 100/146 done
+2026-06-10 08:46:05.706 | INFO     | __main__:run_direction:235 -   [ko_en] 125/146 done
+2026-06-10 08:46:07.877 | INFO     | __main__:main:331 - ko->en BLEU=20.66 (13a), recall=0.4542 (114/251)
+2026-06-10 08:46:07.880 | INFO     | __main__:main:353 - Results saved to /home/jay/Desktop/Jay-per/adaptive-live-translator/reports/p2-2_domain_baseline/result_en_ko.json and /home/jay/Desktop/Jay-per/adaptive-live-translator/reports/p2-2_domain_baseline/result_ko_en.json
+2026-06-10 08:46:07.880 | INFO     | __main__:write_summary:452 - Summary written to /home/jay/Desktop/Jay-per/adaptive-live-translator/reports/p2-2_domain_baseline/summary.md
+2026-06-10 08:46:07.880 | INFO     | __main__:main:357 - Done. Summary written.
