@@ -37,7 +37,18 @@ def _ko_mecab_tagger():
         return _KO_MECAB_TAGGER
     try:
         import MeCab, mecab_ko_dic
-        _KO_MECAB_TAGGER = MeCab.Tagger(f"-d {mecab_ko_dic.dictionary_path} -Owakati")
+        # mecab_ko_dic's API has drifted across releases. Prefer MECAB_ARGS
+        # (it bundles -r <mecabrc> -d <dicdir>): a co-installed unidic — e.g.
+        # pulled in by a MeloTTS install — hijacks MeCab's default dictionary,
+        # so a bare "-d <dir>" is not enough; the rc file must be set too.
+        # Fall back to DICDIR+mecabrc, then the older dictionary_path attr.
+        if hasattr(mecab_ko_dic, "MECAB_ARGS"):
+            args = mecab_ko_dic.MECAB_ARGS + " -Owakati"
+        elif hasattr(mecab_ko_dic, "DICDIR"):
+            args = f'-r "{mecab_ko_dic.mecabrc}" -d "{mecab_ko_dic.DICDIR}" -Owakati'
+        else:
+            args = f"-d {mecab_ko_dic.dictionary_path} -Owakati"
+        _KO_MECAB_TAGGER = MeCab.Tagger(args)
         return _KO_MECAB_TAGGER
     except Exception:
         return None

@@ -68,6 +68,41 @@ risk and must clear an explicit exit criterion before P2-1 is spawned.
   translator silently fall back to CPU; ko-mecab tokenizer breaks.
 - Manager runs P2-0, reports, and waits for sign-off before P2-1.
 
+**P2-0 results (2026-06-09) — PASS.** Manager-run; grep-able numbers
+(scripts: `.claude/p2_0_smoke.py`, `.claude/p2_0_final.py`; freezes:
+`.claude/p2-0_pip_freeze_{before,after}.txt`):
+- torch swap: `2.11.0+cpu` -> `2.11.0+cu128`; `cuda.is_available()=True`;
+  `arch_list` includes `sm_120`; fp16 matmul executes on GPU (127 ms).
+- Exit criterion (translator-only CUDA smoke-load): **PASS**. NLLB-600M fp16
+  (transformers, `cuda:0`), CT2-int8 (`device=cuda`, `int8_float16`), and
+  faster-whisper-large-v3 (`cuda`, `float16`) all load + translate/transcribe
+  both directions with **no silent CPU fallback**; ASR `lang_prob=1.00` on
+  en + ko Fleurs samples.
+- ko-mecab eval tokenizer: **RESTORED**. `compute_bleu(..., tokenize="ko-mecab")`
+  returns `tokenize_used=ko-mecab` (was MeCab-absent -> char fallback). Fix
+  in `src/utils/metrics.py`: use `mecab_ko_dic.MECAB_ARGS` (bundles
+  `-r mecabrc -d dicdir`) because MeloTTS's unidic install hijacks MeCab's
+  default dict; behaviour-preserving (same morpheme segmentation).
+- MeloTTS on Blackwell: **PASS** (bonus; was non-blocking). Loads
+  `device=cuda`; Korean synth ok (190,621 samples @ 44.1 kHz). Required
+  `python -m unidic download` (melo/text/japanese.py inits a tagger at
+  import) + first-run download of `kykim/bert-kor-base`.
+- ENV CASUALTY (recorded): MeloTTS hard-pins `transformers==4.27.4`, so the
+  install downgraded transformers `5.5.4 -> 4.27.4` (+ tokenizers `0.13.3`,
+  librosa `0.9.1`, numpy `1.26.4`). **torch cu128 survived.** Broke
+  flagembedding / sentence-transformers (RAG-only — not used in Phase 2).
+  NLLB fp16, CT2, faster-whisper, sacrebleu all re-verified on the
+  downgraded env.
+
+**P2-1 VRAM RISK (key finding feeding P2-1).** Full P2-1 stack co-resident
+(ASR large-v3 fp16 + NLLB fp16 + MeloTTS) static-load peak = **7.16 GB
+used** of 8.07 GB total (~1.12 GB desktop baseline -> ~6.04 GB process).
+Breakdown: ASR ~4.07 GB, +NLLB ~1.14 GB, +MeloTTS ~0.83 GB. This is the
+*load* peak; inference activations add on top, so the re-baselined ≤7 GB
+gate is **tight** and OOM is a live risk under load. P2-1 likely needs ASR
+`compute_type=int8_float16` (~2 GB vs ~4 GB) or sequential loading to hold
+the gate — call this out in the P2-1 spec.
+
 ### P2-1 — GPU pipeline composition   [PAYOFF — the working system]
 Wire the Phase-1 components onto GPU and measure the full pipeline
 end-to-end on the locked Fleurs paired manifest.
