@@ -7,7 +7,7 @@ saturated and CPU-only deployment is gated by hardware ceilings
 clean. Not reopening any of those axes.
 
 **Phase 2 goal:** stand up a working voice-to-voice en↔ko translator on
-GPU (RTX 4070, 12 GB VRAM, desktop RAM headroom), composing the
+GPU (RTX 5060, 8 GB VRAM, desktop RAM headroom), composing the
 Phase-1-validated components, and confirm the architecture works
 end-to-end when the hardware ceilings don't apply. **This is not round 6.**
 It's a fresh project with a different target (working system, not gate
@@ -23,7 +23,7 @@ Those are Phase 3 questions, decided after Phase 2 lands.
 
 | Axis | Phase 1 (CPU) | Phase 2 (GPU) |
 |---|---|---|
-| Hardware | 8-core CPU, 7 GB free RAM, no GPU | RTX 4070 (12 GB VRAM), desktop RAM |
+| Hardware | 8-core CPU, 7 GB free RAM, no GPU | RTX 5060 (8 GB VRAM, ~7 GB free), desktop RAM |
 | Primary goal | Meet 3.5s/4GB gates | Working system end-to-end |
 | Translator | NLLB-600M CT2-int8 (CPU) | NLLB-600M fp16 (GPU) — same model, no quantization |
 | ASR | faster-whisper base+small int8, streaming | faster-whisper large-v3 fp16, streaming (GPU floor ~0.5s first-emission) |
@@ -38,7 +38,35 @@ freezing those was so numbers from any phase compare to any other.
 
 ---
 
-## Phase 2 experiments (3 experiments, gate-driven, NOT chained)
+## Phase 2 experiments (1 gated env step + 3 experiments, gate-driven, NOT chained)
+
+### P2-0 — Environment rebuild   [GATED STEP — must pass before P2-1]
+Not a spawned experiment; manager-run env work. But it is its own **gated
+step**, not "inline prep": the cu128 torch swap on Blackwell (sm_120) plus
+the MeloTTS-from-source install (Phase 1 R3-2 was a ~40-min hunt) is real
+risk and must clear an explicit exit criterion before P2-1 is spawned.
+
+- Tasks:
+  - Replace the Phase-1 CPU torch wheel (`2.11.0+cpu`) with a CUDA build
+    carrying **sm_120 (Blackwell)** kernels — cu128 or newer; torchaudio
+    must match.
+  - Reinstall **MeloTTS from source** (`myshell-ai/MeloTTS`, MIT). Two
+    known hazards, both checked AFTER install: (a) its deps can clobber the
+    freshly-installed CUDA torch; (b) it can upgrade `mecab_ko_dic` and
+    silently break the locked ko-mecab BLEU tokenizer — the exact incident
+    recorded in `src/utils/metrics.py`.
+- **Exit criterion (translator-only CUDA smoke-load):** NLLB-600M fp16
+  (transformers, CUDA), the CT2-int8 translator (CUDA), and
+  faster-whisper-large-v3 (CUDA, float16) all load and run on the GPU with
+  **no silent CPU fallback**; `torch.cuda.is_available()` is True with
+  sm_120 in the arch list; and the locked ko-mecab tokenizer still segments
+  (no char-BLEU fallback). MeloTTS load is attempted and reported but is
+  **NOT** a blocker: if MeloTTS-on-Blackwell fails, P2-0 still passes and
+  P2-3 (translator-only, text) stays a valid fallback experiment while the
+  TTS issue is worked separately.
+- Falsifies P2-0: torch CUDA won't init on sm_120; faster-whisper or the
+  translator silently fall back to CPU; ko-mecab tokenizer breaks.
+- Manager runs P2-0, reports, and waits for sign-off before P2-1.
 
 ### P2-1 — GPU pipeline composition   [PAYOFF — the working system]
 Wire the Phase-1 components onto GPU and measure the full pipeline
@@ -57,9 +85,11 @@ end-to-end on the locked Fleurs paired manifest.
   - first-emission latency ≤ 1.5s (GPU should crush the 3.5s CPU floor)
   - e2e latency ≤ 2.5s (with the final ASR pass included honestly, per the
     R4-1 lesson — latency and quality must come from the same path)
-  - peak VRAM ≤ 8 GB (leaves headroom for P2-3 glossary loading)
+  - peak VRAM ≤ 7 GB (re-baselined for the 8 GB card — must fit the ~7 GB
+    free at idle; the old ≤8 GB / Phase-3-LoRA-headroom rationale is void,
+    see "What this Phase is NOT")
 - Falsifies: any-direction BLEU regresses >1 vs Phase 1; e2e latency >3s;
-  VRAM >10 GB (would block Phase 3 LoRA loading)
+  peak VRAM exceeds the ~7 GB free budget (OOM on the 8 GB card)
 - Why first: this IS the working system. Everything else is incremental.
 
 ### P2-2 — Domain-slice quality baseline   [SETS PHASE 3 TARGET]
@@ -137,18 +167,30 @@ Stop the loop when ANY of these is true:
 6. **Grep-able headline numbers.** Every number in a verdict must appear
    in a committed file. (Commit 950808f rule.)
 
-## Hardware/environment preflight
+## Preflight results & re-baselined gates (2026-06-08, lab box)
 
-Before spawning P2-1, the manager must verify:
-- CUDA available, RTX 4070 detected
-- PyTorch CUDA build installed (the CPU `torch` wheel from Phase 1
-  won't work — needs replacement)
-- faster-whisper, transformers, MeloTTS load on CUDA without falling back
-  to CPU silently (Phase 1 R3-2 lesson: silent fallback is a failure mode)
-- Available VRAM ≥ 10 GB at idle (leaves room for all three model loads)
+Preflight run inline by the manager. The plan's original "RTX 4070 / 12 GB"
+was **phantom hardware** — corrected throughout this file. Actual GPU:
+**RTX 5060, 8 GB (Blackwell sm_120)**, the same card as Phase-1 R1. Both
+available machines are 8 GB (home 3060 is the backup box).
 
-These checks are inline manager work, not a spawned experiment. Stop
-and report if any fail before spawning.
+Findings:
+- GPU: RTX 5060, 8.15 GB total, **~7.0 GB free at idle** (driver 580.159,
+  CUDA 13.0).
+- torch was `2.11.0+cpu` (Phase-1 CPU wheel) → `cuda.is_available()=False`.
+  Resolved by **P2-0**.
+- MeloTTS not installed (`No module named 'melo'`). Resolved by **P2-0**.
+- CTranslate2 4.7.1 already detects the GPU (fp16/int8 CUDA compute types
+  available) — the ASR + CT2-translator paths may run without torch.
+- All locked eval data present: FLORES devtest 1012/1012, ML glossary slice
+  146, Fleurs paired manifest 270. Weights on disk (whisper-large-v3 CT2,
+  NLLB-600M fp16, nllb-600m-ct2-int8). No downloads needed.
+
+Re-baselined gates (8 GB card, not the phantom 12 GB):
+- **Dropped** the "≥10 GB VRAM free" preflight check — impossible on 8 GB.
+- **P2-1 peak-VRAM gate: ≤ 7 GB** (was ≤ 8 GB) — must fit the ~7 GB free.
+- The silent-CPU-fallback check is preserved and folded into **P2-0**'s
+  exit criterion (R3-2 lesson: silent fallback is a failure mode).
 
 ---
 
@@ -166,6 +208,16 @@ Worth stating explicitly to keep scope tight:
 - **Not a new architecture.** Cascaded ASR→MT→TTS, same as Phase 1.
   Direct speech-to-speech was deferred at the round-1 design-space
   survey; reopening it is a separate, larger decision.
+- **Not a co-resident-LoRA target — architectural finding, not a footnote.**
+  On 8 GB there is **no VRAM headroom for Phase-3 LoRA alongside the
+  inference stack**: the full pipeline already wants ~the whole card
+  (P2-1 gate is ≤7 GB of ~7 GB free). The original plan's assumption that
+  VRAM headroom would hold LoRA was tied to the phantom 12 GB and **does
+  not survive on 8 GB**. Consequence: if Phase 3 LoRA happens, training
+  (and any LoRA-loaded inference) must be a **separate event with the
+  inference stack fully unloaded — never co-resident**. Record this as a
+  hard constraint feeding the Phase-3 LoRA yes/no/different-mechanism
+  decision.
 
 ---
 
