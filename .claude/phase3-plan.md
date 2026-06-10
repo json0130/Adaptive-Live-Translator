@@ -74,18 +74,38 @@ LoRA needs training data, not just an eval slice. The locked ML
 glossary slice (146 pairs) is too small to train on — and using it
 for training would invalidate it as an eval set.
 
-Manager builds a separate training corpus from the same domain sources
-(arXiv abstracts, HF blog, PyTorch docs) referenced in Phase 1's slice
-construction. Target: 1500-3000 sentence pairs containing glossary
-terms, with the canonical target translation. NEVER overlaps with the
-locked 146-pair eval slice (the eval slice stays frozen, untouched).
+**Corpus approach (decided 2026-06-10): (a) Qwen-local generation.**
+The plan's assumed source materials (arXiv/HF blog/PyTorch docs) are NOT
+on disk — preflight confirmed only the frozen 146-pair eval slice + a
+10-pair TM exist. So the corpus is GENERATED with the on-disk
+Qwen2.5-7B-Instruct, constrained to the glossary's canonical terms, then
+filtered + spot-checked. Target ~2000 pairs total.
+
+Hard constraints on generation:
+- **Qwen2.5-7B-nf4 is the SAME model+quant that broke Korean in Phase-1
+  R1 (en->ko 17.32 BLEU, an nf4-specific failure mode).** The spot-check
+  is the ENTIRE safety net.
+- **Generate en->ko and ko->en INDEPENDENTLY** — different sentences per
+  direction, NO round-trip (round-tripping creates correlated errors the
+  LoRA would learn as features).
+- Each pair must actually contain the canonical glossary term (filtered).
+- Zero overlap with the locked 146-pair eval slice (hash-verified).
+
+**BAIL CRITERION (non-negotiable):** on the 50-100 sampled spot-check, if
+**>20% of Korean pairs are ungrammatical OR >30% don't actually use the
+canonical term -> REJECT the Qwen corpus and pivot to (b) templated.**
+Budget pressure does NOT justify accepting a marginal corpus.
 
 Exit criteria:
 - Training corpus committed at `data/eval/ml_glossary_train.{en_ko,ko_en}.tsv`
-- Per-pair glossary trigger count documented
-- Zero overlap with eval slice (verified by hash diff)
-- Train/dev split: 90/10 (dev set is for early-stopping decisions only,
-  NEVER for final reporting — that's the eval slice)
+- Train/dev split: 90/10 (dev = early-stop only, NEVER final reporting)
+- Zero overlap with eval slice (hash diff, committed)
+
+**Corpus sign-off checkpoint (NON-CEREMONIAL) — deliverables before P3-1:**
+(1) 50-100 sampled pairs for native-quality spot-check; (2) per-term
+distribution stats; (3) sentence-length distribution; (4) glossary-trigger
+density; (5) hash-verified zero overlap with eval slice; (6) the bail
+criterion above, evaluated. If any raise concerns, **P3-1 does not spawn.**
 
 Manager inline; no spawn. Drop-blocker: without P3-0, P3-1 cannot run.
 
@@ -95,9 +115,11 @@ Train a LoRA adapter on NLLB-600M using the P3-0 training corpus.
 - Branch: `phase3/lora-terminology`
 - Stack:
   - Base: NLLB-200-distilled-600M (HF transformers, fp16, frozen)
-  - LoRA: peft library, rank 16, alpha 32, target_modules=["q_proj",
-    "k_proj", "v_proj", "out_proj"] on all encoder + decoder attention
-    layers
+  - LoRA: peft 0.3.0, rank 16, alpha 32, target_modules=["q_proj",
+    "k_proj", "v_proj", "out_proj", "fc1", "fc2"] — attention AND FFN.
+    FFN added per preflight decision (2026-06-10): canonical-term
+    preference is a lexical-choice problem that lives in the FFN, not
+    just attention; attention-only would work against the architecture.
   - Optimizer: AdamW, lr 2e-4 (LoRA-typical), warmup 100 steps
   - Train: ~3 epochs on the training corpus, batch 4 (gradient
     accumulation to effective 16 if needed)
@@ -164,12 +186,26 @@ Stop when ANY of these is true:
 - "Valid Korean output" means grammatically plausible on ≥5 manually
   checked sentences, not just non-degenerate tokens (R4-4 lesson)
 
-## Preflight (manager runs before P3-0)
-- `peft` library installed in cu128 venv
-- Training corpus source materials available (arXiv abstracts, etc.)
-- Disk space for adapter checkpoints + training data
-- VRAM headroom verified by loading NLLB-600M + simulated LoRA layers
-  + dummy optimizer state (don't train, just verify the load fits)
+## Preflight results (2026-06-10) — run inline by manager
+
+- **peft: BLOCKER → fixed.** peft 0.19.1 cannot import with transformers
+  4.27.4 (`ImportError: Cache`; peft 0.19 needs tx >=4.36). **Downgraded to
+  peft 0.3.0** (verified: imports, LoRA applies, adapter saves). Did NOT
+  upgrade transformers — that would break MeloTTS and invalidate the
+  P2-2/FLORES baselines measured on 4.27.4. Change is peft-only, reversible.
+  Freezes: `.claude/p3-0_pip_freeze_{before,after}.txt` (committed before P3-0).
+- **LoRA config validated.** q/k/v/out_proj (36 each) + fc1/fc2 (24 each)
+  present in NLLB (M2M100). rank16/α32 on attn+FFN — see P3-1.
+- **VRAM headroom verified.** Real train step (batch 4, seq 128, fp32 base +
+  LoRA + AdamW) = **5.68 GB peak** → fits 8 GB. Grad-accum is the lever if
+  batch/seq pushes it up.
+- **Disk:** 676 GB free. Fine.
+- **Corpus source materials: ABSENT** — only the frozen 146-pair eval slice
+  + a 10-pair TM. Resolved by the P3-0 Qwen-local generation decision above.
+- **NEW sub-blocker (P3-0 build):** Qwen2.5 needs transformers >=4.37 to
+  load (`Qwen2ForCausalLM`), but the venv is pinned at 4.27.4. P3-0
+  generation runs in an ISOLATED throwaway env so the main 4.27.4 venv is
+  untouched; the corpus output (TSV) is env-independent.
 
 ---
 
