@@ -1,0 +1,77 @@
+{
+  "en_ko": {
+    "raw": 1084,
+    "kept": 789,
+    "train": 710,
+    "dev": 79,
+    "drop": {
+      "ko_contaminated": 14,
+      "no_en_term": 31,
+      "no_canonical_ko": 226,
+      "dup": 24
+    },
+    "per_term": {
+      "quantization": 69,
+      "embedding": 65,
+      "latency": 77,
+      "PyTorch": 27,
+      "benchmark": 45,
+      "fine-tuning": 46,
+      "LLM": 72,
+      "inference": 66,
+      "throughput": 70,
+      "tokenizer": 27,
+      "NVIDIA": 70,
+      "RLHF": 74,
+      "attention mechanism": 58,
+      "hallucination": 23
+    },
+    "srclen": {
+      "min": 7,
+      "p50": 13,
+      "mean": 13.0,
+      "max": 26
+    },
+    "trigger_density": 1.02,
+    "canonical_rate": 1.0,
+    "overlap_count": 0
+  },
+  "ko_en": {
+    "raw": 1104,
+    "kept": 958,
+    "train": 862,
+    "dev": 96,
+    "drop": {
+      "no_en_term": 112,
+      "dup": 1,
+      "ko_contaminated": 2,
+      "no_canonical_ko": 31
+    },
+    "per_term": {
+      "latency": 73,
+      "fine-tuning": 55,
+      "quantization": 64,
+      "RLHF": 75,
+      "throughput": 74,
+      "PyTorch": 74,
+      "HuggingFace": 75,
+      "embedding": 63,
+      "hallucination": 74,
+      "attention mechanism": 74,
+      "benchmark": 75,
+      "inference": 32,
+      "NVIDIA": 63,
+      "tokenizer": 57,
+      "LLM": 30
+    },
+    "srclen": {
+      "min": 5,
+      "p50": 10,
+      "mean": 10.0,
+      "max": 21
+    },
+    "trigger_density": 1.01,
+    "canonical_rate": 1.0,
+    "overlap_count": 0
+  }
+}

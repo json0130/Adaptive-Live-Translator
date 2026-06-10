@@ -1,0 +1,88 @@
+dir	term	source	target
+en_ko	embedding	Embeddings for sentences can be created by averaging the embeddings of their constituent words.	문장의 임베딩은 구성 단어들의 임베딩을 평균내서 생성할 수 있습니다.
+en_ko	latency	Latency is often a critical factor in the deployment of edge computing solutions.	엣지 컴퓨팅 솔루션 배포 시 지연 시간은 종종 중요한 요인입니다.
+ko_en	tokenizer	텍스트 데이터를 토크나이저로 전처리하고, 이를 통해 모델의 훈련 속도를 향상시켰습니다.	By preprocessing the text data through a tokenizer, we improved the model's training speed.
+en_ko	embedding	Embeddings of different modalities can be learned jointly to improve performance.	다양한 모달리티의 임베딩을 동시에 학습하여 성능을 향상시킬 수 있습니다.
+en_ko	fine-tuning	Fine-tuning the pre-trained model on the company's internal data improved the recommendation system's relevance.	미리 훈련된 모델을 회사의 내부 데이터에서 파인튜닝함으로써 추천 시스템의 관련성이 향상되었습니다.
+en_ko	attention mechanism	The researchers implemented a novel attention mechanism to enhance the interpretability of their deep learning models.	연구팀은 딥러닝 모델의 해석 가능성 향상을 위해 새로운 어텐션 메커니즘을 구현했습니다.
+en_ko	LLM	Training an LLM requires substantial computational resources.	대형 언어 모델을 학습하기 위해서는 상당한 계산 리소스가 필요합니다.
+en_ko	PyTorch	We chose PyTorch as our deep learning framework because of its dynamic computational graph capabilities.	우리는 동적 계산 그래프 기능 덕분에 PyTorch를 우리의 딥러닝 프레임워크로 선택했습니다.
+ko_en	inference	데이터 마이닝에서 추론을 사용하면 고객의 구매 패턴을 이해할 수 있습니다.	In data mining, inference allows us to understand customer purchase patterns.
+ko_en	benchmark	기술적인 이유로 인해, 이전 버전의 모델은 현재 벤치마크에서 성능이 떨어질 수 있습니다.	Due to technical reasons, previous versions of the model may perform poorly on the current benchmark.
+en_ko	inference	The inference process involves multiple stages of computation and decision-making.	추론 과정은 계산과 의사결정의 여러 단계를 포함합니다.
+ko_en	PyTorch	PyTorch는 머신 러닝 모델을 빠르게 테스트하고 개선하는 데 이상적입니다.	PyTorch is ideal for quickly testing and improving machine learning models.
+ko_en	attention mechanism	어텐션 메커니즘이 적용된 모델은 언어 번역에서 특히 유용하게 작동합니다.	Models that apply the attention mechanism are particularly useful in language translation.
+ko_en	tokenizer	텍스트를 토큰화하는 방법에 대해 논의할 때, 토크나이저의 종류를 먼저 설명해야 합니다.	When discussing how to tokenize text, it's necessary to first explain the types of tokenizers.
+en_ko	quantization	After quantization, the model achieved comparable accuracy on the validation set.	양자화 이후 모델은 검증 세트에서 유사한 정확도를 달성했습니다.
+en_ko	attention mechanism	Attention mechanisms are crucial for understanding the context of a sequence in sequence-to-sequence models.	시퀀스-토-시퀀스 모델에서 시퀀스의 문맥을 이해하는 데 어텐션 메커니즘이 중요합니다.
+en_ko	RLHF	The development of RLHF has opened new possibilities for AI research.	RLHF의 발전은 AI 연구에 새로운 가능성을 열어주었습니다.
+en_ko	RLHF	RLHF was employed to optimize the sampling strategy for generating diverse text outputs.	다양한 텍스트 출력을 생성하기 위해 샘플링 전략을 최적화하기 위해 RLHF가 사용되었습니다.
+ko_en	latency	지연 시간을 최소화하는 알고리즘 개발은 AI 서비스의 성능 향상에 큰 도움이 될 것입니다.	Developing algorithms to minimize latency will greatly enhance the performance of AI services.
+en_ko	NVIDIA	NVIDIA announced the release of their latest GPU for deep learning.	NVIDIA는 최신 딥러닝 GPU의 출시를 발표했습니다.
+en_ko	benchmark	The latest version of the software is expected to surpass current benchmarks in speed.	최신 버전의 소프트웨어는 현재 속도 벤치마크를 넘어설 것으로 예상됩니다.
+ko_en	hallucination	AI 시스템의 훈련 과정에서 환각 현상이 발견되었습니다.	Hallucinations were found during the training process of the AI system.
+ko_en	embedding	텍스트 요약 프로세스에서 임베딩을 통해 문장의 중요 정보를 추출합니다.	In text summarization processes, embeddings help extract the important information from sentences.
+ko_en	fine-tuning	딥러닝 모델을 개선하기 위해 파인튜닝 과정이 필요합니다.	Fine-tuning process is necessary to improve the deep learning model.
+en_ko	quantization	The authors found that quantization reduced the model size by more than 50% without significant loss in accuracy.	저자는 양자화가 약 50%의 모델 크기를 줄이면서 상대적으로 정확도 손실이 거의 없었다는 것을 발견했습니다.
+ko_en	LLM	대형 언어 모델은 다양한 언어 처리 작업에 적용될 수 있습니다.	LLMs can be applied to a variety of language processing tasks.
+en_ko	fine-tuning	Fine-tuning is crucial for adapting pre-trained models to specific tasks.	특정 작업에 적응시키기 위해서는 미리 훈련된 모델에 파인튜닝이 중요합니다.
+en_ko	latency	Reducing latency is crucial for improving user experience in real-time systems.	실시간 시스템에서 사용자 경험을 향상시키려면 지연 시간을 줄이는 것이 중요합니다.
+ko_en	attention mechanism	어텐션 메커니즘이 적용된 뉴럴 네트워크를 사용하여 이메일 필터링 모델을 개발했습니다.	We developed an email filtering model using an attention mechanism applied to neural networks.
+ko_en	attention mechanism	어텐션 메커니즘을 사용하면 자연어 처리에서 문장의 특정 부분에 더 집중할 수 있습니다.	By using the attention mechanism, we can focus more on specific parts of a sentence in natural language processing.
+ko_en	RLHF	RLHF를 사용하면 AI가 인간의 감정과 행동을 더 잘 이해하고, 이를 바탕으로 더 정교한 의사결정을 할 수 있습니다.	Using RLHF allows AI to better understand human emotions and behaviors, enabling more refined decision-making.
+ko_en	HuggingFace	HuggingFace에서 제공하는 소스 코드를 수정하여 우리의 요구사항에 맞게 맞춤화했습니다.	We customized the source code provided by HuggingFace to meet our requirements.
+en_ko	hallucination	By carefully analyzing the causes of hallucinations, researchers can gain valuable insights into improving model reliability.	환각 현상의 원인을 체계적으로 분석함으로써 연구자들은 모델의 신뢰성을 향상시키는 데 필요한 귀중한 통찰력을 얻을 수 있습니다.
+en_ko	NVIDIA	NVIDIA's GPUs are crucial for running complex neural networks efficiently.	NVIDIA의 GPU는 복잡한 신경망을 효율적으로 실행하기 위해 필수적입니다.
+en_ko	inference	Inference time is often measured to optimize the model for real-world applications.	실제 애플리케이션을 위한 모델 최적화를 위해 종종 추론 시간이 측정된다.
+en_ko	hallucination	The phenomenon where the model produces outputs that seem plausible but are not supported by the data is known as hallucination.	모델이 데이터에 근거하지 않고도 가능한 것처럼 보이는 출력을 생성하는 현상은 환각 현상이라 알려져 있습니다.
+en_ko	PyTorch	During the training process, we used PyTorch’s automatic differentiation to optimize the model parameters.	훈련 과정에서 우리는 PyTorch의 자동 미분을 사용하여 모델 매개변수를 최적화했습니다.
+en_ko	tokenizer	During preprocessing, the tokenizer converts the raw text into tokens.	전처리 과정에서 토큰화 토크나이저는 원시 텍스트를 토큰으로 변환합니다.
+ko_en	PyTorch	PyTorch를 통해 학습된 모델을 직관적으로 이해하고 수정할 수 있습니다.	With PyTorch, you can intuitively understand and modify the trained models.
+en_ko	LLM	In this paper, we propose a new method to fine-tune LLMs for specific tasks.	이 논문에서는 특정 작업을 위한 대형 언어 모델을 미세 조정하기 위한 새로운 방법을 제안합니다.
+en_ko	quantization	The model's performance was significantly improved after applying quantization.	모델의 성능이 양자화를 적용한 후 크게 향상되었습니다.
+ko_en	RLHF	RLHF 기법을 사용하여 대화형 AI 시스템을 개선하는 것이 가능해졌습니다.	The use of RLHF techniques has made it possible to improve conversational AI systems.
+ko_en	RLHF	RLHF 기반의 훈련으로 인해 AI 모델의 결정이 더욱 공정해졌습니다.	The AI model's decisions became more fair thanks to RLHF-based training.
+ko_en	PyTorch	PyTorch는 텐서 계산과 자동 미분을 모두 지원하므로 딥러닝 연구에 매우 유용합니다.	PyTorch supports both tensor computation and automatic differentiation, making it very useful for deep learning research.
+ko_en	LLM	최근에 출시된 대형 언어 모델은 기존의 AI 시스템보다 훨씬 강력합니다.	The recently released LLM is much more powerful than existing AI systems.
+en_ko	NVIDIA	During the experiment, the researchers found that NVIDIA GPUs provided better accuracy than CPUs in image recognition tasks.	실험 중에 연구팀은 이미지 인식 작업에서 NVIDIA GPU가 CPU보다 더 뛰어난 정확도를 제공한다는 것을 발견했습니다.
+ko_en	LLM	대형 언어 모델을 사용하여 대화형 AI 시스템을 개발하였습니다.	We developed a conversational AI system using an LLM.
+ko_en	inference	클라우드 서비스 제공업체는 사용자의 이용 패턴에서 추론을 통해 비즈니스 인사이트를 제공합니다.	Cloud service providers provide business insights through inference of user usage patterns.
+ko_en	quantization	양자화를 통해 모델의 복잡성과 관련된 에너지 소모를 줄이는 연구를 진행하였습니다.	We conducted research to reduce energy consumption related to model complexity through quantization.
+ko_en	benchmark	새로운 모델의 성능을 테스트하기 위해 여러 벤치마크를 사용하여 실험을 진행하였습니다.	We conducted experiments using multiple benchmarks to test the performance of the new model.
+en_ko	benchmark	Our model achieved state-of-the-art performance on the benchmark, surpassing the previous record by 5%.	우리 모델은 벤치마크에서 최첨단 성능을 거두어 이전 기록을 5% 초과로 뛰어넘음
+ko_en	throughput	최근의 업데이트를 통해 애플리케이션의 처리량이 20% 늘어났습니다.	Following the recent update, the application throughput increased by 20%.
+ko_en	latency	지연 시간이 낮아지면, 클라우드 기반의 AI 서비스의 응답성이 향상됩니다.	Reducing latency improves the responsiveness of cloud-based AI services.
+en_ko	throughput	The throughput of the streaming processing system was improved by implementing a more efficient scheduling algorithm.	스트리밍 처리 시스템의 처리량을 개선하기 위해 효율적인 스케줄링 알고리즘을 구현했습니다
+en_ko	tokenizer	Our tokenizer handles both words and subwords for better representation learning.	더 나은 표현 학습을 위해 단어와 서브워드 모두를 처리하는 토크나이저가 있습니다.
+en_ko	inference	The inference process required additional resources for handling large datasets.	대량 데이터 처리를 위해 추론 과정에 추가 리소스가 필요했다.
+ko_en	throughput	시스템의 처리량을 높이기 위해 쿠어즈 기반의 병렬 처리 방법을 도입하였습니다.	To increase the system throughput, we introduced a parallel processing method based on CUDA.
+en_ko	latency	The latency between the client and server is a major concern for online gaming.	클라이언트와 서버 간의 지연 시간은 온라인 게임에서 큰 문제가 됩니다.
+ko_en	fine-tuning	파인튜닝 작업을 수행하기 전에 모델의 초기 가중치를 설정하였습니다.	We set the initial weights of the model before performing the fine-tuning task.
+ko_en	fine-tuning	모든 사용자의 피드백을 고려해 파인튜닝을 진행하면, 모델의 일반화 능력이 더욱 높아질 것입니다.	By considering all user feedback during fine-tuning, the model's generalization capability will be significantly enhanced.
+ko_en	quantization	양자화의 주요 목표 중 하나는 연산 시간을 단축시키는 것입니다.	One of the main goals of quantization is to shorten the computation time.
+ko_en	hallucination	모델의 성능을 개선하려면, 환각 현상을 줄이는 것이 중요합니다.	To improve model performance, reducing hallucinations is crucial.
+en_ko	RLHF	RLHF is critical for ensuring human values are aligned with AI behavior in ethical AI applications.	윤리적인 AI 애플리케이션에서 RLHF는 인간 가치가 AI 행동과 일치하는 것을 보장하는 데 중요합니다.
+ko_en	hallucination	기계 번역 도구에서 환각 현상은 원문과 완전히 다른 내용이 포함될 수 있습니다.	In machine translation tools, hallucinations can include content that is completely different from the original text.
+ko_en	NVIDIA	최근 NVIDIA가 발표한 새로운 AI 솔루션은 기존 제품보다 훨씬 빠르고 강합니다.	NVIDIA's recently announced new AI solution is much faster and stronger than existing products.
+ko_en	benchmark	다양한 하이퍼파라미터를 시험한 후, 최적의 조합을 찾기 위해 벤치마크를 반복적으로 수행하였습니다.	After testing various hyperparameters, we repeatedly performed benchmarks to find the optimal combination.
+ko_en	tokenizer	텍스트 데이터의 토큰화 작업은 매우 중요하며, 이를 위해 다양한 토크나이저들이 사용됩니다.	Tokenizing text data is very important, and various tokenizers are used for this purpose.
+en_ko	fine-tuning	The researchers performed fine-tuning to adapt the pre-trained model for their new dataset.	연구팀은 새로운 데이터셋에 맞추기 위해 미리 훈련된 모델을 파인튜닝했습니다.
+ko_en	quantization	양자화는 기계 학습 모델의 크기와 복잡성을 줄이는 중요한 전략입니다.	Quantization is a crucial strategy for reducing the size and complexity of machine learning models.
+ko_en	latency	지연 시간이 감소하면, 모델의 훈련 속도 또한 향상될 것입니다.	Reducing latency will also improve the training speed of the model.
+ko_en	inference	AI 시스템의 성능을 향상시키기 위해, 우리는 사용자의 행동에서 추론을 통해 행동 패턴을 파악해야 합니다.	To improve AI system performance, we need to identify behavior patterns through inference of user actions.
+ko_en	HuggingFace	HuggingFace에서 공개된 데이터셋을 이용하여 실험을 진행하였습니다.	We conducted the experiment using the dataset publicly available from HuggingFace.
+en_ko	LLM	The recent advancements in LLMs have significantly improved text generation capabilities.	최근 대형 언어 모델의 발전은 텍스트 생성 능력에 큰 도움을 주었습니다.
+ko_en	NVIDIA	딥러닝 프로젝트를 위한 최적의 성능을 위해 NVIDIA 그래픽 카드를 선택했습니다.	I chose an NVIDIA graphics card for optimal performance in my deep learning project.
+ko_en	HuggingFace	저는 HuggingFace의 데이터셋을 사용해서 모델을 훈련시켰습니다.	I trained my model using the dataset from HuggingFace.
+en_ko	benchmark	Our system achieved state-of-the-art performance, setting a new benchmark.	우리 시스템은 최상의 성능을 달성하여 새로운 벤치마크를 세웠습니다.
+en_ko	tokenizer	The tokenizer helps in splitting the text into tokens that can be processed by the machine learning model.	텍스트를 머신러닝 모델이 처리할 수 있는 토큰으로 분할하는 데 도움을 주는 토크나이저가 있습니다.
+en_ko	attention mechanism	The design of an attention mechanism can influence the overall performance and efficiency of a deep learning system.	어텐션 메커니즘의 설계는 딥러닝 시스템의 전체 성능과 효율성에 큰 영향을 미칠 수 있습니다.
+en_ko	hallucination	One common challenge in building robust models is dealing with the occasional occurrence of hallucinations.	내구성이 강한 모델을 구축하는 하나의 일반적인 도전은 환각 현상의 간헐적인 발생을 관리하는 것입니다.
+en_ko	throughput	The throughput of the GPU accelerated model was found to be twice as high as that of the CPU-only version.	GPU 가속화 모델의 처리량은 CPU만 있는 버전의 두 배 이상이었습니다.
+ko_en	embedding	데이터를 임베딩한 뒤, 차원 축소 기법을 사용하여 더 효율적인 모델을 구축합니다.	After embedding the data, we use dimensionality reduction techniques to build a more efficient model.
+en_ko	embedding	Embedding methods can be used for unsupervised learning tasks.	임베딩 방법은 비지도 학습 작업에 사용될 수 있습니다.
+en_ko	throughput	We evaluated the throughput of the system at different stages of the application lifecycle.	응용 프로그램 라이프사이클의 다양한 단계에서 시스템의 처리량을 평가했습니다
+en_ko	PyTorch	PyTorch's dynamic graphing feature enables efficient debugging and optimization of models.	PyTorch의 동적 그래프 기능은 모델의 효과적인 디버깅과 최적화를 가능하게 합니다.
+ko_en	throughput	빅데이터 처리량을 높이기 위해 고성능 클러스터를 구축하였습니다.	To increase big data processing throughput, we built a high-performance cluster.
+ko_en	NVIDIA	AI 모델을 훈련시키기 위해서는 NVIDIA 그래픽 카드가 필수적입니다.	An NVIDIA graphics card is essential for training AI models.
+ko_en	embedding	텍스트 인코딩에서 임베딩은 단어들을 숫자 벡터로 변환하는 기법입니다.	In text encoding, embedding is a technique that converts words into numerical vectors.
