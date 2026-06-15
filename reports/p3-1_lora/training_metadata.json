@@ -1,0 +1,49 @@
+{
+  "experiment": "P3-1_lora_training",
+  "model": "facebook/nllb-200-distilled-600M",
+  "lora_config": {
+    "rank": 16,
+    "lora_alpha": 32,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "out_proj",
+      "fc1",
+      "fc2"
+    ],
+    "lora_dropout": 0.05
+  },
+  "training": {
+    "n_train": 1900,
+    "n_dev": 212,
+    "n_epochs_run": 3,
+    "chosen_epoch": 3,
+    "batch_size_per_step": 4,
+    "grad_accum": 4,
+    "effective_batch": 16,
+    "lr": 0.0002,
+    "warmup_steps": 100,
+    "total_optimizer_steps": 357,
+    "train_losses": [
+      1.4387,
+      0.1463,
+      0.0688
+    ],
+    "dev_losses": [
+      0.2522,
+      0.095,
+      0.0783
+    ],
+    "best_dev_loss": 0.0783,
+    "total_train_time_s": 168.2
+  },
+  "params": {
+    "trainable": 8650752,
+    "total": 623724544,
+    "trainable_pct": 1.387
+  },
+  "peak_vram_train_mb": 3465.5,
+  "ru_maxrss_kb": 4767112,
+  "adapter_path": "/home/jay/Desktop/Jay-per/adaptive-live-translator/reports/p3-1_lora/adapter"
+}

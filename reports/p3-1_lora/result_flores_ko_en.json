@@ -1,0 +1,10 @@
+{
+  "experiment": "P3-1_lora_eval",
+  "direction": "ko_en",
+  "dataset": "flores_devtest",
+  "n_segments": 1012,
+  "base_bleu": 24.88,
+  "adapter_bleu": 21.48,
+  "regression": 3.4,
+  "tokenize_used": "13a"
+}

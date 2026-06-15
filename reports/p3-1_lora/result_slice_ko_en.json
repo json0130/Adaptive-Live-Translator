@@ -1,0 +1,5692 @@
+{
+  "experiment": "P3-1_lora_eval",
+  "direction": "ko_en",
+  "dataset": "ml_glossary_slice",
+  "n_segments": 146,
+  "bleu": {
+    "base": 20.65,
+    "adapter": 26.48,
+    "regression": -5.82,
+    "tokenize_used": "13a"
+  },
+  "base": {
+    "total_triggered": 251,
+    "total_correct": 114,
+    "overall_recall": 0.4542,
+    "dnt_triggered": 51,
+    "dnt_correct": 51,
+    "dnt_recall": 1.0,
+    "nondnt_triggered": 200,
+    "nondnt_correct": 63,
+    "nondnt_recall": 0.315,
+    "per_term": [
+      {
+        "src": "LLM",
+        "tgt": "대형 언어 모델",
+        "dnt": false,
+        "triggered": 47,
+        "correct": 0,
+        "recall": 0.0
+      },
+      {
+        "src": "fine-tuning",
+        "tgt": "파인튜닝",
+        "dnt": false,
+        "triggered": 16,
+        "correct": 1,
+        "recall": 0.0625
+      },
+      {
+        "src": "inference",
+        "tgt": "추론",
+        "dnt": false,
+        "triggered": 27,
+        "correct": 19,
+        "recall": 0.7037
+      },
+      {
+        "src": "embedding",
+        "tgt": "임베딩",
+        "dnt": false,
+        "triggered": 14,
+        "correct": 5,
+        "recall": 0.3571
+      },
+      {
+        "src": "attention mechanism",
+        "tgt": "어텐션 메커니즘",
+        "dnt": false,
+        "triggered": 8,
+        "correct": 1,
+        "recall": 0.125
+      },
+      {
+        "src": "tokenizer",
+        "tgt": "토크나이저",
+        "dnt": false,
+        "triggered": 17,
+        "correct": 3,
+        "recall": 0.1765
+      },
+      {
+        "src": "hallucination",
+        "tgt": "환각 현상",
+        "dnt": false,
+        "triggered": 12,
+        "correct": 12,
+        "recall": 1.0
+      },
+      {
+        "src": "RLHF",
+        "tgt": "RLHF",
+        "dnt": true,
+        "triggered": 12,
+        "correct": 12,
+        "recall": 1.0
+      },
+      {
+        "src": "NVIDIA",
+        "tgt": "NVIDIA",
+        "dnt": true,
+        "triggered": 15,
+        "correct": 15,
+        "recall": 1.0
+      },
+      {
+        "src": "PyTorch",
+        "tgt": "PyTorch",
+        "dnt": true,
+        "triggered": 11,
+        "correct": 11,
+        "recall": 1.0
+      },
+      {
+        "src": "HuggingFace",
+        "tgt": "HuggingFace",
+        "dnt": true,
+        "triggered": 13,
+        "correct": 13,
+        "recall": 1.0
+      },
+      {
+        "src": "benchmark",
+        "tgt": "벤치마크",
+        "dnt": false,
+        "triggered": 15,
+        "correct": 15,
+        "recall": 1.0
+      },
+      {
+        "src": "throughput",
+        "tgt": "처리량",
+        "dnt": false,
+        "triggered": 19,
+        "correct": 0,
+        "recall": 0.0
+      },
+      {
+        "src": "latency",
+        "tgt": "지연 시간",
+        "dnt": false,
+        "triggered": 12,
+        "correct": 1,
+        "recall": 0.0833
+      },
+      {
+        "src": "quantization",
+        "tgt": "양자화",
+        "dnt": false,
+        "triggered": 13,
+        "correct": 6,
+        "recall": 0.4615
+      }
+    ]
+  },
+  "adapter": {
+    "total_triggered": 251,
+    "total_correct": 222,
+    "overall_recall": 0.8845,
+    "dnt_triggered": 51,
+    "dnt_correct": 51,
+    "dnt_recall": 1.0,
+    "nondnt_triggered": 200,
+    "nondnt_correct": 171,
+    "nondnt_recall": 0.855,
+    "per_term": [
+      {
+        "src": "LLM",
+        "tgt": "대형 언어 모델",
+        "dnt": false,
+        "triggered": 47,
+        "correct": 46,
+        "recall": 0.9787
+      },
+      {
+        "src": "fine-tuning",
+        "tgt": "파인튜닝",
+        "dnt": false,
+        "triggered": 16,
+        "correct": 15,
+        "recall": 0.9375
+      },
+      {
+        "src": "inference",
+        "tgt": "추론",
+        "dnt": false,
+        "triggered": 27,
+        "correct": 26,
+        "recall": 0.963
+      },
+      {
+        "src": "embedding",
+        "tgt": "임베딩",
+        "dnt": false,
+        "triggered": 14,
+        "correct": 1,
+        "recall": 0.0714
+      },
+      {
+        "src": "attention mechanism",
+        "tgt": "어텐션 메커니즘",
+        "dnt": false,
+        "triggered": 8,
+        "correct": 8,
+        "recall": 1.0
+      },
+      {
+        "src": "tokenizer",
+        "tgt": "토크나이저",
+        "dnt": false,
+        "triggered": 17,
+        "correct": 13,
+        "recall": 0.7647
+      },
+      {
+        "src": "hallucination",
+        "tgt": "환각 현상",
+        "dnt": false,
+        "triggered": 12,
+        "correct": 12,
+        "recall": 1.0
+      },
+      {
+        "src": "RLHF",
+        "tgt": "RLHF",
+        "dnt": true,
+        "triggered": 12,
+        "correct": 12,
+        "recall": 1.0
+      },
+      {
+        "src": "NVIDIA",
+        "tgt": "NVIDIA",
+        "dnt": true,
+        "triggered": 15,
+        "correct": 15,
+        "recall": 1.0
+      },
+      {
+        "src": "PyTorch",
+        "tgt": "PyTorch",
+        "dnt": true,
+        "triggered": 11,
+        "correct": 11,
+        "recall": 1.0
+      },
+      {
+        "src": "HuggingFace",
+        "tgt": "HuggingFace",
+        "dnt": true,
+        "triggered": 13,
+        "correct": 13,
+        "recall": 1.0
+      },
+      {
+        "src": "benchmark",
+        "tgt": "벤치마크",
+        "dnt": false,
+        "triggered": 15,
+        "correct": 15,
+        "recall": 1.0
+      },
+      {
+        "src": "throughput",
+        "tgt": "처리량",
+        "dnt": false,
+        "triggered": 19,
+        "correct": 18,
+        "recall": 0.9474
+      },
+      {
+        "src": "latency",
+        "tgt": "지연 시간",
+        "dnt": false,
+        "triggered": 12,
+        "correct": 10,
+        "recall": 0.8333
+      },
+      {
+        "src": "quantization",
+        "tgt": "양자화",
+        "dnt": false,
+        "triggered": 13,
+        "correct": 7,
+        "recall": 0.5385
+      }
+    ]
+  },
+  "per_segment": [
+    {
+      "seg_idx": 0,
+      "src": "우리는 1000억 토큰으로 대형 언어 모델을 학습시켰습니다.",
+      "reference": "We trained the LLM on a hundred billion tokens.",
+      "base_out": "We learned a large language model with 100 billion tokens.",
+      "adapter_out": "We learned LLMs with 100 billion tokens.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 1,
+      "src": "도메인 특화 데이터로 대형 언어 모델을 파인튜닝하면 환각 현상이 감소합니다.",
+      "reference": "Fine-tuning a large language model on domain-specific data reduces hallucination.",
+      "base_out": "Painting large language models with domain-specific data reduces hallucinations.",
+      "adapter_out": "Fine-tuning LLMs with domain-specific data reduces hallucinations.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        },
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        },
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 2,
+      "src": "새로운 대형 언어 모델은 해당 벤치마크에서 최첨단 결과를 달성합니다.",
+      "reference": "The new LLM achieves state-of-the-art results on the benchmark.",
+      "base_out": "The new large language model achieves state-of-the-art results on the benchmark.",
+      "adapter_out": "New LLMs achieve state-of-the-art results in their benchmarks.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 3,
+      "src": "int4 양자화를 통해 추론 지연 시간을 단축했습니다.",
+      "reference": "Inference latency was reduced by quantization to int4.",
+      "base_out": "And we cut the delay time of the inference by using int4 quantization.",
+      "adapter_out": "It reduced inference latency through int4 quantization.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": false
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": true
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 4,
+      "src": "어텐션 메커니즘은 모델이 관련 토큰에 집중할 수 있게 합니다.",
+      "reference": "The attention mechanism allows the model to focus on relevant tokens.",
+      "base_out": "The extension mechanism allows the model to focus on the relevant tokens.",
+      "adapter_out": "Attention mechanisms allow models to focus on relevant tokens.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 5,
+      "src": "두 대형 언어 모델 추론 엔진의 처리량을 비교했습니다.",
+      "reference": "We compared the throughput of two LLM inference engines.",
+      "base_out": "We compared the processing power of two large language model inference engines.",
+      "adapter_out": "We compared throughput in LLMs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": false
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 6,
+      "src": "임베딩 차원은 모델의 표현 능력에 영향을 줍니다.",
+      "reference": "Embedding dimensions affect the model's representational capacity.",
+      "base_out": "The embedding dimension affects the model's ability to express itself.",
+      "adapter_out": "Embedded dimensions affect the expressiveness of models.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 7,
+      "src": "토크나이저는 대형 언어 모델을 위해 텍스트를 서브워드 단위로 분할합니다.",
+      "reference": "The tokenizer splits text into subword units for the LLM.",
+      "base_out": "TokenNiger divides text into subword units for large language models.",
+      "adapter_out": "Tokenizers break down text into subword units for LLMs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 8,
+      "src": "RLHF는 대형 언어 모델을 인간의 선호에 정렬하는 데 사용되었습니다.",
+      "reference": "RLHF was used to align the LLM with human preferences.",
+      "base_out": "RLHF has been used to sort large language models into human preferences.",
+      "adapter_out": "RLHF was used to align LLMs to human preference.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 9,
+      "src": "NVIDIA는 대형 언어 모델 추론에 최적화된 새 GPU를 출시했습니다.",
+      "reference": "NVIDIA released a new GPU optimized for LLM inference.",
+      "base_out": "NVIDIA has released a new GPU that's optimized for big language model inference.",
+      "adapter_out": "NVIDIA released new GPUs optimized for LLM inference.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 10,
+      "src": "우리는 PyTorch로 학습 루프를 구현했습니다.",
+      "reference": "We implemented the training loop in PyTorch.",
+      "base_out": "We implemented the learning loop with PyTorch.",
+      "adapter_out": "We implemented learning loops with PyTorch.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 11,
+      "src": "모델 체크포인트는 HuggingFace에 호스팅됩니다.",
+      "reference": "The model checkpoints are hosted on HuggingFace.",
+      "base_out": "The model checkpoint is hosted on HuggingFace.",
+      "adapter_out": "Model checkpoints are hosted on HuggingFace.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 12,
+      "src": "벤치마크는 추론, 수학, 코드 생성을 다룹니다.",
+      "reference": "The benchmark covers reasoning, math, and code generation.",
+      "base_out": "Benchmarks are all about reasoning, math, code creation.",
+      "adapter_out": "Benchmarks cover inference, mathematics, and code creation.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": false
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 13,
+      "src": "더 높은 처리량은 더 큰 배치 크기가 필요합니다.",
+      "reference": "Higher throughput requires larger batch sizes.",
+      "base_out": "Higher processing needs larger batch sizes.",
+      "adapter_out": "Higher throughput requires larger layers.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 14,
+      "src": "종단 간 지연 시간은 100밀리초 이하로 유지해야 합니다.",
+      "reference": "End-to-end latency must stay under 100 milliseconds.",
+      "base_out": "The inter-phase delay should be kept below 100 milliseconds.",
+      "adapter_out": "Interval time should be kept under 100 milliseconds.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 15,
+      "src": "int8 양자화는 처리량을 2배 향상시켰습니다.",
+      "reference": "Quantization to int8 yielded a 2x throughput improvement.",
+      "base_out": "Int8 quantization has doubled the processing.",
+      "adapter_out": "Int8 quantization improved throughput by twice.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 16,
+      "src": "LoRA 어댑터를 사용한 파인튜닝은 기본 대형 언어 모델 가중치를 보존합니다.",
+      "reference": "Fine-tuning with LoRA adapters preserves the base LLM weights.",
+      "base_out": "Fine tuning using the LoRA adapter preserves the basic weight of the large language model.",
+      "adapter_out": "Fine-tuning using the LoRA adapter preserves the weight of the basic LLMs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 17,
+      "src": "토크나이저 어휘는 250,000개의 서브워드 토큰을 포함합니다.",
+      "reference": "The tokenizer vocabulary contains 250,000 subword tokens.",
+      "base_out": "The TokenNizer dictionary includes 250,000 subword tokens.",
+      "adapter_out": "Tokenizers vocabulary includes 250,000 subword tokens.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 18,
+      "src": "우리는 동일한 벤치마크 세트에서 다섯 개의 대형 언어 모델을 평가했습니다.",
+      "reference": "We evaluated five LLMs on the same benchmark set.",
+      "base_out": "We evaluated five large language models from the same benchmark set.",
+      "adapter_out": "We evaluated five LLMs in the same set of benchmarks.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 19,
+      "src": "정밀도를 낮추면 환각 현상 비율이 종종 증가합니다.",
+      "reference": "Reducing precision often increases hallucination rates.",
+      "base_out": "Lowering the accuracy often increases the rate of hallucinations.",
+      "adapter_out": "Lower accuracy often increases hallucination rates.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 20,
+      "src": "임베딩 모델은 1024차원 벡터를 생성합니다.",
+      "reference": "The embedding model produces 1024-dimensional vectors.",
+      "base_out": "The embedding model generates a 1024-dimensional vector.",
+      "adapter_out": "Embedded models produce 1024-dimensional vectors.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 21,
+      "src": "PyTorch와 HuggingFace는 대형 언어 모델 개발의 표준 도구입니다.",
+      "reference": "PyTorch and HuggingFace are standard tools for LLM development.",
+      "base_out": "PyTorch and HuggingFace are standard tools for developing large language models.",
+      "adapter_out": "PyTorch and HuggingFace are standard tools for LLM development.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        },
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        },
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 22,
+      "src": "NVIDIA H100 GPU는 대형 언어 모델 추론을 크게 가속화합니다.",
+      "reference": "NVIDIA H100 GPUs accelerate LLM inference significantly.",
+      "base_out": "The NVIDIA H100 GPU greatly speeds up the big language model inference.",
+      "adapter_out": "The NVIDIA H100 GPU significantly accelerates LLM inference.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 23,
+      "src": "어텐션 메커니즘은 시퀀스 길이에 따라 이차적으로 확장됩니다.",
+      "reference": "The attention mechanism scales quadratically with sequence length.",
+      "base_out": "The tension mechanism expands in a binary way depending on the length of the sequence.",
+      "adapter_out": "Attention mechanisms are extended alternatively depending on sequence length.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 24,
+      "src": "추측적 디코딩을 적용한 후 추론 처리량이 향상되었습니다.",
+      "reference": "Inference throughput improved after applying speculative decoding.",
+      "base_out": "And then we had a lot of speculative decoding, and then we had a lot of better inference processing.",
+      "adapter_out": "inference throughput improved after application of inferential decoding.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 25,
+      "src": "환각 현상은 배포된 대형 언어 모델에서 여전히 주요 과제입니다.",
+      "reference": "Hallucination remains a major challenge in deployed LLMs.",
+      "base_out": "Hallucinations are still a major challenge in distributed language models.",
+      "adapter_out": "Hallucinations are still major problems in distributed LLMs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 26,
+      "src": "이 벤치마크는 지난달 HuggingFace가 공개했습니다.",
+      "reference": "The benchmark was released by HuggingFace last month.",
+      "base_out": "This benchmark was released last month by HuggingFace.",
+      "adapter_out": "This benchmark was released last month by HuggingFace.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 27,
+      "src": "양자화 인식 파인튜닝은 사후 학습 양자화보다 더 많은 정확도를 보존합니다.",
+      "reference": "Quantization-aware fine-tuning preserves more accuracy than post-training quantization.",
+      "base_out": "Quantum recognition painstaking preserves more accuracy than post-mortem learning quantumization.",
+      "adapter_out": "Quantitative cognitive fine-tuning preserves more accuracy than post-learning quantization.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 28,
+      "src": "토크나이저 오버헤드를 포함한 종단 간 지연 시간을 측정했습니다.",
+      "reference": "We measured end-to-end latency including tokenizer overhead.",
+      "base_out": "We measured the inter-phase delay, including the Toknaiser overhead.",
+      "adapter_out": "Measured interstitial latency, including tokenizers overheads.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 29,
+      "src": "이 대형 언어 모델은 RLHF 부산물을 제거하도록 필터링된 데이터로 학습되었습니다.",
+      "reference": "The LLM was trained on data filtered to remove RLHF artifacts.",
+      "base_out": "This large language model was learned from filtered data to remove RLHF byproducts.",
+      "adapter_out": "This LLM was learned through filtered data to eliminate RLHF byproducts.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 30,
+      "src": "임베딩 유사도는 벡터 데이터베이스에서 검색을 주도합니다.",
+      "reference": "Embedding similarity drives retrieval in vector databases.",
+      "base_out": "Embedded analogies lead to a search in a vector database.",
+      "adapter_out": "Embedded similarities lead search in vector databases.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 31,
+      "src": "처리량 병목 현상은 토크나이저 단계에서 확인되었습니다.",
+      "reference": "The throughput bottleneck was identified as the tokenizer step.",
+      "base_out": "The phenomenon of the tank was confirmed in the process of the tokenizer stage.",
+      "adapter_out": "The problem of throughput is confirmed in tokenization.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 32,
+      "src": "NVIDIA의 CUDA 스택은 대부분의 대형 언어 모델 추론 프레임워크를 뒷받침합니다.",
+      "reference": "NVIDIA's CUDA stack underpins most LLM inference frameworks.",
+      "base_out": "NVIDIA's CUDA stack supports most of the major language model inference frameworks.",
+      "adapter_out": "NVIDIA's CUDA stack supports most LLM inference frameworks.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 33,
+      "src": "파인튜닝에는 NVIDIA A100 GPU 8대로 2주가 필요했습니다.",
+      "reference": "Fine-tuning required 8 NVIDIA A100 GPUs for two weeks.",
+      "base_out": "It took two weeks to pin-tune the NVIDIA A100 GPU 8.",
+      "adapter_out": "Fine-tuning required two weeks under NVIDIA A100 GPU 8.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 34,
+      "src": "환각 현상 비율은 RLHF 이후 30퍼센트 감소했습니다.",
+      "reference": "The hallucination rate dropped 30 percent after RLHF.",
+      "base_out": "The hallucination rate has dropped 30 percent since RLHF.",
+      "adapter_out": "Hallucinations rates have decreased by 30 percent since RLHF.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        },
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        },
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 35,
+      "src": "지연 시간에 민감한 애플리케이션은 더 작은 대형 언어 모델을 선호합니다.",
+      "reference": "Latency-sensitive applications prefer smaller LLMs.",
+      "base_out": "Late-term sensitive applications prefer smaller, larger language models.",
+      "adapter_out": "Applications that are sensitive to latency prefer smaller LLMs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 36,
+      "src": "벤치마크 결과는 70억 매개변수 이상의 모델이 유리합니다.",
+      "reference": "The benchmark results favor models above 7 billion parameters.",
+      "base_out": "The benchmark results are favorable for more than 7 billion models of parameters.",
+      "adapter_out": "Benchmark results favor more than 7 billion models of parameters.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 37,
+      "src": "HuggingFace transformers를 사용해 대형 언어 모델 가중치를 로드했습니다.",
+      "reference": "We loaded the LLM weights using HuggingFace transformers.",
+      "base_out": "We loaded large language model weightings using HuggingFace transformers.",
+      "adapter_out": "We loaded LLMs using HuggingFace transformers.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 38,
+      "src": "양자화된 대형 언어 모델 추론은 소비자용 하드웨어에서 실현 가능합니다.",
+      "reference": "Inference on quantized LLMs is feasible on consumer hardware.",
+      "base_out": "Quantumized large-scale language model inferences can be realized in consumer hardware.",
+      "adapter_out": "Quantitative LLM inference is realized in consumer hardware.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 39,
+      "src": "토크나이저는 학습과 추론 사이에 일치해야 합니다.",
+      "reference": "The tokenizer must match between training and inference.",
+      "base_out": "Tokenagers have to match learning and reasoning.",
+      "adapter_out": "Tokenizers need to coincide between learning and inference.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": false
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 40,
+      "src": "달러당 처리량은 표준 비교 지표입니다.",
+      "reference": "Throughput per dollar is the standard comparison metric.",
+      "base_out": "The processing rate per dollar is a standard comparison.",
+      "adapter_out": "Per-dollar throughput is standard benchmarks.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 41,
+      "src": "임베딩 캐싱은 추론 중 중복 계산을 줄입니다.",
+      "reference": "Embedding caching reduces redundant computation during inference.",
+      "base_out": "Embedded caching reduces the computation of the overlap in the inference.",
+      "adapter_out": "Embedded caching reduces inference overlay.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 42,
+      "src": "PyTorch 2.0은 대형 언어 모델을 위한 컴파일 기반 최적화를 도입했습니다.",
+      "reference": "PyTorch 2.0 introduced compile-based optimization for LLMs.",
+      "base_out": "PyTorch 2.0 introduced compile-based optimization for large language models.",
+      "adapter_out": "PyTorch 2.0 introduced compile-based optimization for LLMs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 43,
+      "src": "RLHF는 보상 모델과 정책 최적화를 결합합니다.",
+      "reference": "RLHF combines a reward model with policy optimization.",
+      "base_out": "RLHF combines reward models with policy optimization.",
+      "adapter_out": "RLHF combines reward models with policy optimization.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 44,
+      "src": "어텐션 메커니즘의 KV 캐시는 추론 시 메모리 사용량을 지배합니다.",
+      "reference": "The attention mechanism's KV cache dominates memory usage at inference.",
+      "base_out": "KV caches in the acceleration mechanism control the memory usage during the reasoning.",
+      "adapter_out": "KV cache in attention mechanisms dominates inference-side memory usage.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": false
+        },
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 45,
+      "src": "int4 양자화는 대형 언어 모델의 메모리 사용량을 절반으로 줄였습니다.",
+      "reference": "Quantization to int4 halved the LLM's memory footprint.",
+      "base_out": "Int4 quantization has halved memory usage in large language models.",
+      "adapter_out": "Int4 quantization reduced memory usage in LLMs by half.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 46,
+      "src": "PyTorch 프로파일러로 추론 파이프라인을 프로파일링했습니다.",
+      "reference": "We profiled the inference pipeline with PyTorch profiler.",
+      "base_out": "I profiled the inference pipeline with PyTorch profiles.",
+      "adapter_out": "We profiled inference pipelines with the PyTorch profile.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 47,
+      "src": "HuggingFace 모델 카드는 벤치마크 방법론을 문서화했습니다.",
+      "reference": "The HuggingFace model card documented the benchmark methodology.",
+      "base_out": "HuggingFace model cards documented the benchmark methodology.",
+      "adapter_out": "The HuggingFace model card documented benchmark methodology.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 48,
+      "src": "저정밀도 산술은 NVIDIA Hopper GPU에서 처리량을 증가시킵니다.",
+      "reference": "Lower-precision arithmetic increases throughput on NVIDIA Hopper GPUs.",
+      "base_out": "Low-precision computing increases processing power in the NVIDIA Hopper GPU.",
+      "adapter_out": "Low-precision computing increases throughput in the NVIDIA Hopper GPU.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 49,
+      "src": "환각 현상 테스트는 대형 언어 모델 출력의 사실 일관성을 측정합니다.",
+      "reference": "Hallucination tests measure factual consistency of LLM outputs.",
+      "base_out": "Hallucinational phenomena testing measures the actual consistency of the output of large language models.",
+      "adapter_out": "Hallucination phenomenon testing measures the factual consistency of LLM outputs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 50,
+      "src": "합성 데이터로 파인튜닝하면 분포 이동 위험이 있습니다.",
+      "reference": "Fine-tuning on synthetic data risks distribution shift.",
+      "base_out": "If you're painstaking with synthetic data, there's a risk of distribution displacement.",
+      "adapter_out": "Fine-tuning with aggregated data risks distribution shift.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 51,
+      "src": "토크나이저는 바이트 페어 인코딩으로 학습되었습니다.",
+      "reference": "The tokenizer was trained with byte-pair encoding.",
+      "base_out": "TokenNiger was learned by byte fair encoding.",
+      "adapter_out": "Tokenizers were learned through byte-ferre encoding.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 52,
+      "src": "지연 시간 분산은 평균 지연 시간보다 사용자 경험에 더 큰 영향을 줍니다.",
+      "reference": "Latency variance affects user experience more than mean latency.",
+      "base_out": "Delay time distribution has a bigger impact on user experience than average delay time.",
+      "adapter_out": "Latency allocations have greater impact on user experience than average latency.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 53,
+      "src": "임베딩 모델은 검색 벤치마크로 평가할 수 있습니다.",
+      "reference": "Embedding models can be evaluated with retrieval benchmarks.",
+      "base_out": "Embedded models can be evaluated as search benchmarks.",
+      "adapter_out": "Embedded models can be evaluated as search benchmarks.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 54,
+      "src": "대형 언어 모델은 존재하지 않는 논문에 대해 환각 현상을 일으켰습니다.",
+      "reference": "The LLM produced a hallucination about a non-existent paper.",
+      "base_out": "The big language model has created a hallucination about papers that don't exist.",
+      "adapter_out": "LLMs caused hallucinations for papers that did not exist.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 55,
+      "src": "RLHF 데이터로 파인튜닝하면 지시 따르기 성능이 향상되었습니다.",
+      "reference": "Fine-tuning on RLHF data improved instruction following.",
+      "base_out": "Painting with RLHF data improved the performance of the instruction.",
+      "adapter_out": "Fine-tuning with RLHF data improved instruction-follow performance.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        },
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        },
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 56,
+      "src": "NVIDIA Triton은 양자화된 대형 언어 모델을 프로덕션 처리량으로 서빙합니다.",
+      "reference": "NVIDIA Triton serves the quantized LLM at production throughput.",
+      "base_out": "NVIDIA Triton serves as a quantum large language model for production processing.",
+      "adapter_out": "NVIDIA Triton serves the quantized LLM model as production throughput.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 57,
+      "src": "vLLM과 같은 추론 엔진은 더 높은 처리량을 위해 요청을 배치합니다.",
+      "reference": "Inference engines like vLLM batch requests for higher throughput.",
+      "base_out": "An inference engine like vLLM places requests for higher processing power.",
+      "adapter_out": "inference engines such as vLLMs place requests for higher throughput.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 58,
+      "src": "어텐션 메커니즘의 소프트맥스는 fp16에서 수치적 불안정성을 일으킬 수 있습니다.",
+      "reference": "The attention mechanism's softmax can cause numerical instability at fp16.",
+      "base_out": "Softening of the tensile mechanism can cause numerical instability in fp16.",
+      "adapter_out": "Softmax in attention mechanisms can cause quantitative instability in fp16.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 59,
+      "src": "HuggingFace datasets는 메모리에 로드하지 않고 대규모 코퍼스를 스트리밍합니다.",
+      "reference": "HuggingFace datasets streams large corpora without loading into memory.",
+      "base_out": "HuggingFace datasets do not load into memory, but stream large-scale covers.",
+      "adapter_out": "HuggingFace datasets stream large-scale bodies without loading into memory.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 60,
+      "src": "토크나이저 불일치로 인해 대형 언어 모델이 추론 중 잘못된 출력을 생성했습니다.",
+      "reference": "Tokenizer mismatch caused the LLM to output garbage during inference.",
+      "base_out": "The Toknaiser inconsistency has led to a large language model that generates a false output in reasoning.",
+      "adapter_out": "Tokenization inconsistencies caused LLMs to produce incorrect output in inference.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": false
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 61,
+      "src": "종단 간 지연 시간이 500ms 목표 아래로 떨어졌습니다.",
+      "reference": "End-to-end latency dropped below the 500ms target.",
+      "base_out": "Inter-phase latency fell below the target of 500ms.",
+      "adapter_out": "Interval time fell below the goal of 500ms.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 62,
+      "src": "PyTorch의 autograd는 그래디언트 계산을 자동으로 처리합니다.",
+      "reference": "PyTorch's autograd handles the gradient computation automatically.",
+      "base_out": "PyTorch's autograd automatically processes the gradient calculation.",
+      "adapter_out": "PyTorch's autograd automates gradient computations, which are typically used in computer-generated languages.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 63,
+      "src": "파인튜닝 전 큐레이션된 혼합 데이터로 모델을 사전 학습시켰습니다.",
+      "reference": "We pretrained the model on a curated mixture before fine-tuning.",
+      "base_out": "We pre-learned the model using mixed data curated before Paintuning.",
+      "adapter_out": "Pre-learned models with pre-fine-tuning curated mixed data.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 64,
+      "src": "이 벤치마크는 최신 대형 언어 모델 출시에서 성능 저하를 드러냈습니다.",
+      "reference": "The benchmark exposed a regression in the latest LLM release.",
+      "base_out": "This benchmark has shown a decline in performance in the latest major language model releases.",
+      "adapter_out": "This benchmark exposed underperformance in recent LLMs releases.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 65,
+      "src": "NVIDIA의 TensorRT-LLM 라이브러리는 저지연 추론을 목표로 합니다.",
+      "reference": "NVIDIA's TensorRT-LLM library targets low-latency inference.",
+      "base_out": "NVIDIA's TensorRT-LLM library is focused on low-level inference.",
+      "adapter_out": "The TensorRT-LLM library in NVIDIA aims for low-level inference.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 66,
+      "src": "RLHF 데이터셋은 일반적으로 수천 건의 인간 주석이 필요합니다.",
+      "reference": "RLHF datasets typically require thousands of human annotations.",
+      "base_out": "RLHF datasets typically require thousands of human cells.",
+      "adapter_out": "RLHF datasets typically require thousands of human syllables.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 67,
+      "src": "768차원 임베딩은 문장 수준 검색에 일반적입니다.",
+      "reference": "Embedding dimensions of 768 are common for sentence-level retrieval.",
+      "base_out": "768-dimensional embedding is common in phrase-level searches.",
+      "adapter_out": "768-D embeddings are common in sentence-level searches.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 68,
+      "src": "토크나이저는 채팅 스타일 파인튜닝을 위한 특수 토큰을 추가했습니다.",
+      "reference": "The tokenizer added special tokens for chat-style fine-tuning.",
+      "base_out": "TokenNizer has added a special token for chat style fine tuning.",
+      "adapter_out": "Tokenizers added special tokens for chat style fine-tuning.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 69,
+      "src": "HuggingFace Inference Endpoint에 대형 언어 모델을 배포했습니다.",
+      "reference": "We deployed the LLM on a HuggingFace Inference Endpoint.",
+      "base_out": "We've deployed a large language model to HuggingFace Inference Endpoint.",
+      "adapter_out": "It deployed LLMs to the HuggingFace Inference Endpoint.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 70,
+      "src": "양자화는 모델 크기를 14GB에서 4GB로 줄였습니다.",
+      "reference": "Quantization reduced model size from 14 GB to 4 GB.",
+      "base_out": "Quantumization reduced the model size from 14GB to 4GB.",
+      "adapter_out": "Quantization reduced model sizes from 14GB to 4GB.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 71,
+      "src": "처리량 저하의 원인은 CUDA 커널 버그로 추적되었습니다.",
+      "reference": "The throughput regression was traced to a CUDA kernel bug.",
+      "base_out": "The cause of the low processing volume was traced to a CUDA kernel bug.",
+      "adapter_out": "The causes of underperformance were tracked by CUDA kernel bugs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 72,
+      "src": "환각 현상 점수는 사실 기반 질문-답변 쌍에서 더 신뢰할 수 있습니다.",
+      "reference": "Hallucination scoring is more reliable on factual question-answer pairs.",
+      "base_out": "Hallucination scores are more reliable in fact-based question-and-answer pairs.",
+      "adapter_out": "Hallucinations scores are more reliable in fact-based Q&A pairs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 73,
+      "src": "추론 배치는 GPU 활용도를 극적으로 향상시킵니다.",
+      "reference": "Inference batching dramatically improves GPU utilization.",
+      "base_out": "The mapping dramatically improves the GPU utilization.",
+      "adapter_out": "inference deployments dramatically improve GPU usability.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 74,
+      "src": "파인튜닝된 대형 언어 모델은 법률 문서 요약에 특화되었습니다.",
+      "reference": "The fine-tuned LLM specialized in legal document summarization.",
+      "base_out": "The large language model that was tuned was characterized by legal document summaries.",
+      "adapter_out": "Fine-tuning LLMs were characterized in legal document summaries.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 75,
+      "src": "토크나이저 정규화는 대형 언어 모델의 어휘 범위에 영향을 줍니다.",
+      "reference": "Tokenizer normalization affects the LLM's vocabulary coverage.",
+      "base_out": "Tokenization regulates the vocabulary range of large language models.",
+      "adapter_out": "Tokenization normalisation affects the range of vocabulary in LLMs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 76,
+      "src": "NVIDIA NeMo는 종단 간 대형 언어 모델 학습 도구를 제공합니다.",
+      "reference": "NVIDIA NeMo provides tools for end-to-end LLM training.",
+      "base_out": "NVIDIA NeMo provides a large language model learning tool for all classes.",
+      "adapter_out": "NVIDIA NeMo provides LLMs as an tools for cross-disciplinary language learning.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 77,
+      "src": "임베딩 코사인 유사도는 표준 검색 지표입니다.",
+      "reference": "Embedding cosine similarity is the standard retrieval metric.",
+      "base_out": "The embedded cursor is a standard search index.",
+      "adapter_out": "The similarity of embedded language is standard search indices.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 78,
+      "src": "PyTorch Lightning은 멀티 GPU 대형 언어 모델 학습을 단순화합니다.",
+      "reference": "PyTorch Lightning simplifies multi-GPU LLM training.",
+      "base_out": "PyTorch Lightning simplifies learning of multi-GPU large language models.",
+      "adapter_out": "PyTorch Lightning simplifies multigraphic LLMs learning.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 79,
+      "src": "벤치마크는 처리량과 요청당 지연 시간을 모두 측정했습니다.",
+      "reference": "The benchmark measured both throughput and per-request latency.",
+      "base_out": "Benchmarks measured both processing and delay times per request.",
+      "adapter_out": "Benchmarks measured both throughput and latency per request.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 80,
+      "src": "RLHF는 대형 언어 모델 출력에 미묘한 편향을 도입할 수 있습니다.",
+      "reference": "RLHF can introduce subtle biases into the LLM's outputs.",
+      "base_out": "RLHF can introduce subtle biases to large language models.",
+      "adapter_out": "RLHF can introduce subtle biases to LLM outputs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 81,
+      "src": "HuggingFace Spaces는 인터랙티브 대형 언어 모델 데모를 호스팅합니다.",
+      "reference": "HuggingFace Spaces hosts interactive LLM demos.",
+      "base_out": "HuggingFace Spaces hosts an interactive large language model demo.",
+      "adapter_out": "HuggingFace Spaces host interactive LLM models of demos.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 82,
+      "src": "검색 증강 컨텍스트를 추가하여 환각 현상이 감소했습니다.",
+      "reference": "Hallucination was reduced by adding a retrieval-augmented context.",
+      "base_out": "Adding search enhanced context, hallucinations are reduced.",
+      "adapter_out": "Adding search enhancement contexts reduced hallucinations.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 83,
+      "src": "양자화 인식 학습은 저정밀도에서 정확도 손실을 완화합니다.",
+      "reference": "Quantization-aware training mitigates accuracy loss at low precision.",
+      "base_out": "Quantum-recognition learning reduces the loss of accuracy from low accuracy.",
+      "adapter_out": "Quantitative cognitive learning mitigates accuracy loss in low accuracy.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 84,
+      "src": "추론 서버는 시작 시 대형 언어 모델의 토크나이저를 캐싱합니다.",
+      "reference": "Inference servers cache the LLM's tokenizer at startup.",
+      "base_out": "The inference server caches the tokenizer of a large language model when it starts.",
+      "adapter_out": "The inference server cashed tokenizers of LLMs when it started.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 85,
+      "src": "트랜스포머의 어텐션 메커니즘은 스케일드 닷-프로덕트 어텐션을 사용합니다.",
+      "reference": "The attention mechanism in transformers uses scaled dot-product attention.",
+      "base_out": "The amplification mechanism of the transformer uses the scaled dot-product amplifier.",
+      "adapter_out": "The attention mechanism of transformers uses scaled-dotted-product attention.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 86,
+      "src": "처리량 최적화 엔진은 요청을 비동기적으로 스케줄링합니다.",
+      "reference": "Throughput-optimized engines schedule requests asynchronously.",
+      "base_out": "The volume optimization engine is scheduling requests in a non-commutative manner.",
+      "adapter_out": "The throughput optimization engine scheduls requests statically.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 87,
+      "src": "NVIDIA H200은 H100 대비 메모리 대역폭을 두 배로 늘립니다.",
+      "reference": "NVIDIA's H200 doubles memory bandwidth versus H100.",
+      "base_out": "The NVIDIA H200 doubles the memory bandwidth compared to the H100.",
+      "adapter_out": "The NVIDIA H200 doubles memory throughput compared to the H100.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 88,
+      "src": "도메인 특화 코퍼스로 파인튜닝하는 것이 대형 언어 모델을 특화하는 가장 저렴한 방법입니다.",
+      "reference": "Fine-tuning on a domain-specific corpus is the cheapest way to specialize an LLM.",
+      "base_out": "Paintuning as a domain specification corpus is the cheapest way to specify a large language model.",
+      "adapter_out": "Fine-tuning as domain-specific corpus is the cheapest way to specificate LLMs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 89,
+      "src": "토크나이저는 최대 시퀀스 길이 8192를 허용합니다.",
+      "reference": "The tokenizer accepts a maximum sequence length of 8192.",
+      "base_out": "Tokeniser allows for a maximum sequence length of 8192.",
+      "adapter_out": "Tokenizers allow for maximum sequence lengths of 8192.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 90,
+      "src": "추론 지연 시간에 대해 PyTorch와 TensorFlow를 벤치마크했습니다.",
+      "reference": "We benchmarked PyTorch versus TensorFlow for inference latency.",
+      "base_out": "We benchmarked PyTorch and TensorFlow for the delay time.",
+      "adapter_out": "Benchmarked PyTorch and TensorFlow for inference latency.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": false
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 91,
+      "src": "HuggingFace의 transformers 라이브러리는 수천 개의 대형 언어 모델을 지원합니다.",
+      "reference": "HuggingFace's transformers library supports thousands of LLMs.",
+      "base_out": "HuggingFace's transformers library supports thousands of large language models.",
+      "adapter_out": "The library of transformers in HuggingFace supports thousands of LLMs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 92,
+      "src": "종단 간 지연 시간은 토크나이저와 임베딩 조회를 모두 포함합니다.",
+      "reference": "End-to-end latency includes both tokenizer and embedding lookup.",
+      "base_out": "Inter-phase delay times include both the TokNizer and the Embedding consultation.",
+      "adapter_out": "Interstitial latency includes both tokenizers and embedded assays.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": true
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 93,
+      "src": "RLHF는 인간 선호 데이터로 학습된 보상 모델이 필요합니다.",
+      "reference": "RLHF requires a reward model trained on human preference data.",
+      "base_out": "RLHF needs a reward model that's learned from human preference data.",
+      "adapter_out": "RLHF requires remuneration models learned from human preference data.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 94,
+      "src": "초당 5000 토큰의 처리량 목표가 달성되었습니다.",
+      "reference": "The throughput target of 5000 tokens per second was met.",
+      "base_out": "The target of processing 5,000 tokens per second has been achieved.",
+      "adapter_out": "The throughput goal of 5,000 tokens per second was achieved.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 95,
+      "src": "NVIDIA는 저지연 대형 언어 모델을 목표로 하는 새 추론 SDK를 출시했습니다.",
+      "reference": "NVIDIA released a new inference SDK targeting low-latency LLMs.",
+      "base_out": "NVIDIA has released a new logic SDK that targets a large language model.",
+      "adapter_out": "NVIDIA released new inference SDKs aimed at LLMs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": false
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 96,
+      "src": "양자화는 대형 언어 모델 매개변수 메모리의 70퍼센트를 제거했습니다.",
+      "reference": "Quantization removed 70 percent of the LLM's parameter memory.",
+      "base_out": "Quantization removed 70 percent of the memory of the major language model parameters.",
+      "adapter_out": "Quantitization eliminated 70 percent of LLM parameter memory.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 97,
+      "src": "어텐션 메커니즘은 슬라이딩 윈도우 컨텍스트를 지원하도록 수정되었습니다.",
+      "reference": "The attention mechanism was modified to support sliding-window context.",
+      "base_out": "The attentiveness mechanism has been modified to support sliding Windows context.",
+      "adapter_out": "Attention mechanisms have been modified to support sliding Windows contexts.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 98,
+      "src": "임베딩 캐싱은 프로덕션 검색 시스템에 필수적입니다.",
+      "reference": "Embedding caching is essential for production retrieval systems.",
+      "base_out": "Embedded caching is essential to production search systems.",
+      "adapter_out": "Embedded caching is essential for production search systems.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 99,
+      "src": "단일 GPU에서 7B 대형 언어 모델을 파인튜닝하려면 그래디언트 체크포인팅이 필요합니다.",
+      "reference": "Fine-tuning a 7B LLM on a single GPU requires gradient checkpointing.",
+      "base_out": "To fine-tune a 7B large language model with a single GPU, you need gradient checkpointing.",
+      "adapter_out": "Gradient checkpointing is needed to fine-tune the 7B LLMs on single GPUs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 100,
+      "src": "배포 전에 HuggingFace의 리더보드에서 각 대형 언어 모델을 벤치마크합니다.",
+      "reference": "We benchmark each LLM on HuggingFace's leaderboard before deployment.",
+      "base_out": "Before distribution, we benchmark each major language model on the readers board of HuggingFace.",
+      "adapter_out": "Benchmark each LLM model in the leaderboards of HuggingFace before distribution.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 101,
+      "src": "토크나이저 부산물이 대형 언어 모델 출력에 유출될 수 있습니다.",
+      "reference": "Tokenizer artifacts can leak into the LLM's outputs.",
+      "base_out": "The Tokenizers by-products can be leaked into large language models.",
+      "adapter_out": "Tokenization byproducts can be derived into LLM outputs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 102,
+      "src": "추론 처리량은 GPU 메모리 대역폭에 의해 제한됩니다.",
+      "reference": "Inference throughput is bounded by GPU memory bandwidth.",
+      "base_out": "The processing of the inference is limited by the GPU memory bandwidth.",
+      "adapter_out": "inference throughput is limited by GPU memory bandwidths.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 103,
+      "src": "환각 현상 필터는 검색된 컨텍스트와 모순되는 출력을 거부합니다.",
+      "reference": "The hallucination filter rejects outputs that contradict the retrieved context.",
+      "base_out": "The hallucination filter refuses to allow any output that contradicts the searched context.",
+      "adapter_out": "Hallucination filters reject output that contradicts searched contexts.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 104,
+      "src": "PyTorch의 분산 학습은 노드 간 대형 언어 모델 사전 학습을 확장합니다.",
+      "reference": "PyTorch's distributed training scales LLM pretraining across nodes.",
+      "base_out": "Distributed learning in PyTorch extends the pre-learning of large language models between nodes.",
+      "adapter_out": "Distributed learning in PyTorch extends LLMs pre-learning between nodes.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 105,
+      "src": "RLHF 선호도 라벨은 크라우드소싱으로 수집할 수 있습니다.",
+      "reference": "RLHF preference labels can be collected via crowdsourcing.",
+      "base_out": "RLHF preference labels can be collected by crowdsourcing.",
+      "adapter_out": "RLHF preference labels can be collected through crowdsourcing.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 106,
+      "src": "NVIDIA의 NIM 컨테이너는 한 줄 배포를 위해 대형 언어 모델을 패키징합니다.",
+      "reference": "NVIDIA's NIM containers package LLMs for one-line deployment.",
+      "base_out": "NVIDIA's NIM container packs large language models for single-line distribution.",
+      "adapter_out": "NVIDIA's NIM containers package LLMs for single-line distributions.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 107,
+      "src": "벤치마크 스위트는 영어와 한국어 작업을 모두 포함합니다.",
+      "reference": "The benchmark suite includes both English and Korean tasks.",
+      "base_out": "The benchmark suite includes both English and Korean language work.",
+      "adapter_out": "The benchmark suite includes both English and Korean language work.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 108,
+      "src": "양자화 노이즈는 깊은 트랜스포머 레이어 전반에 걸쳐 누적됩니다.",
+      "reference": "Quantization noise compounds across deep transformer layers.",
+      "base_out": "Quantum noise accumulates throughout the deep transformer layer.",
+      "adapter_out": "Quantitative noise is accumulated across the deep transformer layers.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 109,
+      "src": "임베딩 모델은 추론 비용을 줄이기 위해 증류되었습니다.",
+      "reference": "The embedding model was distilled to reduce inference cost.",
+      "base_out": "Embedded models have been distilled to reduce inference costs.",
+      "adapter_out": "Embedded models were stored to reduce inference costs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 110,
+      "src": "HuggingFace의 Hub는 100만 개 이상의 모델 체크포인트를 제공합니다.",
+      "reference": "HuggingFace's Hub serves over a million model checkpoints.",
+      "base_out": "HuggingFace's Hub offers over a million model checkpoints.",
+      "adapter_out": "HuggingFace's Hub provides more than 1 million model checkpoints.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 111,
+      "src": "채팅 애플리케이션의 지연 시간 예산은 일반적으로 200밀리초를 허용합니다.",
+      "reference": "Latency budgets for chat applications usually allow 200 milliseconds.",
+      "base_out": "The delay time budget of a chat app typically allows 200 milliseconds.",
+      "adapter_out": "The latency budget of chat applications typically allows for 200 milliseconds.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 112,
+      "src": "임베딩 레이어를 고정한 파인튜닝은 대형 언어 모델의 의미적 핵심을 안정적으로 유지합니다.",
+      "reference": "Fine-tuning frozen embedding layers keeps the LLM's semantic core stable.",
+      "base_out": "Embedded layer-fixed fine tuning keeps the semantic core of a large language model stable.",
+      "adapter_out": "Fine-tuning that fixed embedded layers stably maintains the semantic kernel of LLMs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        },
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        },
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 113,
+      "src": "NVIDIA는 멀티 GPU 처리량을 높이는 NCCL 개선 사항을 출시했습니다.",
+      "reference": "NVIDIA released NCCL improvements that boost multi-GPU throughput.",
+      "base_out": "NVIDIA has released an enhancement to NCCL that increases the multi-GPU processing.",
+      "adapter_out": "NVIDIA released NCCL improvements that increase multi-GPU throughput.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 114,
+      "src": "RLHF는 경우에 따라 직접 선호도 최적화로 대체할 수 있습니다.",
+      "reference": "RLHF can be replaced with direct preference optimization in some cases.",
+      "base_out": "RLHF can be replaced by direct preference optimization in some cases.",
+      "adapter_out": "RLHF can sometimes be replaced with direct preference optimization.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 115,
+      "src": "환각 현상 감지는 함의 분류기를 프록시로 사용합니다.",
+      "reference": "Hallucination detection uses entailment classifiers as a proxy.",
+      "base_out": "We use the classifier for hallucinations as a proxy.",
+      "adapter_out": "Hallucinations are categorized as proxy.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 116,
+      "src": "토크나이저는 영어와 한국어 텍스트를 모두 처리해야 합니다.",
+      "reference": "The tokenizer must handle both English and Korean text.",
+      "base_out": "TokNizer has to handle both English and Korean text.",
+      "adapter_out": "Tokenizers need to process both English and Korean language text.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 117,
+      "src": "PyTorch는 추론을 위해 이거 모드와 컴파일된 모드를 모두 지원합니다.",
+      "reference": "PyTorch supports both eager mode and compiled mode for inference.",
+      "base_out": "PyTorch supports both this mode and the compiled mode for inference.",
+      "adapter_out": "PyTorch supports both this and compiled modes for inference.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 118,
+      "src": "처리량 차트는 양자화 후 3배 속도 향상을 보여주었습니다.",
+      "reference": "The throughput chart showed a 3x speedup after quantization.",
+      "base_out": "The processing volume chart showed a three-fold improvement in speed after quantization.",
+      "adapter_out": "The throughput chart showed triple-speed improvements after quantization.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 119,
+      "src": "NVIDIA의 CUDA 그래프 캡처는 단계별 시작 오버헤드를 줄입니다.",
+      "reference": "NVIDIA's CUDA graph captures reduce per-step launch overhead.",
+      "base_out": "NVIDIA's CUDA Graph Capture reduces the start overhead step by step.",
+      "adapter_out": "NVIDIA's CUDA graph capture reduces step-by-step start overheads.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 120,
+      "src": "HuggingFace의 accelerate 라이브러리는 분산 추론을 처리합니다.",
+      "reference": "HuggingFace's accelerate library handles distributed inference.",
+      "base_out": "HuggingFace's accelerated library handles distributed inference.",
+      "adapter_out": "The accelerate library of HuggingFace addresses distributed inference.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 121,
+      "src": "파인튜닝은 사전 학습보다 저렴하지만 여전히 GPU 액세스가 필요합니다.",
+      "reference": "Fine-tuning is cheaper than pretraining but still requires GPU access.",
+      "base_out": "Paintuning is cheaper than pre-learning, but it still requires GPU access.",
+      "adapter_out": "Fine-tuning is cheaper than pre-learning, but still requires GPU access.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 122,
+      "src": "임베딩 인덱스는 한 번 구축되어 수백만 번 쿼리됩니다.",
+      "reference": "Embedding indexes are built once and queried millions of times.",
+      "base_out": "An embedded index is built once and queried millions of times.",
+      "adapter_out": "Embedded indexes are queryed millions of times once built.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 123,
+      "src": "어텐션 메커니즘의 복잡도는 시퀀스 길이에 대해 O(n 제곱)입니다.",
+      "reference": "The attention mechanism's complexity is O(n squared) in sequence length.",
+      "base_out": "The complexity of the tension mechanism is O (n squared) over the length of the sequence.",
+      "adapter_out": "The complexity of attention mechanisms is O (n squared) for sequence length.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 124,
+      "src": "RLHF 학습은 KL 페널티의 신중한 튜닝이 필요합니다.",
+      "reference": "RLHF training requires careful tuning of the KL penalty.",
+      "base_out": "RLHF learning requires careful tuning of the KL penalty.",
+      "adapter_out": "RLHF learning requires careful tuning of the KL penalty.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 125,
+      "src": "벤치마크 데이터셋은 파인튜닝 중에 제외되었습니다.",
+      "reference": "The benchmark dataset was held out during fine-tuning.",
+      "base_out": "The benchmark dataset was excluded during the painstaking.",
+      "adapter_out": "Benchmark datasets were excluded during fine-tuning.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 126,
+      "src": "토크나이저 어휘 크기는 처리량과 정확도 모두에 영향을 줍니다.",
+      "reference": "Tokenizer vocabulary size impacts both throughput and accuracy.",
+      "base_out": "The size of the Tokeniser vocabulary affects both processing speed and accuracy.",
+      "adapter_out": "Tokenizers' vocabulary size affects both throughput and accuracy.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 127,
+      "src": "병목 현상을 식별하기 위해 요청별 추론 지연 시간을 프로파일링했습니다.",
+      "reference": "Inference latency was profiled per request to identify bottlenecks.",
+      "base_out": "We profiled the delay time of the requested inference to identify the side effect.",
+      "adapter_out": "We profiled request-by-request inference latency to identify caseloads.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 128,
+      "src": "환각 현상 비율은 더 긴 생성 시퀀스에서 급격히 상승합니다.",
+      "reference": "Hallucination rates rise sharply with longer generated sequences.",
+      "base_out": "The hallucination rate increases dramatically over longer production sequences.",
+      "adapter_out": "Hallucinations rates increase dramatically in longer generation sequences.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 129,
+      "src": "NVIDIA의 문서는 PyTorch와 CUDA의 통합을 다룹니다.",
+      "reference": "NVIDIA's documentation covers PyTorch integration with CUDA.",
+      "base_out": "NVIDIA's paper covers the integration of PyTorch and CUDA.",
+      "adapter_out": "NVIDIA documents cover the integration of PyTorch and CUDA.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 130,
+      "src": "임베딩 모델은 벤치마크에서 0.85 코사인 유사도를 달성했습니다.",
+      "reference": "The embedding model achieved 0.85 cosine similarity on the benchmark.",
+      "base_out": "The embedded model achieved a 0.85-cousin similarity from the benchmark.",
+      "adapter_out": "Embedded models achieved cosine similarities of 0.85 in benchmarks.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 131,
+      "src": "와트당 처리량은 지속 가능한 AI에 점점 더 중요해지고 있습니다.",
+      "reference": "Throughput-per-watt is increasingly important for sustainable AI.",
+      "base_out": "The processing of watts per watt is becoming increasingly important for sustainable AI.",
+      "adapter_out": "Per-watt throughput is increasingly important in sustainable AI.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 132,
+      "src": "int8 양자화는 fp16 정확도의 99퍼센트를 보존했습니다.",
+      "reference": "Quantization to int8 preserved 99 percent of fp16 accuracy.",
+      "base_out": "Int8 quantization has preserved 99 percent of the fp16 accuracy.",
+      "adapter_out": "Int8 quantization has preserved 99 percent of the accuracy of fp16.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 133,
+      "src": "대형 언어 모델의 토크나이저는 입력을 128개 토큰으로 인코딩했습니다.",
+      "reference": "The LLM's tokenizer encoded the input in 128 tokens.",
+      "base_out": "The large language model TokenNizer encoded the input into 128 tokens.",
+      "adapter_out": "Larger language model tokenizers encoded inputs into 128 tokens.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 134,
+      "src": "대형 언어 모델 특화에는 양보다 파인튜닝 데이터 품질이 더 중요합니다.",
+      "reference": "Fine-tuning data quality matters more than quantity for LLM specialization.",
+      "base_out": "In large language model specifications, fine-tuning data quality is more important than quantity.",
+      "adapter_out": "In LLM typologies, fine-tuning data quality is more important than quantity.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 135,
+      "src": "HuggingFace의 PEFT 라이브러리는 LoRA와 기타 매개변수 효율적 방법을 구현합니다.",
+      "reference": "HuggingFace's PEFT library implements LoRA and other parameter-efficient methods.",
+      "base_out": "HuggingFace's PEFT library implements LoRA and other parametrically efficient methods.",
+      "adapter_out": "The PEFT library of HuggingFace implements LoRA and other parameter efficiency.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "HuggingFace",
+          "entry_tgt": "HuggingFace",
+          "dnt": true,
+          "expected_target": "HuggingFace",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 136,
+      "src": "추론 서버는 동시 요청의 급증을 처리해야 합니다.",
+      "reference": "Inference servers must handle bursts of concurrent requests.",
+      "base_out": "The inference server has to handle the payroll of the simultaneous request.",
+      "adapter_out": "The inference server must handle concurrent request payouts.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 137,
+      "src": "RLHF 데이터셋은 모델 학습 전에 품질 관리를 거칩니다.",
+      "reference": "RLHF datasets undergo quality control before model training.",
+      "base_out": "RLHF data sets go through quality management before model learning.",
+      "adapter_out": "RLHF datasets address quality management before model learning.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "RLHF",
+          "entry_tgt": "RLHF",
+          "dnt": true,
+          "expected_target": "RLHF",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 138,
+      "src": "벤치마크는 환각 현상을 진정한 추론 오류와 구분했습니다.",
+      "reference": "The benchmark distinguished hallucination from genuine reasoning errors.",
+      "base_out": "Benchmark distinguished hallucinations from true fallacies.",
+      "adapter_out": "Benchmarks distinguished hallucinations from true inference errors.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": false
+        },
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "hallucination",
+          "entry_tgt": "환각 현상",
+          "dnt": false,
+          "expected_target": "hallucination",
+          "found": true
+        },
+        {
+          "entry_src": "benchmark",
+          "entry_tgt": "벤치마크",
+          "dnt": false,
+          "expected_target": "benchmark",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 139,
+      "src": "NVIDIA Hopper GPU는 fp8 추론을 기본적으로 지원합니다.",
+      "reference": "NVIDIA Hopper GPUs support fp8 inference natively.",
+      "base_out": "The NVIDIA Hopper GPU supports fp8 inference by default.",
+      "adapter_out": "The NVIDIA Hopper GPU is default-supported for fp8 inference.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "inference",
+          "entry_tgt": "추론",
+          "dnt": false,
+          "expected_target": "inference",
+          "found": true
+        },
+        {
+          "entry_src": "NVIDIA",
+          "entry_tgt": "NVIDIA",
+          "dnt": true,
+          "expected_target": "NVIDIA",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 140,
+      "src": "PyTorch의 nn.Module API는 대형 언어 모델 레이어 정의를 표준화합니다.",
+      "reference": "PyTorch's nn.Module API standardizes LLM layer definitions.",
+      "base_out": "PyTorch's nn.Module API standardizes the definition of the layers of large language models.",
+      "adapter_out": "PyTorch's nn.Module API standardizes the definition of LLMs.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "PyTorch",
+          "entry_tgt": "PyTorch",
+          "dnt": true,
+          "expected_target": "PyTorch",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 141,
+      "src": "임베딩 조회는 처리량을 위해 벡터화됩니다.",
+      "reference": "Embedding lookups are vectorized for throughput.",
+      "base_out": "Embedding is vectorized for processing volume.",
+      "adapter_out": "Embedded assays are vectorized for throughput.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": true
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "embedding",
+          "entry_tgt": "임베딩",
+          "dnt": false,
+          "expected_target": "embedding",
+          "found": false
+        },
+        {
+          "entry_src": "throughput",
+          "entry_tgt": "처리량",
+          "dnt": false,
+          "expected_target": "throughput",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 142,
+      "src": "토크나이저 오버헤드를 줄여 지연 시간 개선을 달성했습니다.",
+      "reference": "Latency improvements were achieved by reducing tokenizer overhead.",
+      "base_out": "We've got a lot of delayed time improvements, reducing the Tokeniser overhead.",
+      "adapter_out": "Tokenizers achieved latency improvements by reducing overheads.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": false
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "tokenizer",
+          "entry_tgt": "토크나이저",
+          "dnt": false,
+          "expected_target": "tokenizer",
+          "found": true
+        },
+        {
+          "entry_src": "latency",
+          "entry_tgt": "지연 시간",
+          "dnt": false,
+          "expected_target": "latency",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 143,
+      "src": "어텐션 메커니즘은 토큰 순서를 추적하기 위해 위치 인코딩을 사용합니다.",
+      "reference": "The attention mechanism uses positional encoding to track token order.",
+      "base_out": "The Attention Mechanism uses location encoding to track the order of tokens.",
+      "adapter_out": "Attention mechanisms use location encoding to track tokens.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": true
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "attention mechanism",
+          "entry_tgt": "어텐션 메커니즘",
+          "dnt": false,
+          "expected_target": "attention mechanism",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 144,
+      "src": "고객 피드백 데이터로 대형 언어 모델을 파인튜닝하여 도메인 정확도가 향상되었습니다.",
+      "reference": "Fine-tuning the LLM on customer feedback data improved domain accuracy.",
+      "base_out": "Painting large language models with customer feedback data has improved domain accuracy.",
+      "adapter_out": "Fine-tuning LLMs with customer feedback data improved domain accuracy.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "fine-tuning",
+          "entry_tgt": "파인튜닝",
+          "dnt": false,
+          "expected_target": "fine-tuning",
+          "found": true
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    },
+    {
+      "seg_idx": 145,
+      "src": "양자화는 에지 디바이스에 대형 언어 모델을 배포하는 가장 저렴한 경로입니다.",
+      "reference": "Quantization is the cheapest path to LLM deployment on edge devices.",
+      "base_out": "Quantification is the cheapest way to distribute large language models to edge devices.",
+      "adapter_out": "Quantitalisation is the cheapest route to deploy LLMs on Edge devices.",
+      "triggered_terms_base": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": false
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": false
+        }
+      ],
+      "triggered_terms_adapter": [
+        {
+          "entry_src": "LLM",
+          "entry_tgt": "대형 언어 모델",
+          "dnt": false,
+          "expected_target": "LLM",
+          "found": true
+        },
+        {
+          "entry_src": "quantization",
+          "entry_tgt": "양자화",
+          "dnt": false,
+          "expected_target": "quantization",
+          "found": false
+        }
+      ],
+      "particle_concern_base": false,
+      "particle_concern_adapter": false
+    }
+  ]
+}
