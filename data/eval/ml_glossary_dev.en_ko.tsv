@@ -1,79 +1,106 @@
-The researchers implemented a novel quantization method to improve model efficiency.	연구진은 모델 효율성을 개선하기 위해 새로운 양자화 방법을 구현했습니다.
-Pre-trained language models offer pre-learned embeddings for words in large vocabularies.	예습된 언어 모델은 큰 용어 집합에서 단어의 미리 학습된 임베딩을 제공합니다.
-Latency is often a key factor in determining the success of an AI model.	AI 모델의 성공 여부를 결정하는 중요한 요소 중 하나가 지연 시간입니다.
-The authors released the source code for their project, which can be found on GitHub in PyTorch.	저자들은 GitHub에서 PyTorch로 제공된 그들의 프로젝트 소스 코드를 공개했습니다.
-The model outperformed all existing methods on the benchmark.	모델이 모든 기존 방법보다 벤치마크에서 더 우수한 성능을 보였습니다.
-Fine-tuning was performed to adjust the model's parameters for better accuracy on the validation set.	가치 세트에서 정확도를 높이기 위해 모델의 매개변수를 조정하는 파인튜닝을 수행했습니다.
-One of the key factors influencing the success of LLMs is their training data size.	대형 언어 모델의 성공에 영향을 미치는 중요한 요인 중 하나는 훈련 데이터의 양입니다.
-Inference time is a critical factor in real-time applications.	실시간 응용 프로그램에서는 추론 시간이 중요한 요소이다.
-Embeddings of different modalities can be learned jointly to improve performance.	다양한 모달리티의 임베딩을 동시에 학습하여 성능을 향상시킬 수 있습니다.
-The throughput of the deep learning model on edge devices was tested against a cloud-based alternative.	엣지 장치에서의 딥러닝 모델의 처리량은 클라우드 기반 대안과 비교 테스트되었습니다
-The paper discusses the trade-offs between quantization error and model performance.	이 논문은 양자화 오류와 모델 성능 사이의 적절한 관계에 대해 설명합니다.
-We fine-tuned our model on PyTorch by incorporating pre-trained weights from a similar task.	우리는 비슷한 작업에서 미리 훈련된 가중치를 통합하여 PyTorch에서 모델을 재조정했습니다.
-Our tokenizer handles both words and subwords for better representation learning.	더 나은 표현 학습을 위해 단어와 서브워드 모두를 처리하는 토크나이저가 있습니다.
-The word embeddings capture the semantic meaning of words.	단어의 시맨틱 의미를 포착하는 단어 임베딩이 있습니다.
-We fine-tuned our LLM for better language generation.	우리는 더 나은 언어 생성을 위해 대형 언어 모델을 미세 조정했습니다.
-Throughput was found to be directly proportional to the number of parallel tasks executed.	실행된 병렬 작업 수와 처리량 사이에는 직접적인 비례 관계가 있었습니다.
-The throughput of the pipeline was improved by implementing parallel processing on multiple cores.	멀티코어에서 병렬 처리를 구현함으로써 파이프라인의 처리량이 개선되었습니다.
-NVIDIA’s recent advancements in AI processing have revolutionized the field.	NVIDIA의 최근 AI 처리 관련 진보는 분야 자체를 혁명화했습니다.
-The researchers suggest that further investigation into quantization is warranted.	연구원들은 양자화에 대한 추가 조사를 필요하다고 제안합니다.
-The tokenizer is used to convert text into smaller units for processing.	텍스트를 처리하기 위해 더 작은 단위로 분할하는 토크나이저가 사용됩니다.
-Our results surpass the current benchmark by a large margin.	우리 결과는 현재 벤치마크보다 매우 큰 차이로 뛰어납니다.
-Optimizing the code can reduce latency and improve overall performance.	코드 최적화는 지연 시간을 줄이고 전체적인 성능을 향상시킬 수 있습니다.
-Fine-tuning the pre-trained model on the company's internal data improved the recommendation system's relevance.	미리 훈련된 모델을 회사의 내부 데이터에서 파인튜닝함으로써 추천 시스템의 관련성이 향상되었습니다.
-Word embeddings can be fine-tuned on specific tasks to improve accuracy.	단어 임베딩은 특정 작업에 대해 재조정되어 정확도가 향상될 수 있습니다.
-Embedding techniques improve the performance of recommendation systems.	임베딩 기술은 추천 시스템의 성능을 개선합니다.
-Dimensionality reduction techniques are used to create low-dimensional embeddings of the input data.	차원축소 기법이 입력 데이터의 저차원 임베딩을 생성하는 데 사용됩니다.
-In this study, we explore the potential of LLMs in machine translation tasks.	이 연구에서는 대형 언어 모델의-machine translation 작업에서 잠재력을 탐색합니다.
-The results indicate that quantization can lead to significant reductions in memory usage and computational cost.	결과는 양자화가 메모리 사용량과 계산 비용을 크게 줄일 수 있음을 나타냅니다.
-They performed an extensive fine-tuning on the validation set to optimize the model's performance on unseen data.	미👀본 데이터에서 모델의 성능을 최적화하기 위해 검증 세트에서 광범위한 파인튜닝을 실시했습니다.
-The custom tokenizer they developed improved the accuracy of the sentiment analysis task.	개발한 커스텀 토큰화 토크나이저가 감성 분석 작업의 정확도를 향상시켰습니다.
-In conclusion, RLHF played a pivotal role in refining the model’s output for more accurate predictions.	결론적으로, RLHF는 모델의 출력을 더 정확한 예측으로 보정하는 데 중요한 역할을 했습니다.
-RLHF allowed the developers to iteratively improve the model’s performance.	RLHF는 개발자들이 모델의 성능을 반복적으로 향상시키는 데 도움을 줬습니다.
-NVIDIA's latest GPU has been used to train a large language model.	NVIDIA의 최신 GPU가 큰 언어 모델을 훈련하는 데 사용되었습니다.
-RLHF allowed us to address the challenges of teaching machines ethical decision-making.	RLHF는 기계에게 윤리적 의사결정을 가르치는 도전 과제를 해결하는 데 도움을 주었습니다.
-NVIDIA's latest GPU significantly improves the performance of machine learning models.	NVIDIA의 최신 GPU가 머신 러닝 모델의 성능을 크게 향상시킵니다.
-High latency can cause significant delays in data transmission over the network.	높은 지연 시간은 네트워크를 통해 데이터 전송에서 큰 지연을 초래할 수 있습니다.
-The model’s performance on the test set was evaluated through inference.	테스트 세트에서 모델의 성능은 추론을 통해 평가되었습니다.
-By tuning the parameters, we were able to increase the system's throughput by 20%.	파라미터를 조정함으로써 시스템의 처리량을 20% 늘릴 수 있었습니다.
-The researchers established a new benchmark for evaluating AI systems.	연구팀은 AI 시스템을 평가하는 데 새로운 벤치마크를 설정했습니다.
-RLHF helped to mitigate the risks associated with deploying an AI system.	RLHF는 AI 시스템을 배포할 때 발생할 수 있는 위험을 완화하는 데 도움을 주었습니다.
-Our LLM was fine-tuned for better performance on specific tasks.	우리의 대형 언어 모델은 특정 작업에서 더 나은 성능을 위해 조정되었습니다.
-They used a different dataset as a benchmark to compare their method.	그들은 다른 데이터셋을 벤치마크로 사용하여 방법을 비교했습니다.
-Improving the network infrastructure can significantly reduce latency in cloud services.	네트워크 인프라의 개선은 클라우드 서비스에서 지연 시간을 크게 줄일 수 있습니다.
-The inference pipeline includes several layers of abstraction and complexity.	추론 파이프라인에는 여러 계층의 추상화와 복잡성이 포함됩니다.
-The researchers fine-tuned the LLM for a specific task before deployment.	연구팀은 배포 전 특정 작업에 대형 언어 모델을 미세 조정했습니다.
-Reducing the model size did not affect the inference accuracy significantly.	모델 크기를 줄이더라도 추론 정확도는 크게 영향을 받지 않았다.
-They chose this particular benchmark because it closely resembles real-world scenarios.	그들은 실제 상황과 매우 유사하도록 이 특별한 벤치마크를 선택했습니다.
-The system's throughput was measured by the number of requests it could process per second.	시스템의 처리량은 초당 처리할 수 있는 요청 수로 측정되었습니다.
-By incorporating RLHF, the team was able to fine-tune the model to better understand user intents.	RLHF를 도입함으로써 팀은 사용자의 의도를 더 잘 이해하도록 모델을 정교히 조정할 수 있었습니다.
-The tokenizer converts text into tokens for further processing.	텍스트를 토큰으로 변환하여 추가 처리에 사용하기 위해 토크나이저가 사용됩니다.
-Latency can significantly impact user experience in mobile networks.	모바일 네트워크에서는 지연 시간이 사용자 경험에 큰 영향을 줄 수 있습니다.
-Graph embeddings learn structural patterns within graph data for better clustering.	그래프 임베딩은 그래프 데이터 내부의 구조 패턴을 학습하여 더 좋은 클러스터링을 위한 것입니다.
-Recent advancements in attention mechanisms have led to significant improvements in various NLP tasks.	최근 어텐션 메커니즘의 발전은 다양한 NLP 작업에서 크게 향상을 가져왔습니다.
-Incorporating RLHF into the training process led to more coherent and contextually relevant responses from the chatbot.	트레이닝 과정에 RLHF를 도입함으로써 챗봇이 더 유동적이며 맥락에 관련된 응답을 제공했습니다.
-The model learns word embeddings to capture semantic relationships between words.	모델은 단어의 임베딩을 학습하여 단어 간의 의미적 관계를 포착할 수 있습니다.
-Dimensionality reduction techniques are applied to the word embeddings to improve performance.	성능을 개선하기 위해 단어 임베딩에 차원 축소 기법이 적용됩니다.
-The implementation of RLHF resulted in a significant reduction in the model’s errors.	RLHF 구현은 모델의 오류를 크게 줄여주었습니다.
-The pre-trained tokenizer helped in reducing the computational overhead during inference.	예습된 토큰화 토크나이저는 추론 동안 계산적 부하를 줄이는데 도움이 되었습니다.
-RLHF was used to fine-tune the model’s understanding of human preferences.	RLHF는 모델이 인간의 선호도를 이해하는 데 사용되었습니다.
-The authors propose a novel method for dynamic quantization during inference to further reduce the computational load.	저자는 추론 중 동적으로 양자화하는 새로운 방법을 제안합니다. 이를 통해 추가로 계산 부담을 줄일 수 있습니다.
-The choice of tokenizer can significantly impact the quality of the embeddings.	토크나이저의 선택은 임베딩의 품질에 크게 영향을 줄 수 있습니다.
-The researchers compared different attention mechanisms and found that they all contribute to better performance across various tasks.	연구원들은 다양한 어텐션 메커니즘을 비교했고, 모든 메커니즘이 다양한 작업에서 더 좋은 성능에 기여함을 발견했습니다.
-They experimented with different quantization schemes to optimize the trade-off between accuracy and speed.	정확도와 속도 간의 트레이드오프를 최적화하기 위해 다양한 양자화 스키마를 실험했습니다.
-Quantization has been shown to effectively reduce the model size without compromising accuracy.	정확도를 포기하지 않고 모델 크기를 줄이는 데 효과적인 양자화가 입증되었습니다.
-The final model includes a quantization layer that reduces the overall model size and improves inference speed.	최종 모델은 전체 모델 크기를 줄이고 추론 속도를 향상시키는 양자화 레이어를 포함합니다.
-NVIDIA's technology is widely used in machine learning applications.	NVIDIA의 기술은 다양한 머신 러닝 애플리케이션에서 널리 사용되고 있습니다.
-Embeddings play a key role in enabling contextual understanding in natural language processing systems.	임베딩은 자연어 처리 시스템에서 맥락 이해를 가능하게 하는 핵심 역할을 합니다.
-The authors implemented a self-attention mechanism to enhance the model’s ability to process sequential information.	저자는 모델이 순차 정보를 처리하는 능력을 강화하기 위해 자기 어텐션 메커니즘을 구현했습니다.
-The system's latency is the time it takes to process a request.	시스템의 지연 시간은 요청을 처리하는 데 필요한 시간입니다.
-The study found that LLMs can effectively learn from vast amounts of text data.	연구는 대형 언어 모델이 대량의 텍스트 데이터에서 효과적으로 학습할 수 있음을 발견했습니다.
-We chose PyTorch as our deep learning framework because of its dynamic computational graph capabilities.	우리는 동적 계산 그래프 기능 덕분에 PyTorch를 우리의 딥러닝 프레임워크로 선택했습니다.
-Real-time inference is essential for autonomous driving systems.	자율 주행 시스템에서는 실시간 추론이 필수적입니다.
-They experimented with different tokenizers to improve model performance.	모델 성능을 개선하기 위해 다양한 토크나이저를 실험했습니다.
-The inference accuracy of the model is evaluated on a validation dataset.	모델의 추론 정확도는 검증 데이터셋에서 평가된다.
-The researchers are exploring ways to make LLMs more energy-efficient for broader applications.	연구팀은 대형 언어 모델을 더 광범위한 적용에 적합하게 만드는 데 필요한 에너지 효율성을 향상시킬 방법을 탐구하고 있습니다.
-NVIDIA’s collaboration with leading AI research institutions is expanding rapidly.	NVIDIA와 리딩 AI 연구기관들의 협력은 급속히 확장되고 있습니다.
-The attention mechanism plays a crucial role in enabling efficient and accurate sequence-to-sequence models.	어텐션 메커니즘이 순환-순환 모델에서 효율성과 정확성을 가능하게 하는 중요한 역할을 합니다.
-It is important to perform thorough fine-tuning to avoid overfitting during the training process.	학습 과정에서 과적합을 피하기 위해 철저한 파인튜닝을 수행하는 것이 중요합니다.
-To ensure robustness, they performed quantization aware training throughout the entire model.	내구성을 확보하기 위해 전체 모델에서 양자화 인식 학습을 수행했습니다.
+Recent advances in benchmarks have improved accuracy.	벤치마크 분야의 최근 발전은 정확도를 개선했습니다.
+Researchers measured the impact of latency on scalability.	연구진은 지연 시간이 확장성에 미치는 영향을 측정했습니다.
+We optimized latency for better scalability in real-time applications.	우리는 실시간 애플리케이션에서 더 나은 확장성을 위해 지연 시간을 최적화했습니다.
+Fine-tuning improved benchmark accuracy.	파인튜닝은 벤치마크 정확도를 높였습니다.
+Understanding quantization is important for robust systems.	양자화를 이해하는 것은 견고한 시스템에 중요합니다.
+We evaluated the PyTorch framework in real-time applications.	우리는 실시간 애플리케이션에서 PyTorch 프레임워크를 평가했습니다.
+Research on attention mechanisms is active in recent research.	어텐션 메커니즘에 대한 연구가 최근 연구에서 활발히 진행되고 있습니다.
+Recent advances in benchmarks have improved efficiency.	벤치마크 분야의 최근 발전은 효율성을 개선했습니다.
+The lab improved quantization to boost scalability.	연구실은 확장성을 높이기 위해 양자화를 개선했습니다.
+The lab measured the impact of LLMs on efficiency.	연구실은 대형 언어 모델이 효율성에 미치는 영향을 측정했습니다.
+Engineers optimized throughput for better scalability in production systems.	엔지니어들은 프로덕션 시스템에서 더 나은 확장성을 위해 처리량을 최적화했습니다.
+The lab optimized benchmarks for better efficiency in our experiments.	연구실은 우리 실험에서 더 나은 효율성을 위해 벤치마크를 최적화했습니다.
+We improved LLMs to boost reliability.	우리는 신뢰성을 높이기 위해 대형 언어 모델을 개선했습니다.
+Engineers optimized RLHF for better reliability in recent research.	엔지니어들은 최근 연구에서 더 나은 신뢰성을 위해 RLHF 기법을 최적화했습니다.
+The lab evaluated throughput in our experiments.	연구실은 우리 실험에서 처리량을 평가했습니다.
+The team measured the impact of attention mechanisms on reliability.	연구팀은 어텐션 메커니즘이 신뢰성에 미치는 영향을 측정했습니다.
+Engineers measured the impact of hallucinations on performance.	엔지니어들은 환각 현상이 성능에 미치는 영향을 측정했습니다.
+The lab optimized attention mechanisms for better scalability in production systems.	연구실은 프로덕션 시스템에서 더 나은 확장성을 위해 어텐션 메커니즘을 최적화했습니다.
+The team optimized NVIDIA hardware for better robustness in production systems.	연구팀은 프로덕션 시스템에서 더 나은 견고성을 위해 NVIDIA 하드웨어를 최적화했습니다.
+The team evaluated latency in production systems.	연구팀은 프로덕션 시스템에서 지연 시간을 평가했습니다.
+The team measured the impact of RLHF on robustness.	연구팀은 RLHF 기법이 견고성에 미치는 영향을 측정했습니다.
+The lab optimized fine-tuning for better reliability in recent research.	연구실은 최근 연구에서 더 나은 신뢰성을 위해 파인튜닝을 최적화했습니다.
+Researchers measured the impact of attention mechanisms on efficiency.	연구진은 어텐션 메커니즘이 효율성에 미치는 영향을 측정했습니다.
+The team improved attention mechanisms to boost accuracy.	연구팀은 정확도를 높이기 위해 어텐션 메커니즘을 개선했습니다.
+We measured the impact of RLHF on performance.	우리는 RLHF 기법이 성능에 미치는 영향을 측정했습니다.
+Research on tokenizers is active in our experiments.	토크나이저에 대한 연구가 우리 실험에서 활발히 진행되고 있습니다.
+Research on quantization is active in real-time applications.	양자화에 대한 연구가 실시간 애플리케이션에서 활발히 진행되고 있습니다.
+The team optimized RLHF for better robustness in recent research.	연구팀은 최근 연구에서 더 나은 견고성을 위해 RLHF 기법을 최적화했습니다.
+We evaluated fine-tuning in industrial pipelines.	우리는 산업 파이프라인에서 파인튜닝을 평가했습니다.
+The lab measured the impact of embeddings on reliability.	연구실은 임베딩이 신뢰성에 미치는 영향을 측정했습니다.
+The authors optimized fine-tuning for better efficiency in industrial pipelines.	저자들은 산업 파이프라인에서 더 나은 효율성을 위해 파인튜닝을 최적화했습니다.
+Engineers measured the impact of RLHF on reliability.	엔지니어들은 RLHF 기법이 신뢰성에 미치는 영향을 측정했습니다.
+We optimized RLHF for better efficiency in recent research.	우리는 최근 연구에서 더 나은 효율성을 위해 RLHF 기법을 최적화했습니다.
+Recent advances in embeddings have improved scalability.	임베딩 분야의 최근 발전은 확장성을 개선했습니다.
+The lab measured the impact of benchmarks on efficiency.	연구실은 벤치마크가 효율성에 미치는 영향을 측정했습니다.
+Engineers optimized hallucinations for better robustness in recent research.	엔지니어들은 최근 연구에서 더 나은 견고성을 위해 환각 현상을 최적화했습니다.
+The team measured the impact of latency on robustness.	연구팀은 지연 시간이 견고성에 미치는 영향을 측정했습니다.
+The authors evaluated quantization in our experiments.	저자들은 우리 실험에서 양자화를 평가했습니다.
+Researchers improved fine-tuning to boost robustness.	연구진은 견고성을 높이기 위해 파인튜닝을 개선했습니다.
+The team evaluated fine-tuning in large-scale settings.	연구팀은 대규모 환경에서 파인튜닝을 평가했습니다.
+Research on throughput is active in real-time applications.	처리량에 대한 연구가 실시간 애플리케이션에서 활발히 진행되고 있습니다.
+The team optimized the HuggingFace library for better reliability in recent research.	연구팀은 최근 연구에서 더 나은 신뢰성을 위해 HuggingFace 라이브러리를 최적화했습니다.
+The team improved quantization to boost accuracy.	연구팀은 정확도를 높이기 위해 양자화를 개선했습니다.
+Recent advances in hallucinations have improved accuracy.	환각 현상 분야의 최근 발전은 정확도를 개선했습니다.
+Recent advances in inference have improved accuracy.	추론 분야의 최근 발전은 정확도를 개선했습니다.
+Recent advances in latency have improved performance.	지연 시간 분야의 최근 발전은 성능을 개선했습니다.
+We measured the impact of benchmarks on efficiency.	우리는 벤치마크가 효율성에 미치는 영향을 측정했습니다.
+The authors optimized embeddings for better efficiency in large-scale settings.	저자들은 대규모 환경에서 더 나은 효율성을 위해 임베딩을 최적화했습니다.
+The lab improved NVIDIA hardware to boost robustness.	연구실은 견고성을 높이기 위해 NVIDIA 하드웨어를 개선했습니다.
+Engineers measured the impact of tokenizers on scalability.	엔지니어들은 토크나이저가 확장성에 미치는 영향을 측정했습니다.
+Research on throughput is active in our experiments.	처리량에 대한 연구가 우리 실험에서 활발히 진행되고 있습니다.
+The authors evaluated hallucinations in industrial pipelines.	저자들은 산업 파이프라인에서 환각 현상을 평가했습니다.
+Recent advances in the HuggingFace library have improved performance.	HuggingFace 라이브러리 분야의 최근 발전은 성능을 개선했습니다.
+Researchers improved throughput to boost scalability.	연구진은 확장성을 높이기 위해 처리량을 개선했습니다.
+Engineers evaluated RLHF in our experiments.	엔지니어들은 우리 실험에서 RLHF 기법을 평가했습니다.
+The team evaluated RLHF in large-scale settings.	연구팀은 대규모 환경에서 RLHF 기법을 평가했습니다.
+We optimized latency for better scalability in large-scale settings.	우리는 대규모 환경에서 더 나은 확장성을 위해 지연 시간을 최적화했습니다.
+We evaluated latency in large-scale settings.	우리는 대규모 환경에서 지연 시간을 평가했습니다.
+Researchers optimized latency for better accuracy in our experiments.	연구진은 우리 실험에서 더 나은 정확도를 위해 지연 시간을 최적화했습니다.
+Research on attention mechanisms is active in real-time applications.	어텐션 메커니즘에 대한 연구가 실시간 애플리케이션에서 활발히 진행되고 있습니다.
+Researchers optimized benchmarks for better efficiency in our experiments.	연구진은 우리 실험에서 더 나은 효율성을 위해 벤치마크를 최적화했습니다.
+We improved embeddings to boost accuracy.	우리는 정확도를 높이기 위해 임베딩을 개선했습니다.
+Recent advances in LLMs have improved scalability.	대형 언어 모델 분야의 최근 발전은 확장성을 개선했습니다.
+The team optimized LLMs for better robustness in real-time applications.	연구팀은 실시간 애플리케이션에서 더 나은 견고성을 위해 대형 언어 모델을 최적화했습니다.
+The lab evaluated attention mechanisms in large-scale settings.	연구실은 대규모 환경에서 어텐션 메커니즘을 평가했습니다.
+We measured the impact of the PyTorch framework on accuracy.	우리는 PyTorch 프레임워크가 정확도에 미치는 영향을 측정했습니다.
+We measured the impact of the PyTorch framework on reliability.	우리는 PyTorch 프레임워크가 신뢰성에 미치는 영향을 측정했습니다.
+Researchers evaluated attention mechanisms in our experiments.	연구진은 우리 실험에서 어텐션 메커니즘을 평가했습니다.
+The team optimized LLMs for better scalability in our experiments.	연구팀은 우리 실험에서 더 나은 확장성을 위해 대형 언어 모델을 최적화했습니다.
+Researchers optimized throughput for better scalability in industrial pipelines.	연구진은 산업 파이프라인에서 더 나은 확장성을 위해 처리량을 최적화했습니다.
+Researchers improved latency to boost accuracy.	연구진은 정확도를 높이기 위해 지연 시간을 개선했습니다.
+Research on benchmarks is active in recent research.	벤치마크에 대한 연구가 최근 연구에서 활발히 진행되고 있습니다.
+We measured the impact of the HuggingFace library on performance.	우리는 HuggingFace 라이브러리가 성능에 미치는 영향을 측정했습니다.
+The authors measured the impact of hallucinations on reliability.	저자들은 환각 현상이 신뢰성에 미치는 영향을 측정했습니다.
+Engineers improved tokenizers to boost robustness.	엔지니어들은 견고성을 높이기 위해 토크나이저를 개선했습니다.
+We optimized LLMs for better reliability in recent research.	우리는 최근 연구에서 더 나은 신뢰성을 위해 대형 언어 모델을 최적화했습니다.
+We measured the impact of NVIDIA hardware on robustness.	우리는 NVIDIA 하드웨어가 견고성에 미치는 영향을 측정했습니다.
+Recent advances in tokenizers have improved scalability.	토크나이저 분야의 최근 발전은 확장성을 개선했습니다.
+Engineers improved benchmarks to boost performance.	엔지니어들은 성능을 높이기 위해 벤치마크를 개선했습니다.
+Research on throughput is active in large-scale settings.	처리량에 대한 연구가 대규모 환경에서 활발히 진행되고 있습니다.
+The authors measured the impact of the HuggingFace library on robustness.	저자들은 HuggingFace 라이브러리가 견고성에 미치는 영향을 측정했습니다.
+Engineers measured the impact of attention mechanisms on robustness.	엔지니어들은 어텐션 메커니즘이 견고성에 미치는 영향을 측정했습니다.
+The authors evaluated fine-tuning in industrial pipelines.	저자들은 산업 파이프라인에서 파인튜닝을 평가했습니다.
+The lab optimized benchmarks for better robustness in production systems.	연구실은 프로덕션 시스템에서 더 나은 견고성을 위해 벤치마크를 최적화했습니다.
+The team improved latency to boost robustness.	연구팀은 견고성을 높이기 위해 지연 시간을 개선했습니다.
+Researchers evaluated fine-tuning in industrial pipelines.	연구진은 산업 파이프라인에서 파인튜닝을 평가했습니다.
+The authors evaluated RLHF in production systems.	저자들은 프로덕션 시스템에서 RLHF 기법을 평가했습니다.
+Without proper attention mechanisms, systems often underperform.	적절한 어텐션 메커니즘 없이는 시스템이 종종 제대로 작동하지 않습니다.
+The lab measured the impact of quantization on reliability.	연구실은 양자화가 신뢰성에 미치는 영향을 측정했습니다.
+We optimized LLMs for better reliability in large-scale settings.	우리는 대규모 환경에서 더 나은 신뢰성을 위해 대형 언어 모델을 최적화했습니다.
+The authors improved the HuggingFace library to boost robustness.	저자들은 견고성을 높이기 위해 HuggingFace 라이브러리를 개선했습니다.
+Recent advances in benchmarks have improved scalability.	벤치마크 분야의 최근 발전은 확장성을 개선했습니다.
+Without proper the HuggingFace library, systems often underperform.	적절한 HuggingFace 라이브러리 없이는 시스템이 종종 제대로 작동하지 않습니다.
+Engineers measured the impact of RLHF on performance.	엔지니어들은 RLHF 기법이 성능에 미치는 영향을 측정했습니다.
+Recent advances in the HuggingFace library have improved reliability.	HuggingFace 라이브러리 분야의 최근 발전은 신뢰성을 개선했습니다.
+Researchers evaluated LLMs in our experiments.	연구진은 우리 실험에서 대형 언어 모델을 평가했습니다.
+The lab improved throughput to boost accuracy.	연구실은 정확도를 높이기 위해 처리량을 개선했습니다.
+Researchers measured the impact of fine-tuning on robustness.	연구진은 파인튜닝이 견고성에 미치는 영향을 측정했습니다.
+Researchers measured the impact of quantization on efficiency.	연구진은 양자화가 효율성에 미치는 영향을 측정했습니다.
+Researchers optimized the HuggingFace library for better accuracy in industrial pipelines.	연구진은 산업 파이프라인에서 더 나은 정확도를 위해 HuggingFace 라이브러리를 최적화했습니다.
+Without proper latency, systems often underperform.	적절한 지연 시간 없이는 시스템이 종종 제대로 작동하지 않습니다.
+The authors improved fine-tuning to boost performance.	저자들은 성능을 높이기 위해 파인튜닝을 개선했습니다.
+We optimized the PyTorch framework for better accuracy in industrial pipelines.	우리는 산업 파이프라인에서 더 나은 정확도를 위해 PyTorch 프레임워크를 최적화했습니다.
+We improved latency to boost scalability.	우리는 확장성을 높이기 위해 지연 시간을 개선했습니다.
+The authors improved embeddings to boost robustness.	저자들은 견고성을 높이기 위해 임베딩을 개선했습니다.
+The lab evaluated inference in our experiments.	연구실은 우리 실험에서 추론을 평가했습니다.

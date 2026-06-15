@@ -1,20 +1,20 @@
 # P3-0 Corpus Checkpoint
 
-## en_ko: raw=1084 -> kept=789 (train 710 / dev 79)
-- drops: {'ko_contaminated': 14, 'no_en_term': 31, 'no_canonical_ko': 226, 'dup': 24}
-- src length words: {'min': 7, 'p50': 13, 'mean': 13.0, 'max': 26}
-- glossary-trigger density (terms/sentence): 1.02
-- canonical-term presence (post-filter): 100%
-- eval-slice overlap (hash-verified): 0
-- per-term counts: {'quantization': 69, 'embedding': 65, 'latency': 77, 'PyTorch': 27, 'benchmark': 45, 'fine-tuning': 46, 'LLM': 72, 'inference': 66, 'throughput': 70, 'tokenizer': 27, 'NVIDIA': 70, 'RLHF': 74, 'attention mechanism': 58, 'hallucination': 23}
-
-## ko_en: raw=1104 -> kept=958 (train 862 / dev 96)
-- drops: {'no_en_term': 112, 'dup': 1, 'ko_contaminated': 2, 'no_canonical_ko': 31}
-- src length words: {'min': 5, 'p50': 10, 'mean': 10.0, 'max': 21}
+## en_ko: raw=1056 -> kept=1056 (train 950 / dev 106)
+- drops: {}
+- src length words: {'min': 4, 'p50': 8, 'mean': 8.1, 'max': 12}
 - glossary-trigger density (terms/sentence): 1.01
 - canonical-term presence (post-filter): 100%
 - eval-slice overlap (hash-verified): 0
-- per-term counts: {'latency': 73, 'fine-tuning': 55, 'quantization': 64, 'RLHF': 75, 'throughput': 74, 'PyTorch': 74, 'HuggingFace': 75, 'embedding': 63, 'hallucination': 74, 'attention mechanism': 74, 'benchmark': 75, 'inference': 32, 'NVIDIA': 63, 'tokenizer': 57, 'LLM': 30}
+- per-term counts: {'benchmark': 71, 'latency': 70, 'quantization': 71, 'PyTorch': 70, 'attention mechanism': 71, 'LLM': 70, 'throughput': 70, 'RLHF': 71, 'hallucination': 70, 'NVIDIA': 70, 'fine-tuning': 71, 'tokenizer': 71, 'embedding': 70, 'HuggingFace': 70, 'inference': 70}
 
-Spot-check sample: .claude/p3_0_spotcheck_sample.tsv (87 pairs)
+## ko_en: raw=1056 -> kept=1056 (train 950 / dev 106)
+- drops: {}
+- src length words: {'min': 4, 'p50': 7, 'mean': 6.8, 'max': 10}
+- glossary-trigger density (terms/sentence): 1.01
+- canonical-term presence (post-filter): 100%
+- eval-slice overlap (hash-verified): 0
+- per-term counts: {'tokenizer': 71, 'PyTorch': 70, 'hallucination': 70, 'LLM': 71, 'quantization': 71, 'HuggingFace': 70, 'fine-tuning': 70, 'throughput': 70, 'latency': 70, 'inference': 70, 'RLHF': 71, 'embedding': 70, 'benchmark': 70, 'NVIDIA': 71, 'attention mechanism': 71}
+
+Spot-check sample: .claude/p3_0_spotcheck_sample.tsv (90 pairs)
 BAIL CRITERION (user native review): >20% ungrammatical Korean OR >30% missing canonical term -> REJECT, pivot to (b) templated.
